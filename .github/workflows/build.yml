@@ -1,0 +1,86 @@
+name: Bikeshed and PDF build
+on: [push]
+jobs:
+    run:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Install bikeshed
+              run: pip3 install bikeshed && bikeshed update
+
+            - name: Install Prince PDF printer
+              run: |
+                set -e
+                NAME="prince-16-linux-generic-x86_64"
+                wget https://www.princexml.com/download/$NAME.tar.gz
+                tar -xzf ./$NAME.tar.gz
+                $NAME/install.sh
+                rm -rf $NAME $NAME.tar.gz
+            
+            - name: Clone repository
+              uses: actions/checkout@v2
+
+            - name: Fetch Ecmarkup PR \#600 (for Ecma stylesheets and images)
+              run: |
+                git clone -b pdf-gen-fixes --depth=1 https://github.com/gesa/ecmarkup.git
+
+            - name: Add Bikeshed template
+              run: |
+                set -e
+                BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
+                BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
+                cp -r ./boilerplate/* "$BOILERPLATE"/
+                cat "$BOILERPLATE"/doctypes.kdl ./doctypes.kdl > "$BOILERPLATE"/doctypes.kdl
+
+            - name: Build specs
+              run: |
+                set -e
+                mkdir output
+                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api.html
+                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api-pdf.html --md-status=PDF
+                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api.html
+                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api-pdf.html --md-status=PDF
+            
+            - name: Download fonts
+              run: |
+                # - Microsoft core web fonts (Arial, Verdana...)
+                # - IBM Plex
+                # - DejaVu Math TeX Gyre
+                # - Noto, just in case we find some character not covered by the fonts above (e.g.
+                #   in names in the references section)
+
+                set -e
+                echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+                apt-get update && apt-get install -y \
+                  ttf-mscorefonts-installer \
+                  fonts-ibm-plex \
+                  fonts-dejavu-extra \
+                  fonts-noto
+
+            - name: PDF generation
+              run: |
+                set -e
+                prince ./output/min-common-api-pdf.html -o ./output/min-common-api.pdf
+                prince ./output/sockets-api-pdf.html -o ./output/sockets-api.pdf
+            
+            - name: Generate index
+              run: |
+                cat > ./output/index.html <<EOL
+                  <!DOCTYPE html>
+                  <meta charset="UTF-8">
+                  <dl>
+                    <dt>Minimum Common API</dt>
+                    <dd><a href="./min-common-api.html" target="_new">HTML version</a></dd>
+                    <dd><a href="./min-common-api.pdf" target="_new">PDF version</a></dd>
+                    <dd><a href="./min-common-api-pdf.html" target="_new">Source for the PDF version</a></dd>
+                    <dt>Sockets API</dt>
+                    <dd><a href="./sockets-api.html" target="_new">HTML version</a></dd>
+                    <dd><a href="./sockets-api.pdf" target="_new">PDF version</a></dd>
+                    <dd><a href="./sockets-api-pdf.html" target="_new">Source for the PDF version</a></dd>
+                  </dl>
+                EOL
+
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./output
