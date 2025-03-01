@@ -16,6 +16,22 @@ jobs:
                 sudo $NAME/install.sh
                 rm -rf $NAME $NAME.tar.gz
             
+            - name: Download fonts
+              run: |
+                # - Microsoft core web fonts (Arial, Verdana...)
+                # - IBM Plex
+                # - DejaVu Math TeX Gyre
+                # - Noto, just in case we find some character not covered by the fonts above (e.g.
+                #   in names in the references section)
+
+                set -e
+                echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+                sudo apt-get update && sudo apt-get install -y \
+                  ttf-mscorefonts-installer \
+                  fonts-ibm-plex \
+                  fonts-dejavu-extra \
+                  fonts-noto
+            
             - name: Clone repository
               uses: actions/checkout@v2
 
@@ -39,22 +55,6 @@ jobs:
                 bikeshed spec ./specs/min-common-api.bs ./output/min-common-api-pdf.html --md-status=PDF
                 bikeshed spec ./specs/sockets-api.bs ./output/sockets-api.html
                 bikeshed spec ./specs/sockets-api.bs ./output/sockets-api-pdf.html --md-status=PDF
-            
-            - name: Download fonts
-              run: |
-                # - Microsoft core web fonts (Arial, Verdana...)
-                # - IBM Plex
-                # - DejaVu Math TeX Gyre
-                # - Noto, just in case we find some character not covered by the fonts above (e.g.
-                #   in names in the references section)
-
-                set -e
-                echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-                sudo apt-get update && sudo apt-get install -y \
-                  ttf-mscorefonts-installer \
-                  fonts-ibm-plex \
-                  fonts-dejavu-extra \
-                  fonts-noto
 
             - name: PDF generation
               run: |
