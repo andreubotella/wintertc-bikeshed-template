@@ -13,7 +13,7 @@ jobs:
                 NAME="prince-16-linux-generic-x86_64"
                 wget https://www.princexml.com/download/$NAME.tar.gz
                 tar -xzf ./$NAME.tar.gz
-                $NAME/install.sh
+                sudo $NAME/install.sh
                 rm -rf $NAME $NAME.tar.gz
             
             - name: Clone repository
@@ -28,8 +28,8 @@ jobs:
                 set -e
                 BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
                 BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
-                cp -r ./boilerplate/* "$BOILERPLATE"/
-                cat "$BOILERPLATE"/doctypes.kdl ./doctypes.kdl > "$BOILERPLATE"/doctypes.kdl
+                sudo cp -r ./boilerplate/* "$BOILERPLATE"/
+                sudo cat "$BOILERPLATE"/doctypes.kdl ./doctypes.kdl > "$BOILERPLATE"/doctypes.kdl
 
             - name: Build specs
               run: |
@@ -49,8 +49,8 @@ jobs:
                 #   in names in the references section)
 
                 set -e
-                echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
-                apt-get update && apt-get install -y \
+                echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+                sudo apt-get update && sudo apt-get install -y \
                   ttf-mscorefonts-installer \
                   fonts-ibm-plex \
                   fonts-dejavu-extra \
