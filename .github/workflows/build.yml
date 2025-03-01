@@ -1,5 +1,8 @@
 name: Bikeshed and PDF build
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
     run:
         runs-on: ubuntu-22.04
