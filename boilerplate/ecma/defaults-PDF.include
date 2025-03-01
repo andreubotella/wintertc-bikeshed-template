@@ -1,7 +1,0 @@
-{
-    "Include MDN Panels": "no",
-    "Include Can I Use Panels": "no",
-    "Use Dfn Panels": "no",
-    "Dark Mode": "no",
-    "Boilerplate": "style-autolinks no, style-colors no, style-counters no, style-dfn-panel no, style-issues no, style-ref-hints no, style-selflinks no, style-md-lists no, script-dom-helper no, script-dfn-panel no, script-ref-hints no, issues-index no"
-}
