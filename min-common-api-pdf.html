@@ -4,13 +4,20 @@
   <title>Minimum Common Web Platform API</title>
   <link href="../ecmarkup/css/elements.css" rel="stylesheet">
   <link href="../ecmarkup/css/print.css" media="print" rel="stylesheet">
+<style media="print">
+    #toc > ol > li:first-child {
+      /* The introduction is not an entry in the TOC, so the first entry doesn't
+       * need to be hidden. */
+      display: list-item;
+    }
+  </style>
   <meta content="Bikeshed version 60c422380, updated Thu Feb 20 19:11:22 2025 -0800" name="generator">
   <link href="https://min-common-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="c5dcacf56189731a9fd146707f89f05617a42b37" name="revision">
+  <meta content="e4746f055699c8de3850b2cc8a2fc88c3fcc5ce4" name="revision">
  <body>
   <div class="full-page-svg" id="front-cover">
    <h1 class="shortname"><span class="status">Standard</span> Ecma-XXX</h1>
-   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 1 March 2025</h1>
+   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 2 March 2025</h1>
    <h1 class="title">Minimum Common Web Platform API</h1>
   </div>
   <div class="full-page-svg" id="inside-cover"></div>
@@ -18,12 +25,11 @@
    <div data-fill-with="table-of-contents" id="toc">
     <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
     <ol class="toc" role="directory">
-     <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
-     <li><a href="#terminology"><span class="secno">2</span> <span class="content">Terminology</span></a>
-     <li><a href="#api-index"><span class="secno">3</span> <span class="content">Common API Index</span></a>
-     <li><a href="#global-scope"><span class="secno">4</span> <span class="content">The Global Scope</span></a>
-     <li><a href="#navigator-useragent-requirements"><span class="secno">5</span> <span class="content">Requirements for navigator.userAgent</span></a>
-     <li><a href="#extensions"><span class="secno">6</span> <span class="content">Extensions</span></a>
+     <li><a href="#terminology"><span class="secno">1</span> <span class="content">Terminology</span></a>
+     <li><a href="#api-index"><span class="secno">2</span> <span class="content">Common API Index</span></a>
+     <li><a href="#global-scope"><span class="secno">3</span> <span class="content">The Global Scope</span></a>
+     <li><a href="#navigator-useragent-requirements"><span class="secno">4</span> <span class="content">Requirements for navigator.userAgent</span></a>
+     <li><a href="#extensions"><span class="secno">5</span> <span class="content">Extensions</span></a>
      <li>
       <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
       <ol class="toc">
@@ -37,6 +43,7 @@
       </ol>
     </ol>
    </div>
+    <emu-intro> <h1 class="no-num">Introduction</h1> <div data-fill-with="introduction"> <p>The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p> </div> </emu-intro> 
    <div id="metadata-block">
     <h1 class="no-num no-toc no-ref">Contributing to this Specification</h1>
     <div data-fill-with="spec-metadata">
@@ -51,14 +58,11 @@
     </div>
    </div>
    <main>
-    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-    <p><em>This section is non-normative.</em></p>
-    <p>The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p>
-    <h2 class="heading settled" data-level="2" id="terminology"><span class="secno">2. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
+    <h2 class="heading settled" data-level="1" id="terminology"><span class="secno">1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
     <p>The Web Platform is the combination of technology standards defined by organizations such as the W3C, the WHATWG, and others as implemented by Web Browsers.</p>
     <p>A <dfn data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime<a class="self-link" href="#web-interoperable-runtime"></a></dfn> is any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.
 While this term is intentionally broad to also encompass Web Browsers, the primary focus here is on outlining expectations for non-browser runtimes.</p>
-    <h2 class="heading settled" data-level="3" id="api-index"><span class="secno">3. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
+    <h2 class="heading settled" data-level="2" id="api-index"><span class="secno">2. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
     <p>All <a data-link-type="dfn" href="#web-interoperable-runtime" id="ref-for-web-interoperable-runtime">Web-interoperable Runtimes</a> conforming to this specification SHALL implement each of the following Web Platform APIs in accordance with their normative requirements except where modified here. Where any conforming runtime environment chooses (either by necessity or otherwise) to diverge from a normative requirement of the specification, clear explanations of such divergence MUST be made clearly and readily available in the documentation.</p>
     <p>Interfaces:</p>
     <ul>
@@ -186,10 +190,10 @@ Cloudflare Workers ignores all parameters.</p>
      <li data-md>
       <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑨">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-validate" id="ref-for-dom-webassembly-validate">validate()</a></code></p>
     </ul>
-    <h2 class="heading settled" data-level="4" id="global-scope"><span class="secno">4. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
+    <h2 class="heading settled" data-level="3" id="global-scope"><span class="secno">3. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
     <p>The exact type of the global scope (<code>globalThis</code>) can vary across runtimes. Most Web Platform APIs are defined in terms that assume Web Browser environments that specifically expose types like <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#window" id="ref-for-window">Window</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#worker" id="ref-for-worker">Worker</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope" id="ref-for-workerglobalscope">WorkerGlobalScope</a></code>, and so forth. To simplify conformance, all Interfaces, methods, and properties defined by this specification MUST be exposed on the runtime’s relevant global scope (e,g., <code>globalThis.crypto</code>, <code>globalThis.ReadableStream</code>, etc).</p>
     <p>With many runtimes, adding a new global-scoped property can introduce breaking changes when the new global conflicts with existing application code. Many Web Platform APIs define global properties using the <code>readonly</code> attribute. To avoid introducing breaking changes, runtimes conforming to this specification MAY choose to ignore the <code>readonly</code> attribute for properties being added to the global scope.</p>
-    <h2 class="heading settled" data-level="5" id="navigator-useragent-requirements"><span class="secno">5. </span><span class="content">Requirements for navigator.userAgent</span><a class="self-link" href="#navigator-useragent-requirements"></a></h2>
+    <h2 class="heading settled" data-level="4" id="navigator-useragent-requirements"><span class="secno">4. </span><span class="content">Requirements for navigator.userAgent</span><a class="self-link" href="#navigator-useragent-requirements"></a></h2>
     <p>The globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator①">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent①">userAgent</a></code> property is provided such that application code can reliably identify the runtime within which it is running.
 The value of the property is a string conforming to the <code class="idl"><a data-link-type="idl" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3"><code>User-Agent</code></a></code> construction in RFC 7231:</p>
 <pre>User-Agent      = product *( RWS ( product / comment ) )
@@ -197,7 +201,7 @@ product         = token ["/" product-version]
 product-version = token
 </pre>
     <p>While runtimes that implement globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator②">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent②">userAgent</a></code> MUST provide a value that is conformant with the structure defined by RFC 7231, the value SHOULD be treated as a single, complete, opaque, unstructured value. It is RECOMMENDED that the value be limited to a single <code>product</code> token excluding the optional <code>product-version</code>. For instance, <code>navigator.userAgent = 'MyRuntime'</code>. The value SHOULD NOT include any <code>comment</code> components.</p>
-    <h2 class="heading settled" data-level="6" id="extensions"><span class="secno">6. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
+    <h2 class="heading settled" data-level="5" id="extensions"><span class="secno">5. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
     <p>Runtime-specific extensions to any Web Platform API MAY be implemented by conforming runtimes. Such extensions MUST be defined so that their use neither contradicts nor causes the non-conformance of normative functionality of any Web Platform API.</p>
     <p>Application use of such extensions must be carefully considered, as doing so reduces interoperability and portability of code across runtimes.</p>
     <div data-fill-with="references">
@@ -240,7 +244,7 @@ product-version = token
      <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
      <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
      <ul class="index">
-      <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 2</span>
+      <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 1</span>
      </ul>
      <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
      <ul class="index">

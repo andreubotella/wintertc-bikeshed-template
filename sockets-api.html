@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 60c422380, updated Thu Feb 20 19:11:22 2025 -0800" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="c5dcacf56189731a9fd146707f89f05617a42b37" name="revision">
+  <meta content="e4746f055699c8de3850b2cc8a2fc88c3fcc5ce4" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2177,7 +2177,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Sockets API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-03-01">1 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-03-02">2 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2204,41 +2204,41 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
+    <li><a href="#intro"><span class="secno"></span> <span class="content">Introduction</span></a>
     <li>
-     <a href="#concepts"><span class="secno">2</span> <span class="content">Concepts</span></a>
+     <a href="#concepts"><span class="secno">1</span> <span class="content">Concepts</span></a>
      <ol class="toc">
-      <li><a href="#socket-concept-section"><span class="secno">2.1</span> <span class="content">Socket</span></a>
-      <li><a href="#connect-concept-section"><span class="secno">2.2</span> <span class="content">Connect</span></a>
-      <li><a href="#binding-object-concept"><span class="secno">2.3</span> <span class="content">Binding Object</span></a>
+      <li><a href="#socket-concept-section"><span class="secno">1.1</span> <span class="content">Socket</span></a>
+      <li><a href="#connect-concept-section"><span class="secno">1.2</span> <span class="content">Connect</span></a>
+      <li><a href="#binding-object-concept"><span class="secno">1.3</span> <span class="content">Binding Object</span></a>
      </ol>
     <li>
-     <a href="#socket-section"><span class="secno">3</span> <span class="content">Socket</span></a>
+     <a href="#socket-section"><span class="secno">2</span> <span class="content">Socket</span></a>
      <ol class="toc">
-      <li><a href="#using-a-socket"><span class="secno">3.1</span> <span class="content">Using a socket</span></a>
-      <li><a href="#socket-class"><span class="secno">3.2</span> <span class="content">The <code class="idl"><span>Socket</span></code> class</span></a>
+      <li><a href="#using-a-socket"><span class="secno">2.1</span> <span class="content">Using a socket</span></a>
+      <li><a href="#socket-class"><span class="secno">2.2</span> <span class="content">The <code class="idl"><span>Socket</span></code> class</span></a>
       <li>
-       <a href="#attributes"><span class="secno">3.3</span> <span class="content">Attributes</span></a>
+       <a href="#attributes"><span class="secno">2.3</span> <span class="content">Attributes</span></a>
        <ol class="toc">
-        <li><a href="#readable-attribute"><span class="secno">3.3.1</span> <span class="content">readable</span></a>
-        <li><a href="#writable-attribute"><span class="secno">3.3.2</span> <span class="content">writable</span></a>
-        <li><a href="#opened-attribute"><span class="secno">3.3.3</span> <span class="content">opened</span></a>
-        <li><a href="#closed-attribute"><span class="secno">3.3.4</span> <span class="content">closed</span></a>
+        <li><a href="#readable-attribute"><span class="secno">2.3.1</span> <span class="content">readable</span></a>
+        <li><a href="#writable-attribute"><span class="secno">2.3.2</span> <span class="content">writable</span></a>
+        <li><a href="#opened-attribute"><span class="secno">2.3.3</span> <span class="content">opened</span></a>
+        <li><a href="#closed-attribute"><span class="secno">2.3.4</span> <span class="content">closed</span></a>
        </ol>
       <li>
-       <a href="#methods"><span class="secno">3.4</span> <span class="content">Methods</span></a>
+       <a href="#methods"><span class="secno">2.4</span> <span class="content">Methods</span></a>
        <ol class="toc">
-        <li><a href="#close-method"><span class="secno">3.4.1</span> <span class="content">close(optional any reason)</span></a>
-        <li><a href="#starttls-method"><span class="secno">3.4.2</span> <span class="content">startTls()</span></a>
+        <li><a href="#close-method"><span class="secno">2.4.1</span> <span class="content">close(optional any reason)</span></a>
+        <li><a href="#starttls-method"><span class="secno">2.4.2</span> <span class="content">startTls()</span></a>
        </ol>
-      <li><a href="#socket-error"><span class="secno">3.5</span> <span class="content">SocketError</span></a>
+      <li><a href="#socket-error"><span class="secno">2.5</span> <span class="content">SocketError</span></a>
      </ol>
     <li>
-     <a href="#connect-section"><span class="secno">4</span> <span class="content">connect</span></a>
+     <a href="#connect-section"><span class="secno">3</span> <span class="content">connect</span></a>
      <ol class="toc">
-      <li><a href="#socketoptions-dictionary"><span class="secno">4.1</span> <span class="content"><code>SocketOptions</code> dictionary</span></a>
-      <li><a href="#socketinfo-dictionary"><span class="secno">4.2</span> <span class="content"><code>SocketInfo</code> dictionary</span></a>
-      <li><a href="#anysocketaddress-type"><span class="secno">4.3</span> <span class="content"><code>AnySocketAddress</code> type</span></a>
+      <li><a href="#socketoptions-dictionary"><span class="secno">3.1</span> <span class="content"><code>SocketOptions</code> dictionary</span></a>
+      <li><a href="#socketinfo-dictionary"><span class="secno">3.2</span> <span class="content"><code>SocketInfo</code> dictionary</span></a>
+      <li><a href="#anysocketaddress-type"><span class="secno">3.3</span> <span class="content"><code>AnySocketAddress</code> type</span></a>
      </ol>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
@@ -2256,22 +2256,21 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <div class="non-normative">
-    <p><em>This section is non-normative.</em></p>
+   <h2 class="no-num heading settled" id="intro"><span class="content">Introduction</span></h2>
+   <div data-fill-with="introduction">
     <p>This document defines an API for establishing TCP connections in Non-Browser JavaScript runtime
 environments. Existing standard APIs are reused as much as possible, for example <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream">WritableStream</a></code> are used for reading and writing from a <a data-link-type="dfn" href="#socket-concept" id="ref-for-socket-concept">socket</a>. Some options are inspired
 by the existing Node.js <code>net.Socket</code> API.</p>
    </div>
-   <h2 class="heading settled" data-level="2" id="concepts"><span class="secno">2. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="socket-concept-section"><span class="secno">2.1. </span><span class="content">Socket</span><a class="self-link" href="#socket-concept-section"></a></h3>
+   <h2 class="heading settled" data-level="1" id="concepts"><span class="secno">1. </span><span class="content">Concepts</span><a class="self-link" href="#concepts"></a></h2>
+   <h3 class="heading settled" data-level="1.1" id="socket-concept-section"><span class="secno">1.1. </span><span class="content">Socket</span><a class="self-link" href="#socket-concept-section"></a></h3>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="socket-concept">socket</dfn> represents a TCP connection, from which you can read and write data. A socket begins in a <i>connected</i> state (if the socket fails to connect, an error is thrown). While in a <i>connected</i> state, the socket’s <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream①">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream①">WritableStream</a></code> can be read from and written to respectively.</p>
    <p>A socket becomes <i>closed</i> when its <code class="idl"><a data-link-type="idl" href="#dom-socket-close" id="ref-for-dom-socket-close">close()</a></code> method is called. A socket configured with <code>allowHalfOpen: false</code> will close itself when it receives a FIN or RST packet in its read stream.</p>
-   <h3 class="heading settled" data-level="2.2" id="connect-concept-section"><span class="secno">2.2. </span><span class="content">Connect</span><a class="self-link" href="#connect-concept-section"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="connect-concept-section"><span class="secno">1.2. </span><span class="content">Connect</span><a class="self-link" href="#connect-concept-section"></a></h3>
    <p class="note" role="note">The <a data-link-type="dfn" href="#connect-concept" id="ref-for-connect-concept">connect</a> method here is defined in a <code>sockets</code> module only for initial implementation purposes. It is imagined that in a finalized standard definition, the <a data-link-type="dfn" href="#connect-concept" id="ref-for-connect-concept①">connect</a> would be exposed as a global or within a <a data-link-type="dfn" href="#binding-object" id="ref-for-binding-object">binding object</a></p>
    <p>A socket can be constructed using a <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="connect-concept">connect</dfn> method defined in a <code>sockets</code> module (early implementations may use <code>vendor:sockets</code> for the module name), or defined on a <a data-link-type="dfn" href="#binding-object" id="ref-for-binding-object①">binding object</a>.</p>
    <p>The connect method is the primary mechanism for creating a <a data-link-type="dfn" href="#socket-concept" id="ref-for-socket-concept①">socket</a> instance. It instantiates a socket with a resource identifier and some configuration values. It should synchronously return a socket instance in a <i>pending</i> state (or an error should be thrown). The socket will asynchronously <i>connect</i> depending on the implementation.</p>
-   <h3 class="heading settled" data-level="2.3" id="binding-object-concept"><span class="secno">2.3. </span><span class="content">Binding Object</span><a class="self-link" href="#binding-object-concept"></a></h3>
+   <h3 class="heading settled" data-level="1.3" id="binding-object-concept"><span class="secno">1.3. </span><span class="content">Binding Object</span><a class="self-link" href="#binding-object-concept"></a></h3>
    <p class="note" role="note">A <a data-link-type="dfn" href="#binding-object" id="ref-for-binding-object②">binding object</a> in this context is essentially just an object that exposes a <a data-link-type="dfn" href="#connect-concept" id="ref-for-connect-concept②">connect</a> method conformant with this specification. It is anticipated that a runtime may have any number of such objects. This is an area where there is still active discussion on how this should be defined.</p>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="binding-object">binding object</dfn> defines extra socket <code>connect</code> options. The options it contains can modify the
 behaviour of the <code>connect</code> invoked on it. Some of the options it can define:</p>
@@ -2284,8 +2283,8 @@ behaviour of the <code>connect</code> invoked on it. Some of the options it can 
 tls_socket<c- p>.</c->connect<c- p>(</c-><c- u>"example.com:1234"</c-><c- p>);</c->
 </pre>
    <p>Additionally, the binding object does not necessarily have to be an instance of a class, nor does it even have to be JavaScript. It can be any mechanism that exposes the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect①">connect()</a></code> method. Cloudflare achieves this through <a href="https://developers.cloudflare.com/workers/configuration/bindings/">environment bindings</a>.</p>
-   <h2 class="heading settled" data-level="3" id="socket-section"><span class="secno">3. </span><span class="content">Socket</span><a class="self-link" href="#socket-section"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="using-a-socket"><span class="secno">3.1. </span><span class="content">Using a socket</span><a class="self-link" href="#using-a-socket"></a></h3>
+   <h2 class="heading settled" data-level="2" id="socket-section"><span class="secno">2. </span><span class="content">Socket</span><a class="self-link" href="#socket-section"></a></h2>
+   <h3 class="heading settled" data-level="2.1" id="using-a-socket"><span class="secno">2.1. </span><span class="content">Using a socket</span><a class="self-link" href="#using-a-socket"></a></h3>
    <div class="example" id="example-1c1d030e">
     <a class="self-link" href="#example-1c1d030e"></a> A basic example of using connect with an echo server. 
 <pre class="highlight"><c- a>const</c-> socket <c- o>=</c-> connect<c- p>({</c-> hostname<c- o>:</c-> <c- u>"my-url.com"</c-><c- p>,</c-> port<c- o>:</c-> <c- mf>43</c-> <c- p>});</c->
@@ -2299,7 +2298,7 @@ tls_socket<c- p>.</c->connect<c- p>(</c-><c- u>"example.com:1234"</c-><c- p>);</
 console<c- p>.</c->log<c- p>(</c->Buffer<c- p>.</c-><c- kr>from</c-><c- p>(</c->result<c- p>.</c->value<c- p>).</c->toString<c- p>());</c-> <c- c1>// Hello, World!</c->
 </pre>
    </div>
-   <h3 class="heading settled" data-level="3.2" id="socket-class"><span class="secno">3.2. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①">Socket</a></code> class</span><a class="self-link" href="#socket-class"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="socket-class"><span class="secno">2.2. </span><span class="content">The <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①">Socket</a></code> class</span><a class="self-link" href="#socket-class"></a></h3>
    <p>The <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket②">Socket</a></code> class is an instance of the <a data-link-type="dfn" href="#socket-concept" id="ref-for-socket-concept②">socket</a> concept. It should not be instantiated directly (<code>new Socket()</code>), but instead created by calling <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect②">connect()</a></code>. A constructor for <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket③">Socket</a></code> is intentionally not specified, and is left to implementors to create.</p>
 <pre class="idl highlight def">[Exposed=*]
 <c- b>dictionary</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export id="dictdef-socketinfo"><code><c- g>SocketInfo</c-></code></dfn> {
@@ -2322,8 +2321,8 @@ console<c- p>.</c->log<c- p>(</c->Buffer<c- p>.</c-><c- kr>from</c-><c- p>(</c->
 };
 </pre>
    <p>The terms <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream③">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream③">WritableStream</a></code> are defined in <a data-link-type="biblio" href="#biblio-whatwg-streams" title="Streams Standard">[WHATWG-STREAMS]</a>.</p>
-   <h3 class="heading settled" data-level="3.3" id="attributes"><span class="secno">3.3. </span><span class="content">Attributes</span><a class="self-link" href="#attributes"></a></h3>
-   <h4 class="heading settled" data-level="3.3.1" id="readable-attribute"><span class="secno">3.3.1. </span><span class="content">readable</span><a class="self-link" href="#readable-attribute"></a></h4>
+   <h3 class="heading settled" data-level="2.3" id="attributes"><span class="secno">2.3. </span><span class="content">Attributes</span><a class="self-link" href="#attributes"></a></h3>
+   <h4 class="heading settled" data-level="2.3.1" id="readable-attribute"><span class="secno">2.3.1. </span><span class="content">readable</span><a class="self-link" href="#readable-attribute"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-readable" id="ref-for-dom-socket-readable">readable</a></code> attribute is a <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream④">ReadableStream</a></code> which receives data from the server the socket is connected to.</p>
    <div class="example" id="example-f99ed967">
     <a class="self-link" href="#example-f99ed967"></a> The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑤">ReadableStream</a></code> usage to read data from a socket: 
@@ -2347,7 +2346,7 @@ reader<c- p>.</c->releaseLock<c- p>();</c->
 </pre>
    </div>
    <p class="note" role="note">The ReadableStream currently is defined to operate in non-byte mode, that is the <code>type</code> parameter to the ReadableStream constructor is not set. This means the stream’s controller is <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreamdefaultcontroller" id="ref-for-readablestreamdefaultcontroller">ReadableStreamDefaultController</a></code>. This, however, should be discussed and may be made configurable. It is reasonable, for instance, to assume that sockets used for most TCP cases would be byte-oriented, while sockets used for messages (e.g. UDP) would not.</p>
-   <h4 class="heading settled" data-level="3.3.2" id="writable-attribute"><span class="secno">3.3.2. </span><span class="content">writable</span><a class="self-link" href="#writable-attribute"></a></h4>
+   <h4 class="heading settled" data-level="2.3.2" id="writable-attribute"><span class="secno">2.3.2. </span><span class="content">writable</span><a class="self-link" href="#writable-attribute"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-writable" id="ref-for-dom-socket-writable">writable</a></code> attribute is a <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream④">WritableStream</a></code> which sends data to the server the socket is connected to.</p>
    <div class="example" id="example-789f6df2">
     <a class="self-link" href="#example-789f6df2"></a> The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑤">WritableStream</a></code> usage to write data to a socket: 
@@ -2359,14 +2358,14 @@ reader<c- p>.</c->releaseLock<c- p>();</c->
 writer<c- p>.</c->write<c- p>(</c->encoder<c- p>.</c->encode<c- p>(</c-><c- u>"GET / HTTP/1.0\r\n\r\n"</c-><c- p>));</c->
 </pre>
    </div>
-   <h4 class="heading settled" data-level="3.3.3" id="opened-attribute"><span class="secno">3.3.3. </span><span class="content">opened</span><a class="self-link" href="#opened-attribute"></a></h4>
+   <h4 class="heading settled" data-level="2.3.3" id="opened-attribute"><span class="secno">2.3.3. </span><span class="content">opened</span><a class="self-link" href="#opened-attribute"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened">opened</a></code> attribute is a promise that is resolved when the socket connection has been
 successfully established, or is rejected if the connection fails. For sockets which use secure-transport,
 the resolution of the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened①">opened</a></code> promise indicates the completion of the secure handshake.</p>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened②">opened</a></code> promise resolves a <code class="idl"><a data-link-type="idl" href="#dictdef-socketinfo" id="ref-for-dictdef-socketinfo①">SocketInfo</a></code> dictionary that optionally provides details
 about the connection that has been established.</p>
    <p>By default, the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened③">opened</a></code> promise is <code class="idl"><a data-link-type="idl">marked as handled</a></code>.</p>
-   <h4 class="heading settled" data-level="3.3.4" id="closed-attribute"><span class="secno">3.3.4. </span><span class="content">closed</span><a class="self-link" href="#closed-attribute"></a></h4>
+   <h4 class="heading settled" data-level="2.3.4" id="closed-attribute"><span class="secno">2.3.4. </span><span class="content">closed</span><a class="self-link" href="#closed-attribute"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed">closed</a></code> attribute is a promise which can be used to keep track of the socket state. It gets resolved under the
 following circumstances:</p>
    <ul>
@@ -2386,13 +2385,13 @@ following circumstances:</p>
     <li>A transient issue with the runtime
    </ul>
    <p>Cancelling the socket’s ReadableStream and closing the socket’s WritableStream does not resolve the <code>closed</code> promise.</p>
-   <h3 class="heading settled" data-level="3.4" id="methods"><span class="secno">3.4. </span><span class="content">Methods</span><a class="self-link" href="#methods"></a></h3>
-   <h4 class="heading settled" data-level="3.4.1" id="close-method"><span class="secno">3.4.1. </span><span class="content">close(optional any reason)</span><a class="self-link" href="#close-method"></a></h4>
+   <h3 class="heading settled" data-level="2.4" id="methods"><span class="secno">2.4. </span><span class="content">Methods</span><a class="self-link" href="#methods"></a></h3>
+   <h4 class="heading settled" data-level="2.4.1" id="close-method"><span class="secno">2.4.1. </span><span class="content">close(optional any reason)</span><a class="self-link" href="#close-method"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-close" id="ref-for-dom-socket-close②">close()</a></code> method closes the socket and its underlying connection. It returns the same promise as the <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed①">closed</a></code> attribute.</p>
    <p>When called, the <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑥">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑥">WritableStream</a></code> associated with the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket⑤">Socket</a></code> will
 be canceled and aborted, respectively. If the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason">reason</a></code> argument is specified, the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason①">reason</a></code> will be passed on to both the <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑦">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑦">WritableStream</a></code>.</p>
    <p>If the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened④">opened</a></code> promise is still pending, it will be rejected with the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason②">reason</a></code>.</p>
-   <h4 class="heading settled" data-level="3.4.2" id="starttls-method"><span class="secno">3.4.2. </span><span class="content">startTls()</span><a class="self-link" href="#starttls-method"></a></h4>
+   <h4 class="heading settled" data-level="2.4.2" id="starttls-method"><span class="secno">2.4.2. </span><span class="content">startTls()</span><a class="self-link" href="#starttls-method"></a></h4>
    <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls">startTls()</a></code> method enables opportunistic TLS (otherwise known as <a href="https://en.wikipedia.org/wiki/Opportunistic_TLS">StartTLS</a>) which is a requirement for some protocols (primarily postgres/mysql and other DB protocols).</p>
    <p>In this <code>secureTransport</code> mode of operation the socket begins the connection in plain-text, with messages read and written without any encryption. Then once the <code>startTls</code> method is called on the socket, the following shall take place:</p>
    <ul>
@@ -2416,7 +2415,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <li>called on an existing TLS socket
     <li>the <code>secureTransport</code> option defined on the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket⑥">Socket</a></code> instance is not equal to <code>"starttls"</code>.
    </ul>
-   <h3 class="heading settled" data-level="3.5" id="socket-error"><span class="secno">3.5. </span><span class="content">SocketError</span><a class="self-link" href="#socket-error"></a></h3>
+   <h3 class="heading settled" data-level="2.5" id="socket-error"><span class="secno">2.5. </span><span class="content">SocketError</span><a class="self-link" href="#socket-error"></a></h3>
    <p class="note" role="note">Arguably, this should be a type of <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMException" id="ref-for-idl-DOMException">DOMException</a></code> rather than <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror">TypeError</a></code>. More discussion is necessary on the form and structure of socket-related errors.</p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-export id="socketerror">SocketError</dfn> is an instance of <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror①">TypeError</a></code>. The error message should start with <code>"SocketError: "</code>.</p>
    <div class="example" id="example-007dd165">
@@ -2425,7 +2424,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
 </pre>
     <p>Should result in the following error: <code>Uncaught SocketError [TypeError]: SocketError: connection failed</code>.</p>
    </div>
-   <h2 class="heading settled" data-level="4" id="connect-section"><span class="secno">4. </span><span class="content">connect</span><a class="self-link" href="#connect-section"></a></h2>
+   <h2 class="heading settled" data-level="3" id="connect-section"><span class="secno">3. </span><span class="content">connect</span><a class="self-link" href="#connect-section"></a></h2>
 <pre class="idl highlight def">[Exposed=*]
 <c- b>dictionary</c-> <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export id="dictdef-socketaddress"><code><c- g>SocketAddress</c-></code></dfn> {
   <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString③"><c- b>DOMString</c-></a> <dfn class="dfn-paneled idl-code" data-dfn-for="SocketAddress" data-dfn-type="dict-member" data-export data-type="DOMString" id="dom-socketaddress-hostname"><code><c- g>hostname</c-></code></dfn>;
@@ -2465,7 +2464,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
      The implementation may consider blocking connections to certain hostname/port combinations which can pose a threat of abuse or security vulnerability. 
     <p>For example, port 25 may be blocked to prevent abuse of SMTP servers and private IPs can be blocked to avoid connecting to private services hosted locally (or on the server’s LAN).</p>
    </div>
-   <h3 class="heading settled" data-level="4.1" id="socketoptions-dictionary"><span class="secno">4.1. </span><span class="content"><code>SocketOptions</code> dictionary</span><a class="self-link" href="#socketoptions-dictionary"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="socketoptions-dictionary"><span class="secno">3.1. </span><span class="content"><code>SocketOptions</code> dictionary</span><a class="self-link" href="#socketoptions-dictionary"></a></h3>
    <dl>
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport">secureTransport</a></code> member 
     <dd>
@@ -2493,7 +2492,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
       <dd>When a FIN packet is received, the socket will enter a "half-open" state where the ReadableStream is closed but the WritableStream can still be written to.
      </dl>
    </dl>
-   <h3 class="heading settled" data-level="4.2" id="socketinfo-dictionary"><span class="secno">4.2. </span><span class="content"><code>SocketInfo</code> dictionary</span><a class="self-link" href="#socketinfo-dictionary"></a></h3>
+   <h3 class="heading settled" data-level="3.2" id="socketinfo-dictionary"><span class="secno">3.2. </span><span class="content"><code>SocketInfo</code> dictionary</span><a class="self-link" href="#socketinfo-dictionary"></a></h3>
    <d1>
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-remoteaddress" id="ref-for-dom-socketinfo-remoteaddress">remoteAddress</a></code> member 
     <dd> Provides the hostname/port combo of the remote peer the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①①">Socket</a></code> is connected to, for example <code>"example.com:443"</code>.
@@ -2503,7 +2502,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn①">alpn</a></code> property 
     <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
    </d1>
-   <h3 class="heading settled" data-level="4.3" id="anysocketaddress-type"><span class="secno">4.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
+   <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
    <dl>
     <dt> <code class="idl"><a data-link-type="idl" href="#dictdef-socketaddress" id="ref-for-dictdef-socketaddress②">SocketAddress</a></code> dictionary 
     <dd>
@@ -2667,42 +2666,42 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#dom-socketoptions-allowhalfopen">allowHalfOpen</a><span>, in § 4</span>
+   <li><a href="#dom-socketoptions-allowhalfopen">allowHalfOpen</a><span>, in § 3</span>
    <li>
     alpn
     <ul>
-     <li><a href="#dom-socketinfo-alpn">dict-member for SocketInfo</a><span>, in § 3.2</span>
-     <li><a href="#dom-socketoptions-alpn">dict-member for SocketOptions</a><span>, in § 4</span>
+     <li><a href="#dom-socketinfo-alpn">dict-member for SocketInfo</a><span>, in § 2.2</span>
+     <li><a href="#dom-socketoptions-alpn">dict-member for SocketOptions</a><span>, in § 3</span>
     </ul>
-   <li><a href="#typedefdef-anysocketaddress">AnySocketAddress</a><span>, in § 4</span>
-   <li><a href="#binding-object">binding object</a><span>, in § 2.3</span>
-   <li><a href="#dom-socket-close">close()</a><span>, in § 3.2</span>
-   <li><a href="#dom-socket-closed">closed</a><span>, in § 3.2</span>
-   <li><a href="#dom-socket-close">close(reason)</a><span>, in § 3.2</span>
-   <li><a href="#connect">Connect</a><span>, in § 4</span>
-   <li><a href="#connect-concept">connect</a><span>, in § 2.2</span>
-   <li><a href="#dom-connect-connect">connect(address)</a><span>, in § 4</span>
-   <li><a href="#dom-connect-connect">connect(address, opts)</a><span>, in § 4</span>
-   <li><a href="#dom-socketaddress-hostname">hostname</a><span>, in § 4</span>
-   <li><a href="#dom-socketinfo-localaddress">localAddress</a><span>, in § 3.2</span>
-   <li><a href="#dom-securetransportkind-off">"off"</a><span>, in § 4</span>
-   <li><a href="#dom-securetransportkind-on">"on"</a><span>, in § 4</span>
-   <li><a href="#dom-socket-opened">opened</a><span>, in § 3.2</span>
-   <li><a href="#dom-socketaddress-port">port</a><span>, in § 4</span>
-   <li><a href="#dom-socket-readable">readable</a><span>, in § 3.2</span>
-   <li><a href="#dom-socketinfo-remoteaddress">remoteAddress</a><span>, in § 3.2</span>
-   <li><a href="#dom-socketoptions-securetransport">secureTransport</a><span>, in § 4</span>
-   <li><a href="#enumdef-securetransportkind">SecureTransportKind</a><span>, in § 4</span>
-   <li><a href="#dom-socketoptions-sni">sni</a><span>, in § 4</span>
-   <li><a href="#socket">Socket</a><span>, in § 3.2</span>
-   <li><a href="#socket-concept">socket</a><span>, in § 2.1</span>
-   <li><a href="#dictdef-socketaddress">SocketAddress</a><span>, in § 4</span>
-   <li><a href="#socketerror">SocketError</a><span>, in § 3.5</span>
-   <li><a href="#dictdef-socketinfo">SocketInfo</a><span>, in § 3.2</span>
-   <li><a href="#dictdef-socketoptions">SocketOptions</a><span>, in § 4</span>
-   <li><a href="#dom-securetransportkind-starttls">"starttls"</a><span>, in § 4</span>
-   <li><a href="#dom-socket-starttls">startTls()</a><span>, in § 3.2</span>
-   <li><a href="#dom-socket-writable">writable</a><span>, in § 3.2</span>
+   <li><a href="#typedefdef-anysocketaddress">AnySocketAddress</a><span>, in § 3</span>
+   <li><a href="#binding-object">binding object</a><span>, in § 1.3</span>
+   <li><a href="#dom-socket-close">close()</a><span>, in § 2.2</span>
+   <li><a href="#dom-socket-closed">closed</a><span>, in § 2.2</span>
+   <li><a href="#dom-socket-close">close(reason)</a><span>, in § 2.2</span>
+   <li><a href="#connect">Connect</a><span>, in § 3</span>
+   <li><a href="#connect-concept">connect</a><span>, in § 1.2</span>
+   <li><a href="#dom-connect-connect">connect(address)</a><span>, in § 3</span>
+   <li><a href="#dom-connect-connect">connect(address, opts)</a><span>, in § 3</span>
+   <li><a href="#dom-socketaddress-hostname">hostname</a><span>, in § 3</span>
+   <li><a href="#dom-socketinfo-localaddress">localAddress</a><span>, in § 2.2</span>
+   <li><a href="#dom-securetransportkind-off">"off"</a><span>, in § 3</span>
+   <li><a href="#dom-securetransportkind-on">"on"</a><span>, in § 3</span>
+   <li><a href="#dom-socket-opened">opened</a><span>, in § 2.2</span>
+   <li><a href="#dom-socketaddress-port">port</a><span>, in § 3</span>
+   <li><a href="#dom-socket-readable">readable</a><span>, in § 2.2</span>
+   <li><a href="#dom-socketinfo-remoteaddress">remoteAddress</a><span>, in § 2.2</span>
+   <li><a href="#dom-socketoptions-securetransport">secureTransport</a><span>, in § 3</span>
+   <li><a href="#enumdef-securetransportkind">SecureTransportKind</a><span>, in § 3</span>
+   <li><a href="#dom-socketoptions-sni">sni</a><span>, in § 3</span>
+   <li><a href="#socket">Socket</a><span>, in § 2.2</span>
+   <li><a href="#socket-concept">socket</a><span>, in § 1.1</span>
+   <li><a href="#dictdef-socketaddress">SocketAddress</a><span>, in § 3</span>
+   <li><a href="#socketerror">SocketError</a><span>, in § 2.5</span>
+   <li><a href="#dictdef-socketinfo">SocketInfo</a><span>, in § 2.2</span>
+   <li><a href="#dictdef-socketoptions">SocketOptions</a><span>, in § 3</span>
+   <li><a href="#dom-securetransportkind-starttls">"starttls"</a><span>, in § 3</span>
+   <li><a href="#dom-socket-starttls">startTls()</a><span>, in § 2.2</span>
+   <li><a href="#dom-socket-writable">writable</a><span>, in § 2.2</span>
   </ul>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
@@ -2991,54 +2990,54 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"2e67bda2": {"dfnID":"2e67bda2","dfnText":"info","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-gpuadapter-info"}],"title":"4.1. SocketOptions dictionary"}],"url":"https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info"},
-"3b90bdcd": {"dfnID":"3b90bdcd","dfnText":"resolve","external":true,"refSections":[{"refs":[{"id":"ref-for-resolve"}],"title":"4. connect"}],"url":"https://webidl.spec.whatwg.org/#resolve"},
-"450958f7": {"dfnID":"450958f7","dfnText":"unsigned short","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-unsigned-short"}],"title":"4. connect"}],"url":"https://webidl.spec.whatwg.org/#idl-unsigned-short"},
-"5372cca8": {"dfnID":"5372cca8","dfnText":"boolean","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-boolean"}],"title":"4. connect"}],"url":"https://webidl.spec.whatwg.org/#idl-boolean"},
-"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-writablestream\u2460"}],"title":"2.1. Socket"},{"refs":[{"id":"ref-for-writablestream\u2461"},{"id":"ref-for-writablestream\u2462"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-writablestream\u2463"},{"id":"ref-for-writablestream\u2464"}],"title":"3.3.2. writable"},{"refs":[{"id":"ref-for-writablestream\u2465"},{"id":"ref-for-writablestream\u2466"}],"title":"3.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-writablestream\u2467"}],"title":"4. connect"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
-"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-readablestream\u2460"}],"title":"2.1. Socket"},{"refs":[{"id":"ref-for-readablestream\u2461"},{"id":"ref-for-readablestream\u2462"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-readablestream\u2463"},{"id":"ref-for-readablestream\u2464"}],"title":"3.3.1. readable"},{"refs":[{"id":"ref-for-readablestream\u2465"},{"id":"ref-for-readablestream\u2466"}],"title":"3.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-readablestream\u2467"}],"title":"4. connect"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
-"5f90bbfb": {"dfnID":"5f90bbfb","dfnText":"undefined","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-undefined"},{"id":"ref-for-idl-undefined\u2460"}],"title":"3.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-undefined"},
-"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"3.3.1. readable"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
-"6c6b1005": {"dfnID":"6c6b1005","dfnText":"any","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-any"}],"title":"3.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-any"},
-"82ca3efc": {"dfnID":"82ca3efc","dfnText":"TypeError","external":true,"refSections":[{"refs":[{"id":"ref-for-exceptiondef-typeerror"},{"id":"ref-for-exceptiondef-typeerror\u2460"}],"title":"3.5. SocketError"}],"url":"https://webidl.spec.whatwg.org/#exceptiondef-typeerror"},
-"8855a9aa": {"dfnID":"8855a9aa","dfnText":"DOMString","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMString"},{"id":"ref-for-idl-DOMString\u2460"},{"id":"ref-for-idl-DOMString\u2461"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-idl-DOMString\u2462"},{"id":"ref-for-idl-DOMString\u2463"},{"id":"ref-for-idl-DOMString\u2464"},{"id":"ref-for-idl-DOMString\u2465"}],"title":"4. connect"},{"refs":[{"id":"ref-for-idl-DOMString\u2466"}],"title":"4.3. AnySocketAddress type"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMString"},
-"bdbd19d1": {"dfnID":"bdbd19d1","dfnText":"Promise","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-promise"},{"id":"ref-for-idl-promise\u2460"},{"id":"ref-for-idl-promise\u2461"}],"title":"3.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-promise"},
-"binding-object": {"dfnID":"binding-object","dfnText":"binding object","external":false,"refSections":[{"refs":[{"id":"ref-for-binding-object"},{"id":"ref-for-binding-object\u2460"}],"title":"2.2. Connect"},{"refs":[{"id":"ref-for-binding-object\u2461"}],"title":"2.3. Binding Object"}],"url":"#binding-object"},
-"c807e273": {"dfnID":"c807e273","dfnText":"NewObject","external":true,"refSections":[{"refs":[{"id":"ref-for-NewObject"}],"title":"3.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#NewObject"},
+"2e67bda2": {"dfnID":"2e67bda2","dfnText":"info","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-gpuadapter-info"}],"title":"3.1. SocketOptions dictionary"}],"url":"https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info"},
+"3b90bdcd": {"dfnID":"3b90bdcd","dfnText":"resolve","external":true,"refSections":[{"refs":[{"id":"ref-for-resolve"}],"title":"3. connect"}],"url":"https://webidl.spec.whatwg.org/#resolve"},
+"450958f7": {"dfnID":"450958f7","dfnText":"unsigned short","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-unsigned-short"}],"title":"3. connect"}],"url":"https://webidl.spec.whatwg.org/#idl-unsigned-short"},
+"5372cca8": {"dfnID":"5372cca8","dfnText":"boolean","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-boolean"}],"title":"3. connect"}],"url":"https://webidl.spec.whatwg.org/#idl-boolean"},
+"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"Introduction"},{"refs":[{"id":"ref-for-writablestream\u2460"}],"title":"1.1. Socket"},{"refs":[{"id":"ref-for-writablestream\u2461"},{"id":"ref-for-writablestream\u2462"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-writablestream\u2463"},{"id":"ref-for-writablestream\u2464"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-writablestream\u2465"},{"id":"ref-for-writablestream\u2466"}],"title":"2.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-writablestream\u2467"}],"title":"3. connect"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
+"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"Introduction"},{"refs":[{"id":"ref-for-readablestream\u2460"}],"title":"1.1. Socket"},{"refs":[{"id":"ref-for-readablestream\u2461"},{"id":"ref-for-readablestream\u2462"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-readablestream\u2463"},{"id":"ref-for-readablestream\u2464"}],"title":"2.3.1. readable"},{"refs":[{"id":"ref-for-readablestream\u2465"},{"id":"ref-for-readablestream\u2466"}],"title":"2.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-readablestream\u2467"}],"title":"3. connect"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
+"5f90bbfb": {"dfnID":"5f90bbfb","dfnText":"undefined","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-undefined"},{"id":"ref-for-idl-undefined\u2460"}],"title":"2.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-undefined"},
+"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"2.3.1. readable"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
+"6c6b1005": {"dfnID":"6c6b1005","dfnText":"any","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-any"}],"title":"2.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-any"},
+"82ca3efc": {"dfnID":"82ca3efc","dfnText":"TypeError","external":true,"refSections":[{"refs":[{"id":"ref-for-exceptiondef-typeerror"},{"id":"ref-for-exceptiondef-typeerror\u2460"}],"title":"2.5. SocketError"}],"url":"https://webidl.spec.whatwg.org/#exceptiondef-typeerror"},
+"8855a9aa": {"dfnID":"8855a9aa","dfnText":"DOMString","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMString"},{"id":"ref-for-idl-DOMString\u2460"},{"id":"ref-for-idl-DOMString\u2461"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-idl-DOMString\u2462"},{"id":"ref-for-idl-DOMString\u2463"},{"id":"ref-for-idl-DOMString\u2464"},{"id":"ref-for-idl-DOMString\u2465"}],"title":"3. connect"},{"refs":[{"id":"ref-for-idl-DOMString\u2466"}],"title":"3.3. AnySocketAddress type"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMString"},
+"bdbd19d1": {"dfnID":"bdbd19d1","dfnText":"Promise","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-promise"},{"id":"ref-for-idl-promise\u2460"},{"id":"ref-for-idl-promise\u2461"}],"title":"2.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#idl-promise"},
+"binding-object": {"dfnID":"binding-object","dfnText":"binding object","external":false,"refSections":[{"refs":[{"id":"ref-for-binding-object"},{"id":"ref-for-binding-object\u2460"}],"title":"1.2. Connect"},{"refs":[{"id":"ref-for-binding-object\u2461"}],"title":"1.3. Binding Object"}],"url":"#binding-object"},
+"c807e273": {"dfnID":"c807e273","dfnText":"NewObject","external":true,"refSections":[{"refs":[{"id":"ref-for-NewObject"}],"title":"2.2. The Socket class"}],"url":"https://webidl.spec.whatwg.org/#NewObject"},
 "connect": {"dfnID":"connect","dfnText":"Connect","external":false,"refSections":[],"url":"#connect"},
-"connect-concept": {"dfnID":"connect-concept","dfnText":"connect","external":false,"refSections":[{"refs":[{"id":"ref-for-connect-concept"},{"id":"ref-for-connect-concept\u2460"}],"title":"2.2. Connect"},{"refs":[{"id":"ref-for-connect-concept\u2461"},{"id":"ref-for-connect-concept\u2462"}],"title":"2.3. Binding Object"}],"url":"#connect-concept"},
-"dacde8b5": {"dfnID":"dacde8b5","dfnText":"a new promise","external":true,"refSections":[{"refs":[{"id":"ref-for-a-new-promise"},{"id":"ref-for-a-new-promise\u2460"}],"title":"4. connect"}],"url":"https://webidl.spec.whatwg.org/#a-new-promise"},
-"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"3.5. SocketError"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
-"dictdef-socketaddress": {"dfnID":"dictdef-socketaddress","dfnText":"SocketAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketaddress"},{"id":"ref-for-dictdef-socketaddress\u2460"}],"title":"4. connect"},{"refs":[{"id":"ref-for-dictdef-socketaddress\u2461"}],"title":"4.3. AnySocketAddress type"}],"url":"#dictdef-socketaddress"},
-"dictdef-socketinfo": {"dfnID":"dictdef-socketinfo","dfnText":"SocketInfo","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketinfo"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-dictdef-socketinfo\u2460"}],"title":"3.3.3. opened"},{"refs":[{"id":"ref-for-dictdef-socketinfo\u2461"}],"title":"4. connect"}],"url":"#dictdef-socketinfo"},
-"dictdef-socketoptions": {"dfnID":"dictdef-socketoptions","dfnText":"SocketOptions","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketoptions"}],"title":"4. connect"}],"url":"#dictdef-socketoptions"},
-"dom-connect-connect": {"dfnID":"dom-connect-connect","dfnText":"connect","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-connect-connect"},{"id":"ref-for-dom-connect-connect\u2460"}],"title":"2.3. Binding Object"},{"refs":[{"id":"ref-for-dom-connect-connect\u2461"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-dom-connect-connect\u2462"}],"title":"4. connect"},{"refs":[{"id":"ref-for-dom-connect-connect\u2463"}],"title":"4.2. SocketInfo dictionary"}],"url":"#dom-connect-connect"},
+"connect-concept": {"dfnID":"connect-concept","dfnText":"connect","external":false,"refSections":[{"refs":[{"id":"ref-for-connect-concept"},{"id":"ref-for-connect-concept\u2460"}],"title":"1.2. Connect"},{"refs":[{"id":"ref-for-connect-concept\u2461"},{"id":"ref-for-connect-concept\u2462"}],"title":"1.3. Binding Object"}],"url":"#connect-concept"},
+"dacde8b5": {"dfnID":"dacde8b5","dfnText":"a new promise","external":true,"refSections":[{"refs":[{"id":"ref-for-a-new-promise"},{"id":"ref-for-a-new-promise\u2460"}],"title":"3. connect"}],"url":"https://webidl.spec.whatwg.org/#a-new-promise"},
+"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"2.5. SocketError"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
+"dictdef-socketaddress": {"dfnID":"dictdef-socketaddress","dfnText":"SocketAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketaddress"},{"id":"ref-for-dictdef-socketaddress\u2460"}],"title":"3. connect"},{"refs":[{"id":"ref-for-dictdef-socketaddress\u2461"}],"title":"3.3. AnySocketAddress type"}],"url":"#dictdef-socketaddress"},
+"dictdef-socketinfo": {"dfnID":"dictdef-socketinfo","dfnText":"SocketInfo","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketinfo"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-dictdef-socketinfo\u2460"}],"title":"2.3.3. opened"},{"refs":[{"id":"ref-for-dictdef-socketinfo\u2461"}],"title":"3. connect"}],"url":"#dictdef-socketinfo"},
+"dictdef-socketoptions": {"dfnID":"dictdef-socketoptions","dfnText":"SocketOptions","external":false,"refSections":[{"refs":[{"id":"ref-for-dictdef-socketoptions"}],"title":"3. connect"}],"url":"#dictdef-socketoptions"},
+"dom-connect-connect": {"dfnID":"dom-connect-connect","dfnText":"connect","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-connect-connect"},{"id":"ref-for-dom-connect-connect\u2460"}],"title":"1.3. Binding Object"},{"refs":[{"id":"ref-for-dom-connect-connect\u2461"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-dom-connect-connect\u2462"}],"title":"3. connect"},{"refs":[{"id":"ref-for-dom-connect-connect\u2463"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-connect-connect"},
 "dom-connect-connect-address-opts-address": {"dfnID":"dom-connect-connect-address-opts-address","dfnText":"address","external":false,"refSections":[],"url":"#dom-connect-connect-address-opts-address"},
 "dom-connect-connect-address-opts-opts": {"dfnID":"dom-connect-connect-address-opts-opts","dfnText":"opts","external":false,"refSections":[],"url":"#dom-connect-connect-address-opts-opts"},
-"dom-securetransportkind-off": {"dfnID":"dom-securetransportkind-off","dfnText":"\"off\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-off"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-off"},
-"dom-securetransportkind-on": {"dfnID":"dom-securetransportkind-on","dfnText":"\"on\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-on"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-on"},
-"dom-securetransportkind-starttls": {"dfnID":"dom-securetransportkind-starttls","dfnText":"\"starttls\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-starttls"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-starttls"},
-"dom-socket-close": {"dfnID":"dom-socket-close","dfnText":"close","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-close"}],"title":"2.1. Socket"},{"refs":[{"id":"ref-for-dom-socket-close\u2460"}],"title":"3.3.4. closed"},{"refs":[{"id":"ref-for-dom-socket-close\u2461"}],"title":"3.4.1. close(optional any reason)"}],"url":"#dom-socket-close"},
-"dom-socket-close-reason-reason": {"dfnID":"dom-socket-close-reason-reason","dfnText":"reason","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-close-reason-reason"},{"id":"ref-for-dom-socket-close-reason-reason\u2460"},{"id":"ref-for-dom-socket-close-reason-reason\u2461"}],"title":"3.4.1. close(optional any reason)"}],"url":"#dom-socket-close-reason-reason"},
-"dom-socket-closed": {"dfnID":"dom-socket-closed","dfnText":"closed","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-closed"}],"title":"3.3.4. closed"},{"refs":[{"id":"ref-for-dom-socket-closed\u2460"}],"title":"3.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-dom-socket-closed\u2461"},{"id":"ref-for-dom-socket-closed\u2462"}],"title":"4. connect"}],"url":"#dom-socket-closed"},
-"dom-socket-opened": {"dfnID":"dom-socket-opened","dfnText":"opened","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-opened"},{"id":"ref-for-dom-socket-opened\u2460"},{"id":"ref-for-dom-socket-opened\u2461"},{"id":"ref-for-dom-socket-opened\u2462"}],"title":"3.3.3. opened"},{"refs":[{"id":"ref-for-dom-socket-opened\u2463"}],"title":"3.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-dom-socket-opened\u2464"},{"id":"ref-for-dom-socket-opened\u2465"}],"title":"4. connect"}],"url":"#dom-socket-opened"},
-"dom-socket-readable": {"dfnID":"dom-socket-readable","dfnText":"readable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-readable"}],"title":"3.3.1. readable"},{"refs":[{"id":"ref-for-dom-socket-readable\u2460"}],"title":"4. connect"}],"url":"#dom-socket-readable"},
-"dom-socket-starttls": {"dfnID":"dom-socket-starttls","dfnText":"startTls","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-starttls"},{"id":"ref-for-dom-socket-starttls\u2460"}],"title":"3.4.2. startTls()"},{"refs":[{"id":"ref-for-dom-socket-starttls\u2461"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-socket-starttls"},
-"dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"3.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"4. connect"}],"url":"#dom-socket-writable"},
-"dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"4.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
-"dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"4.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
+"dom-securetransportkind-off": {"dfnID":"dom-securetransportkind-off","dfnText":"\"off\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-off"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-off"},
+"dom-securetransportkind-on": {"dfnID":"dom-securetransportkind-on","dfnText":"\"on\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-on"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-on"},
+"dom-securetransportkind-starttls": {"dfnID":"dom-securetransportkind-starttls","dfnText":"\"starttls\"","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-securetransportkind-starttls"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-securetransportkind-starttls"},
+"dom-socket-close": {"dfnID":"dom-socket-close","dfnText":"close","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-close"}],"title":"1.1. Socket"},{"refs":[{"id":"ref-for-dom-socket-close\u2460"}],"title":"2.3.4. closed"},{"refs":[{"id":"ref-for-dom-socket-close\u2461"}],"title":"2.4.1. close(optional any reason)"}],"url":"#dom-socket-close"},
+"dom-socket-close-reason-reason": {"dfnID":"dom-socket-close-reason-reason","dfnText":"reason","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-close-reason-reason"},{"id":"ref-for-dom-socket-close-reason-reason\u2460"},{"id":"ref-for-dom-socket-close-reason-reason\u2461"}],"title":"2.4.1. close(optional any reason)"}],"url":"#dom-socket-close-reason-reason"},
+"dom-socket-closed": {"dfnID":"dom-socket-closed","dfnText":"closed","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-closed"}],"title":"2.3.4. closed"},{"refs":[{"id":"ref-for-dom-socket-closed\u2460"}],"title":"2.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-dom-socket-closed\u2461"},{"id":"ref-for-dom-socket-closed\u2462"}],"title":"3. connect"}],"url":"#dom-socket-closed"},
+"dom-socket-opened": {"dfnID":"dom-socket-opened","dfnText":"opened","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-opened"},{"id":"ref-for-dom-socket-opened\u2460"},{"id":"ref-for-dom-socket-opened\u2461"},{"id":"ref-for-dom-socket-opened\u2462"}],"title":"2.3.3. opened"},{"refs":[{"id":"ref-for-dom-socket-opened\u2463"}],"title":"2.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-dom-socket-opened\u2464"},{"id":"ref-for-dom-socket-opened\u2465"}],"title":"3. connect"}],"url":"#dom-socket-opened"},
+"dom-socket-readable": {"dfnID":"dom-socket-readable","dfnText":"readable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-readable"}],"title":"2.3.1. readable"},{"refs":[{"id":"ref-for-dom-socket-readable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-readable"},
+"dom-socket-starttls": {"dfnID":"dom-socket-starttls","dfnText":"startTls","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-starttls"},{"id":"ref-for-dom-socket-starttls\u2460"}],"title":"2.4.2. startTls()"},{"refs":[{"id":"ref-for-dom-socket-starttls\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socket-starttls"},
+"dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-writable"},
+"dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
+"dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
 "dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[],"url":"#dom-socketinfo-alpn"},
-"dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"4.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
-"dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"4.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
-"dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
-"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"4.1. SocketOptions dictionary"},{"refs":[{"id":"ref-for-dom-socketoptions-alpn\u2460"}],"title":"4.2. SocketInfo dictionary"}],"url":"#dom-socketoptions-alpn"},
-"dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
-"dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"4.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
-"enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"4. connect"}],"url":"#enumdef-securetransportkind"},
-"socket": {"dfnID":"socket","dfnText":"Socket","external":false,"refSections":[{"refs":[{"id":"ref-for-socket"}],"title":"2.3. Binding Object"},{"refs":[{"id":"ref-for-socket\u2460"},{"id":"ref-for-socket\u2461"},{"id":"ref-for-socket\u2462"},{"id":"ref-for-socket\u2463"}],"title":"3.2. The Socket class"},{"refs":[{"id":"ref-for-socket\u2464"}],"title":"3.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-socket\u2465"}],"title":"3.4.2. startTls()"},{"refs":[{"id":"ref-for-socket\u2466"},{"id":"ref-for-socket\u2467"},{"id":"ref-for-socket\u2468"},{"id":"ref-for-socket\u2460\u24ea"}],"title":"4. connect"},{"refs":[{"id":"ref-for-socket\u2460\u2460"},{"id":"ref-for-socket\u2460\u2461"}],"title":"4.2. SocketInfo dictionary"}],"url":"#socket"},
-"socket-concept": {"dfnID":"socket-concept","dfnText":"socket","external":false,"refSections":[{"refs":[{"id":"ref-for-socket-concept"}],"title":"1. Introduction"},{"refs":[{"id":"ref-for-socket-concept\u2460"}],"title":"2.2. Connect"},{"refs":[{"id":"ref-for-socket-concept\u2461"}],"title":"3.2. The Socket class"}],"url":"#socket-concept"},
-"socketerror": {"dfnID":"socketerror","dfnText":"SocketError","external":false,"refSections":[{"refs":[{"id":"ref-for-socketerror"}],"title":"3.3.4. closed"},{"refs":[{"id":"ref-for-socketerror\u2460"}],"title":"3.4.2. startTls()"},{"refs":[{"id":"ref-for-socketerror\u2461"},{"id":"ref-for-socketerror\u2462"}],"title":"4. connect"}],"url":"#socketerror"},
-"typedefdef-anysocketaddress": {"dfnID":"typedefdef-anysocketaddress","dfnText":"AnySocketAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-typedefdef-anysocketaddress"}],"title":"4. connect"}],"url":"#typedefdef-anysocketaddress"},
+"dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
+"dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
+"dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
+"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.1. SocketOptions dictionary"},{"refs":[{"id":"ref-for-dom-socketoptions-alpn\u2460"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketoptions-alpn"},
+"dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
+"dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
+"enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"3. connect"}],"url":"#enumdef-securetransportkind"},
+"socket": {"dfnID":"socket","dfnText":"Socket","external":false,"refSections":[{"refs":[{"id":"ref-for-socket"}],"title":"1.3. Binding Object"},{"refs":[{"id":"ref-for-socket\u2460"},{"id":"ref-for-socket\u2461"},{"id":"ref-for-socket\u2462"},{"id":"ref-for-socket\u2463"}],"title":"2.2. The Socket class"},{"refs":[{"id":"ref-for-socket\u2464"}],"title":"2.4.1. close(optional any reason)"},{"refs":[{"id":"ref-for-socket\u2465"}],"title":"2.4.2. startTls()"},{"refs":[{"id":"ref-for-socket\u2466"},{"id":"ref-for-socket\u2467"},{"id":"ref-for-socket\u2468"},{"id":"ref-for-socket\u2460\u24ea"}],"title":"3. connect"},{"refs":[{"id":"ref-for-socket\u2460\u2460"},{"id":"ref-for-socket\u2460\u2461"}],"title":"3.2. SocketInfo dictionary"}],"url":"#socket"},
+"socket-concept": {"dfnID":"socket-concept","dfnText":"socket","external":false,"refSections":[{"refs":[{"id":"ref-for-socket-concept"}],"title":"Introduction"},{"refs":[{"id":"ref-for-socket-concept\u2460"}],"title":"1.2. Connect"},{"refs":[{"id":"ref-for-socket-concept\u2461"}],"title":"2.2. The Socket class"}],"url":"#socket-concept"},
+"socketerror": {"dfnID":"socketerror","dfnText":"SocketError","external":false,"refSections":[{"refs":[{"id":"ref-for-socketerror"}],"title":"2.3.4. closed"},{"refs":[{"id":"ref-for-socketerror\u2460"}],"title":"2.4.2. startTls()"},{"refs":[{"id":"ref-for-socketerror\u2461"},{"id":"ref-for-socketerror\u2462"}],"title":"3. connect"}],"url":"#socketerror"},
+"typedefdef-anysocketaddress": {"dfnID":"typedefdef-anysocketaddress","dfnText":"AnySocketAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-typedefdef-anysocketaddress"}],"title":"3. connect"}],"url":"#typedefdef-anysocketaddress"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{

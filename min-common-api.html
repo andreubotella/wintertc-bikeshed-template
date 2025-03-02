@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 60c422380, updated Thu Feb 20 19:11:22 2025 -0800" name="generator">
   <link href="https://min-common-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="c5dcacf56189731a9fd146707f89f05617a42b37" name="revision">
+  <meta content="e4746f055699c8de3850b2cc8a2fc88c3fcc5ce4" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2051,7 +2051,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Minimum Common Web Platform API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-03-01">1 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-03-02">2 March 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2077,12 +2077,12 @@ dfn > a.self-link::before      { content: "#"; }
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
-    <li><a href="#terminology"><span class="secno">2</span> <span class="content">Terminology</span></a>
-    <li><a href="#api-index"><span class="secno">3</span> <span class="content">Common API Index</span></a>
-    <li><a href="#global-scope"><span class="secno">4</span> <span class="content">The Global Scope</span></a>
-    <li><a href="#navigator-useragent-requirements"><span class="secno">5</span> <span class="content">Requirements for navigator.userAgent</span></a>
-    <li><a href="#extensions"><span class="secno">6</span> <span class="content">Extensions</span></a>
+    <li><a href="#intro"><span class="secno"></span> <span class="content">Introduction</span></a>
+    <li><a href="#terminology"><span class="secno">1</span> <span class="content">Terminology</span></a>
+    <li><a href="#api-index"><span class="secno">2</span> <span class="content">Common API Index</span></a>
+    <li><a href="#global-scope"><span class="secno">3</span> <span class="content">The Global Scope</span></a>
+    <li><a href="#navigator-useragent-requirements"><span class="secno">4</span> <span class="content">Requirements for navigator.userAgent</span></a>
+    <li><a href="#extensions"><span class="secno">5</span> <span class="content">Extensions</span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -2099,14 +2099,15 @@ dfn > a.self-link::before      { content: "#"; }
    </ol>
   </nav>
   <main>
-   <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <p><em>This section is non-normative.</em></p>
-   <p>The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p>
-   <h2 class="heading settled" data-level="2" id="terminology"><span class="secno">2. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
+   <h2 class="no-num heading settled" id="intro"><span class="content">Introduction</span></h2>
+   <div data-fill-with="introduction">
+    <p>The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p>
+   </div>
+   <h2 class="heading settled" data-level="1" id="terminology"><span class="secno">1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
    <p>The Web Platform is the combination of technology standards defined by organizations such as the W3C, the WHATWG, and others as implemented by Web Browsers.</p>
    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime</dfn> is any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.
 While this term is intentionally broad to also encompass Web Browsers, the primary focus here is on outlining expectations for non-browser runtimes.</p>
-   <h2 class="heading settled" data-level="3" id="api-index"><span class="secno">3. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
+   <h2 class="heading settled" data-level="2" id="api-index"><span class="secno">2. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
    <p>All <a data-link-type="dfn" href="#web-interoperable-runtime" id="ref-for-web-interoperable-runtime">Web-interoperable Runtimes</a> conforming to this specification SHALL implement each of the following Web Platform APIs in accordance with their normative requirements except where modified here. Where any conforming runtime environment chooses (either by necessity or otherwise) to diverge from a normative requirement of the specification, clear explanations of such divergence MUST be made clearly and readily available in the documentation.</p>
    <p>Interfaces:</p>
    <ul>
@@ -2234,10 +2235,10 @@ Cloudflare Workers ignores all parameters.</p>
     <li data-md>
      <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑨">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-validate" id="ref-for-dom-webassembly-validate">validate()</a></code></p>
    </ul>
-   <h2 class="heading settled" data-level="4" id="global-scope"><span class="secno">4. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
+   <h2 class="heading settled" data-level="3" id="global-scope"><span class="secno">3. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
    <p>The exact type of the global scope (<code>globalThis</code>) can vary across runtimes. Most Web Platform APIs are defined in terms that assume Web Browser environments that specifically expose types like <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#window" id="ref-for-window">Window</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#worker" id="ref-for-worker">Worker</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope" id="ref-for-workerglobalscope">WorkerGlobalScope</a></code>, and so forth. To simplify conformance, all Interfaces, methods, and properties defined by this specification MUST be exposed on the runtime’s relevant global scope (e,g., <code>globalThis.crypto</code>, <code>globalThis.ReadableStream</code>, etc).</p>
    <p>With many runtimes, adding a new global-scoped property can introduce breaking changes when the new global conflicts with existing application code. Many Web Platform APIs define global properties using the <code>readonly</code> attribute. To avoid introducing breaking changes, runtimes conforming to this specification MAY choose to ignore the <code>readonly</code> attribute for properties being added to the global scope.</p>
-   <h2 class="heading settled" data-level="5" id="navigator-useragent-requirements"><span class="secno">5. </span><span class="content">Requirements for navigator.userAgent</span><a class="self-link" href="#navigator-useragent-requirements"></a></h2>
+   <h2 class="heading settled" data-level="4" id="navigator-useragent-requirements"><span class="secno">4. </span><span class="content">Requirements for navigator.userAgent</span><a class="self-link" href="#navigator-useragent-requirements"></a></h2>
    <p>The globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator①">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent①">userAgent</a></code> property is provided such that application code can reliably identify the runtime within which it is running.
 The value of the property is a string conforming to the <code class="idl"><a data-link-type="idl" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3"><code>User-Agent</code></a></code> construction in RFC 7231:</p>
 <pre>User-Agent      = product *( RWS ( product / comment ) )
@@ -2245,7 +2246,7 @@ product         = token ["/" product-version]
 product-version = token
 </pre>
    <p>While runtimes that implement globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator②">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent②">userAgent</a></code> MUST provide a value that is conformant with the structure defined by RFC 7231, the value SHOULD be treated as a single, complete, opaque, unstructured value. It is RECOMMENDED that the value be limited to a single <code>product</code> token excluding the optional <code>product-version</code>. For instance, <code>navigator.userAgent = 'MyRuntime'</code>. The value SHOULD NOT include any <code>comment</code> components.</p>
-   <h2 class="heading settled" data-level="6" id="extensions"><span class="secno">6. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
+   <h2 class="heading settled" data-level="5" id="extensions"><span class="secno">5. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
    <p>Runtime-specific extensions to any Web Platform API MAY be implemented by conforming runtimes. Such extensions MUST be defined so that their use neither contradicts nor causes the non-conformance of normative functionality of any Web Platform API.</p>
    <p>Application use of such extensions must be carefully considered, as doing so reduces interoperability and portability of code across runtimes.</p>
   </main>
@@ -2398,7 +2399,7 @@ product-version = token
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 2</span>
+   <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 1</span>
   </ul>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
   <ul class="index">
@@ -2771,72 +2772,72 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"055c88fa": {"dfnID":"055c88fa","dfnText":"clearTimeout(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-cleartimeout"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
-"056fb0bd": {"dfnID":"056fb0bd","dfnText":"TextEncoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoder"}],"title":"3. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoder"},
-"08a12aad": {"dfnID":"08a12aad","dfnText":"Response","external":true,"refSections":[{"refs":[{"id":"ref-for-response"}],"title":"3. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#response"},
-"122f01fb": {"dfnID":"122f01fb","dfnText":"setInterval(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-setinterval"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
-"129bdae8": {"dfnID":"129bdae8","dfnText":"Event","external":true,"refSections":[{"refs":[{"id":"ref-for-event"}],"title":"3. Common API Index"}],"url":"https://dom.spec.whatwg.org/#event"},
-"15ed4f00": {"dfnID":"15ed4f00","dfnText":"compileStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compilestreaming"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
-"18c65a7a": {"dfnID":"18c65a7a","dfnText":"HTMLFormElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlformelement"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
-"1b28d572": {"dfnID":"1b28d572","dfnText":"URLPattern","external":true,"refSections":[{"refs":[{"id":"ref-for-urlpattern"}],"title":"3. Common API Index"}],"url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
-"1e249f40": {"dfnID":"1e249f40","dfnText":"TextDecoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoderstream"}],"title":"3. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
-"29228fdf": {"dfnID":"29228fdf","dfnText":"Module","external":true,"refSections":[{"refs":[{"id":"ref-for-module"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#module"},
-"2bc0cdf4": {"dfnID":"2bc0cdf4","dfnText":"EventTarget","external":true,"refSections":[{"refs":[{"id":"ref-for-eventtarget"}],"title":"3. Common API Index"}],"url":"https://dom.spec.whatwg.org/#eventtarget"},
-"2ce6f6bb": {"dfnID":"2ce6f6bb","dfnText":"fetch(input)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-global-fetch"}],"title":"3. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
-"2e66eaf1": {"dfnID":"2e66eaf1","dfnText":"AbortController","external":true,"refSections":[{"refs":[{"id":"ref-for-abortcontroller"}],"title":"3. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortcontroller"},
-"32d74a61": {"dfnID":"32d74a61","dfnText":"Table","external":true,"refSections":[{"refs":[{"id":"ref-for-table"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#table"},
-"3332e595": {"dfnID":"3332e595","dfnText":"setTimeout(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-settimeout"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
-"3711a638": {"dfnID":"3711a638","dfnText":"compile(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compile"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
-"3b35d8a9": {"dfnID":"3b35d8a9","dfnText":"timeOrigin","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-timeorigin"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
-"3cdef7e1": {"dfnID":"3cdef7e1","dfnText":"userAgent","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator-useragent"}],"title":"3. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator-useragent\u2460"},{"id":"ref-for-dom-navigator-useragent\u2461"}],"title":"5. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
-"3ce2d948": {"dfnID":"3ce2d948","dfnText":"Global","external":true,"refSections":[{"refs":[{"id":"ref-for-global"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#global"},
-"417f81da": {"dfnID":"417f81da","dfnText":"TextEncoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoderstream"}],"title":"3. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoderstream"},
-"43617e61": {"dfnID":"43617e61","dfnText":"btoa(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-btoa"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
-"47e93e3e": {"dfnID":"47e93e3e","dfnText":"TransformStream","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstream"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstream"},
-"529179ea": {"dfnID":"529179ea","dfnText":"Crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Crypto"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
-"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
-"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
-"5d7209e9": {"dfnID":"5d7209e9","dfnText":"Window","external":true,"refSections":[{"refs":[{"id":"ref-for-window"}],"title":"4. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
-"5fc623fc": {"dfnID":"5fc623fc","dfnText":"CryptoKey","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-CryptoKey"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
-"61cd38cd": {"dfnID":"61cd38cd","dfnText":"FormData","external":true,"refSections":[{"refs":[{"id":"ref-for-formdata"},{"id":"ref-for-formdata\u2460"}],"title":"3. Common API Index"}],"url":"https://xhr.spec.whatwg.org/#formdata"},
-"630c6156": {"dfnID":"630c6156","dfnText":"clearInterval(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-clearinterval"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
-"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
-"7b1760b0": {"dfnID":"7b1760b0","dfnText":"console","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-console"}],"title":"3. Common API Index"}],"url":"https://console.spec.whatwg.org/#namespacedef-console"},
-"83c59a3a": {"dfnID":"83c59a3a","dfnText":"WorkerGlobalScope","external":true,"refSections":[{"refs":[{"id":"ref-for-workerglobalscope"}],"title":"4. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
-"84eed482": {"dfnID":"84eed482","dfnText":"TextDecoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoder"}],"title":"3. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoder"},
-"98cffeee": {"dfnID":"98cffeee","dfnText":"atob(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-atob"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
-"9927ae47": {"dfnID":"9927ae47","dfnText":"ReadableByteStreamController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablebytestreamcontroller"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
-"99bfa32c": {"dfnID":"99bfa32c","dfnText":"WritableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultcontroller"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
-"9ca1c179": {"dfnID":"9ca1c179","dfnText":"Memory","external":true,"refSections":[{"refs":[{"id":"ref-for-memory"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#memory"},
-"9cae8b68": {"dfnID":"9cae8b68","dfnText":"ReadableStreamDefaultReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultreader"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
-"9feefb27": {"dfnID":"9feefb27","dfnText":"WebAssembly","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-webassembly"},{"id":"ref-for-namespacedef-webassembly\u2460"},{"id":"ref-for-namespacedef-webassembly\u2461"},{"id":"ref-for-namespacedef-webassembly\u2462"},{"id":"ref-for-namespacedef-webassembly\u2463"},{"id":"ref-for-namespacedef-webassembly\u2464"},{"id":"ref-for-namespacedef-webassembly\u2465"},{"id":"ref-for-namespacedef-webassembly\u2466"},{"id":"ref-for-namespacedef-webassembly\u2467"},{"id":"ref-for-namespacedef-webassembly\u2468"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
-"a0768d9f": {"dfnID":"a0768d9f","dfnText":"navigator","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator"}],"title":"3. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator\u2460"},{"id":"ref-for-dom-navigator\u2461"}],"title":"5. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
-"a3a1d384": {"dfnID":"a3a1d384","dfnText":"Instance","external":true,"refSections":[{"refs":[{"id":"ref-for-instance"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#instance"},
-"a845eee0": {"dfnID":"a845eee0","dfnText":"instantiateStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiatestreaming"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
-"adfe3014": {"dfnID":"adfe3014","dfnText":"URLSearchParams","external":true,"refSections":[{"refs":[{"id":"ref-for-urlsearchparams"}],"title":"3. Common API Index"}],"url":"https://url.spec.whatwg.org/#urlsearchparams"},
-"aee9d099": {"dfnID":"aee9d099","dfnText":"performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-performance"},{"id":"ref-for-dom-windoworworkerglobalscope-performance\u2460"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
-"b08d0bb2": {"dfnID":"b08d0bb2","dfnText":"HTMLElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlelement"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
-"b484b574": {"dfnID":"b484b574","dfnText":"ReadableStreamBYOBReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobreader"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
-"b7d73f5b": {"dfnID":"b7d73f5b","dfnText":"Blob","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Blob"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
-"bd1abd53": {"dfnID":"bd1abd53","dfnText":"TransformStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstreamdefaultcontroller"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
-"be0af01c": {"dfnID":"be0af01c","dfnText":"validate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-validate"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
-"bfc1c271": {"dfnID":"bfc1c271","dfnText":"Worker","external":true,"refSections":[{"refs":[{"id":"ref-for-worker"}],"title":"4. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
-"c04c9568": {"dfnID":"c04c9568","dfnText":"ByteLengthQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-bytelengthqueuingstrategy"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
-"c6083cc6": {"dfnID":"c6083cc6","dfnText":"queueMicrotask(callback)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-queuemicrotask"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
-"cca3cdb2": {"dfnID":"cca3cdb2","dfnText":"AbortSignal","external":true,"refSections":[{"refs":[{"id":"ref-for-abortsignal"}],"title":"3. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortsignal"},
-"cd028611": {"dfnID":"cd028611","dfnText":"File","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-file"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-file"},
-"ce760f06": {"dfnID":"ce760f06","dfnText":"ReadableStreamBYOBRequest","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobrequest"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
-"cf02c2dd": {"dfnID":"cf02c2dd","dfnText":"SubtleCrypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-SubtleCrypto"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
-"d62af025": {"dfnID":"d62af025","dfnText":"now()","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-now"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-now"},
-"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"3. Common API Index"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
-"e806d5a8": {"dfnID":"e806d5a8","dfnText":"Headers","external":true,"refSections":[{"refs":[{"id":"ref-for-headers"}],"title":"3. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#headers"},
-"eb1fb636": {"dfnID":"eb1fb636","dfnText":"CountQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-countqueuingstrategy"}],"title":"3. Common API Index"}],"url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
-"ed3ab0a3": {"dfnID":"ed3ab0a3","dfnText":"crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-crypto"}],"title":"3. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
-"f06432d7": {"dfnID":"f06432d7","dfnText":"URL","external":true,"refSections":[{"refs":[{"id":"ref-for-url"}],"title":"3. Common API Index"}],"url":"https://url.spec.whatwg.org/#url"},
-"f20d405b": {"dfnID":"f20d405b","dfnText":"instantiate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiate"}],"title":"3. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
-"f2f85335": {"dfnID":"f2f85335","dfnText":"structuredClone(value, options)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-structuredclone"}],"title":"3. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
-"f9da6f1f": {"dfnID":"f9da6f1f","dfnText":"Request","external":true,"refSections":[{"refs":[{"id":"ref-for-request"}],"title":"3. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#request"},
-"web-interoperable-runtime": {"dfnID":"web-interoperable-runtime","dfnText":"Web-interoperable Runtime","external":false,"refSections":[{"refs":[{"id":"ref-for-web-interoperable-runtime"}],"title":"3. Common API Index"}],"url":"#web-interoperable-runtime"},
+"055c88fa": {"dfnID":"055c88fa","dfnText":"clearTimeout(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-cleartimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
+"056fb0bd": {"dfnID":"056fb0bd","dfnText":"TextEncoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoder"},
+"08a12aad": {"dfnID":"08a12aad","dfnText":"Response","external":true,"refSections":[{"refs":[{"id":"ref-for-response"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#response"},
+"122f01fb": {"dfnID":"122f01fb","dfnText":"setInterval(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-setinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
+"129bdae8": {"dfnID":"129bdae8","dfnText":"Event","external":true,"refSections":[{"refs":[{"id":"ref-for-event"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#event"},
+"15ed4f00": {"dfnID":"15ed4f00","dfnText":"compileStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compilestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
+"18c65a7a": {"dfnID":"18c65a7a","dfnText":"HTMLFormElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlformelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
+"1b28d572": {"dfnID":"1b28d572","dfnText":"URLPattern","external":true,"refSections":[{"refs":[{"id":"ref-for-urlpattern"}],"title":"2. Common API Index"}],"url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
+"1e249f40": {"dfnID":"1e249f40","dfnText":"TextDecoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
+"29228fdf": {"dfnID":"29228fdf","dfnText":"Module","external":true,"refSections":[{"refs":[{"id":"ref-for-module"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#module"},
+"2bc0cdf4": {"dfnID":"2bc0cdf4","dfnText":"EventTarget","external":true,"refSections":[{"refs":[{"id":"ref-for-eventtarget"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#eventtarget"},
+"2ce6f6bb": {"dfnID":"2ce6f6bb","dfnText":"fetch(input)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-global-fetch"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
+"2e66eaf1": {"dfnID":"2e66eaf1","dfnText":"AbortController","external":true,"refSections":[{"refs":[{"id":"ref-for-abortcontroller"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortcontroller"},
+"32d74a61": {"dfnID":"32d74a61","dfnText":"Table","external":true,"refSections":[{"refs":[{"id":"ref-for-table"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#table"},
+"3332e595": {"dfnID":"3332e595","dfnText":"setTimeout(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-settimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
+"3711a638": {"dfnID":"3711a638","dfnText":"compile(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compile"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
+"3b35d8a9": {"dfnID":"3b35d8a9","dfnText":"timeOrigin","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-timeorigin"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
+"3cdef7e1": {"dfnID":"3cdef7e1","dfnText":"userAgent","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator-useragent"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator-useragent\u2460"},{"id":"ref-for-dom-navigator-useragent\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
+"3ce2d948": {"dfnID":"3ce2d948","dfnText":"Global","external":true,"refSections":[{"refs":[{"id":"ref-for-global"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#global"},
+"417f81da": {"dfnID":"417f81da","dfnText":"TextEncoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoderstream"},
+"43617e61": {"dfnID":"43617e61","dfnText":"btoa(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-btoa"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
+"47e93e3e": {"dfnID":"47e93e3e","dfnText":"TransformStream","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstream"},
+"529179ea": {"dfnID":"529179ea","dfnText":"Crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
+"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
+"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
+"5d7209e9": {"dfnID":"5d7209e9","dfnText":"Window","external":true,"refSections":[{"refs":[{"id":"ref-for-window"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
+"5fc623fc": {"dfnID":"5fc623fc","dfnText":"CryptoKey","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-CryptoKey"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
+"61cd38cd": {"dfnID":"61cd38cd","dfnText":"FormData","external":true,"refSections":[{"refs":[{"id":"ref-for-formdata"},{"id":"ref-for-formdata\u2460"}],"title":"2. Common API Index"}],"url":"https://xhr.spec.whatwg.org/#formdata"},
+"630c6156": {"dfnID":"630c6156","dfnText":"clearInterval(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-clearinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
+"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
+"7b1760b0": {"dfnID":"7b1760b0","dfnText":"console","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-console"}],"title":"2. Common API Index"}],"url":"https://console.spec.whatwg.org/#namespacedef-console"},
+"83c59a3a": {"dfnID":"83c59a3a","dfnText":"WorkerGlobalScope","external":true,"refSections":[{"refs":[{"id":"ref-for-workerglobalscope"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
+"84eed482": {"dfnID":"84eed482","dfnText":"TextDecoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoder"},
+"98cffeee": {"dfnID":"98cffeee","dfnText":"atob(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-atob"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
+"9927ae47": {"dfnID":"9927ae47","dfnText":"ReadableByteStreamController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablebytestreamcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
+"99bfa32c": {"dfnID":"99bfa32c","dfnText":"WritableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
+"9ca1c179": {"dfnID":"9ca1c179","dfnText":"Memory","external":true,"refSections":[{"refs":[{"id":"ref-for-memory"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#memory"},
+"9cae8b68": {"dfnID":"9cae8b68","dfnText":"ReadableStreamDefaultReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
+"9feefb27": {"dfnID":"9feefb27","dfnText":"WebAssembly","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-webassembly"},{"id":"ref-for-namespacedef-webassembly\u2460"},{"id":"ref-for-namespacedef-webassembly\u2461"},{"id":"ref-for-namespacedef-webassembly\u2462"},{"id":"ref-for-namespacedef-webassembly\u2463"},{"id":"ref-for-namespacedef-webassembly\u2464"},{"id":"ref-for-namespacedef-webassembly\u2465"},{"id":"ref-for-namespacedef-webassembly\u2466"},{"id":"ref-for-namespacedef-webassembly\u2467"},{"id":"ref-for-namespacedef-webassembly\u2468"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
+"a0768d9f": {"dfnID":"a0768d9f","dfnText":"navigator","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator\u2460"},{"id":"ref-for-dom-navigator\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
+"a3a1d384": {"dfnID":"a3a1d384","dfnText":"Instance","external":true,"refSections":[{"refs":[{"id":"ref-for-instance"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#instance"},
+"a845eee0": {"dfnID":"a845eee0","dfnText":"instantiateStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiatestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
+"adfe3014": {"dfnID":"adfe3014","dfnText":"URLSearchParams","external":true,"refSections":[{"refs":[{"id":"ref-for-urlsearchparams"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#urlsearchparams"},
+"aee9d099": {"dfnID":"aee9d099","dfnText":"performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-performance"},{"id":"ref-for-dom-windoworworkerglobalscope-performance\u2460"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
+"b08d0bb2": {"dfnID":"b08d0bb2","dfnText":"HTMLElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
+"b484b574": {"dfnID":"b484b574","dfnText":"ReadableStreamBYOBReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
+"b7d73f5b": {"dfnID":"b7d73f5b","dfnText":"Blob","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Blob"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
+"bd1abd53": {"dfnID":"bd1abd53","dfnText":"TransformStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
+"be0af01c": {"dfnID":"be0af01c","dfnText":"validate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-validate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
+"bfc1c271": {"dfnID":"bfc1c271","dfnText":"Worker","external":true,"refSections":[{"refs":[{"id":"ref-for-worker"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
+"c04c9568": {"dfnID":"c04c9568","dfnText":"ByteLengthQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-bytelengthqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
+"c6083cc6": {"dfnID":"c6083cc6","dfnText":"queueMicrotask(callback)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-queuemicrotask"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
+"cca3cdb2": {"dfnID":"cca3cdb2","dfnText":"AbortSignal","external":true,"refSections":[{"refs":[{"id":"ref-for-abortsignal"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortsignal"},
+"cd028611": {"dfnID":"cd028611","dfnText":"File","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-file"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-file"},
+"ce760f06": {"dfnID":"ce760f06","dfnText":"ReadableStreamBYOBRequest","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobrequest"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
+"cf02c2dd": {"dfnID":"cf02c2dd","dfnText":"SubtleCrypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-SubtleCrypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
+"d62af025": {"dfnID":"d62af025","dfnText":"now()","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-now"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-now"},
+"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"2. Common API Index"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
+"e806d5a8": {"dfnID":"e806d5a8","dfnText":"Headers","external":true,"refSections":[{"refs":[{"id":"ref-for-headers"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#headers"},
+"eb1fb636": {"dfnID":"eb1fb636","dfnText":"CountQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-countqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
+"ed3ab0a3": {"dfnID":"ed3ab0a3","dfnText":"crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
+"f06432d7": {"dfnID":"f06432d7","dfnText":"URL","external":true,"refSections":[{"refs":[{"id":"ref-for-url"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#url"},
+"f20d405b": {"dfnID":"f20d405b","dfnText":"instantiate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
+"f2f85335": {"dfnID":"f2f85335","dfnText":"structuredClone(value, options)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-structuredclone"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
+"f9da6f1f": {"dfnID":"f9da6f1f","dfnText":"Request","external":true,"refSections":[{"refs":[{"id":"ref-for-request"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#request"},
+"web-interoperable-runtime": {"dfnID":"web-interoperable-runtime","dfnText":"Web-interoperable Runtime","external":false,"refSections":[{"refs":[{"id":"ref-for-web-interoperable-runtime"}],"title":"2. Common API Index"}],"url":"#web-interoperable-runtime"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
