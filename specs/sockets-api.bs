@@ -20,11 +20,7 @@ spec:html; type:attribute; for:Window; text:navigator
 spec:html; type:method; for:Connect; text:connect
 </pre>
 
-<h2 id="intro">Introduction</h2>
-
-<div class="non-normative">
-
-<em>This section is non-normative.</em>
+<div boilerplate="introduction">
 
 This document defines an API for establishing TCP connections in Non-Browser JavaScript runtime
 environments. Existing standard APIs are reused as much as possible, for example {{ReadableStream}}

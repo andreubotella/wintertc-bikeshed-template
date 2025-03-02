@@ -5,6 +5,13 @@
   <title>[TITLE]</title>
   <link rel="stylesheet" href="../ecmarkup/css/elements.css">
   <link rel="stylesheet" href="../ecmarkup/css/print.css" media="print">
+  <style media="print">
+    #toc > ol > li:first-child {
+      /* The introduction is not an entry in the TOC, so the first entry doesn't
+       * need to be hidden. */
+      display: list-item;
+    }
+  </style>
 </head>
 <body>
   <div class="full-page-svg" id="front-cover">
@@ -15,6 +22,10 @@
   <div class="full-page-svg" id="inside-cover"></div>
   <div id="spec-container">
     <div data-fill-with="table-of-contents" id="toc"></div>
+    <emu-intro>
+      <h1 class="no-num">Introduction</h1>
+      <div data-fill-with="introduction"></div>
+    </emu-intro>
     <div id="metadata-block">
       <h1 class="no-num no-toc no-ref">Contributing to this Specification</h1>
       <div data-fill-with="spec-metadata"></div>

@@ -16,12 +16,11 @@ spec:html; type:attribute; for:Window; text:navigator
 spec:fetch; type:method; text:fetch()
 </pre>
 
-Introduction {#intro}
-=====================
-
-*This section is non-normative.*
+<div boilerplate="introduction">
 
 The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.
+
+</div>
 
 Terminology {#terminology}
 ==========================
