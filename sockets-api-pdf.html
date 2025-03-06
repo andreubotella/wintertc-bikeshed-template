@@ -13,7 +13,7 @@
   </style>
   <meta content="Bikeshed version 60c422380, updated Thu Feb 20 19:11:22 2025 -0800" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="e4746f055699c8de3850b2cc8a2fc88c3fcc5ce4" name="revision">
+  <meta content="91cd7fc2f5b6a447f7fe002b52a89aa927a59bb9" name="revision">
 <style>/* Boilerplate: style-idl-highlighting */
 pre.idl.highlight {
     background: var(--borderedblock-bg, var(--def-bg));
@@ -81,7 +81,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body>
   <div class="full-page-svg" id="front-cover">
    <h1 class="shortname"><span class="status">Standard</span> Ecma-XXX</h1>
-   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 2 March 2025</h1>
+   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 6 March 2025</h1>
    <h1 class="title">Sockets API</h1>
   </div>
   <div class="full-page-svg" id="inside-cover"></div>
@@ -388,15 +388,15 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
       </dl>
     </dl>
     <h3 class="heading settled" data-level="3.2" id="socketinfo-dictionary"><span class="secno">3.2. </span><span class="content"><code>SocketInfo</code> dictionary</span><a class="self-link" href="#socketinfo-dictionary"></a></h3>
-    <d1>
+    <dl>
      <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-remoteaddress" id="ref-for-dom-socketinfo-remoteaddress">remoteAddress</a></code> member 
      <dd> Provides the hostname/port combo of the remote peer the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①①">Socket</a></code> is connected to, for example <code>"example.com:443"</code>.
     This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
      <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
      <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn①">alpn</a></code> property 
+     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> property 
      <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
-    </d1>
+    </dl>
     <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
     <dl>
      <dt> <code class="idl"><a data-link-type="idl" href="#dictdef-socketaddress" id="ref-for-dictdef-socketaddress②">SocketAddress</a></code> dictionary 
