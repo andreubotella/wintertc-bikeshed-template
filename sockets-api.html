@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 60c422380, updated Thu Feb 20 19:11:22 2025 -0800" name="generator">
+  <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="91cd7fc2f5b6a447f7fe002b52a89aa927a59bb9" name="revision">
+  <meta content="a3f848a0b2b8af61103f719ba9135b25614d343b" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2177,7 +2177,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref" id="title">Sockets API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-03-06">6 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-05-31">31 May 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2191,9 +2191,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     </dl>
    </div>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright">
-    <p>© 2025 Ecma International. This document is published under TODO license.</p>
-   </p>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
@@ -2240,7 +2237,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#socketinfo-dictionary"><span class="secno">3.2</span> <span class="content"><code>SocketInfo</code> dictionary</span></a>
       <li><a href="#anysocketaddress-type"><span class="secno">3.3</span> <span class="content"><code>AnySocketAddress</code> type</span></a>
      </ol>
-    <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
@@ -2477,7 +2473,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
       <dt><code class="idl"><a data-link-type="idl" href="#dom-securetransportkind-starttls" id="ref-for-dom-securetransportkind-starttls">starttls</a></code>
       <dd>Initially the same as the <code>off</code> option, the connection continues in plain text until the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls②">startTls()</a></code> method is called
      </dl>
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> member 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member 
     <dd> The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-sni" id="ref-for-dom-socketoptions-sni">sni</a></code> member 
     <dd> The Server Name Indication TLS option to send as part of the TLS handshake. If specified, requests that the server send a certificate with a matching common name. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport②">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
@@ -2499,7 +2495,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
     <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn①">alpn</a></code> property 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property 
     <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
    </dl>
    <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
@@ -2516,153 +2512,8 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <dt> <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code> 
     <dd> A hostname/port combo separated by a colon. For example <code>"google.com:443"</code>. 
    </dl>
+   <div data-fill-with="copyright-and-license"></div>
   </main>
-  <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
-   <p> Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
-            The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
-            in the normative parts of this document
-            are to be interpreted as described in RFC 2119.
-            However, for readability,
-            these words do not appear in all uppercase letters in this specification. </p>
-   <p> All of the text of this specification is normative
-            except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[RFC2119]</a> </p>
-   <p> Examples in this specification are introduced with the words “for example”
-            or are set apart from the normative text with <code>class="example"</code>, like this: </p>
-   <div class="example" id="example-example"><a class="self-link" href="#example-example"></a> This is an example of an informative example. </div>
-   <p> Informative notes begin with the word “Note”
-            and are set apart from the normative text with <code>class="note"</code>, like this: </p>
-   <p class="note" role="note"> Note, this is an informative note.</p>
-  </div>
-<script>
-(function() {
-  "use strict";
-  var collapseSidebarText = '<span aria-hidden="true">←</span> '
-                          + '<span>Collapse Sidebar</span>';
-  var expandSidebarText   = '<span aria-hidden="true">→</span> '
-                          + '<span>Pop Out Sidebar</span>';
-  var tocJumpText         = '<span aria-hidden="true">↑</span> '
-                          + '<span>Jump to Table of Contents</span>';
-
-  var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
-  var autoToggle   = function(e){ toggleSidebar(e.matches) };
-  if(sidebarMedia.addListener) {
-    sidebarMedia.addListener(autoToggle);
-  }
-
-  function toggleSidebar(on) {
-    if (on == undefined) {
-      on = !document.body.classList.contains('toc-sidebar');
-    }
-
-    /* Don't scroll to compensate for the ToC if we're above it already. */
-    var headY = 0;
-    var head = document.querySelector('.head');
-    if (head) {
-      // terrible approx of "top of ToC"
-      headY += head.offsetTop + head.offsetHeight;
-    }
-    var skipScroll = window.scrollY < headY;
-
-    var toggle = document.getElementById('toc-toggle');
-    var tocNav = document.getElementById('toc');
-    if (on) {
-      var tocHeight = tocNav.offsetHeight;
-      document.body.classList.add('toc-sidebar');
-      document.body.classList.remove('toc-inline');
-      toggle.innerHTML = collapseSidebarText;
-      if (!skipScroll) {
-        window.scrollBy(0, 0 - tocHeight);
-      }
-      tocNav.focus();
-      sidebarMedia.addListener(autoToggle); // auto-collapse when out of room
-    }
-    else {
-      document.body.classList.add('toc-inline');
-      document.body.classList.remove('toc-sidebar');
-      toggle.innerHTML = expandSidebarText;
-      if (!skipScroll) {
-        window.scrollBy(0, tocNav.offsetHeight);
-      }
-      if (toggle.matches(':hover')) {
-        /* Unfocus button when not using keyboard navigation,
-           because I don't know where else to send the focus. */
-        toggle.blur();
-      }
-    }
-  }
-
-  function createSidebarToggle() {
-    /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
-    var toggle = document.createElement('a');
-      /* This should probably be a button, but appearance isn't standards-track.*/
-    toggle.id = 'toc-toggle';
-    toggle.class = 'toc-toggle';
-    toggle.href = '#toc';
-    toggle.innerHTML = collapseSidebarText;
-
-    sidebarMedia.addListener(autoToggle);
-    var toggler = function(e) {
-      e.preventDefault();
-      sidebarMedia.removeListener(autoToggle); // persist explicit off states
-      toggleSidebar();
-      return false;
-    }
-    toggle.addEventListener('click', toggler, false);
-
-
-    /* Get <nav id=toc-nav>, or make it if we don't have one. */
-    var tocNav = document.getElementById('toc-nav');
-    if (!tocNav) {
-      tocNav = document.createElement('p');
-      tocNav.id = 'toc-nav';
-      /* Prepend for better keyboard navigation */
-      document.body.insertBefore(tocNav, document.body.firstChild);
-    }
-    /* While we're at it, make sure we have a Jump to Toc link. */
-    var tocJump = document.getElementById('toc-jump');
-    if (!tocJump) {
-      tocJump = document.createElement('a');
-      tocJump.id = 'toc-jump';
-      tocJump.href = '#toc';
-      tocJump.innerHTML = tocJumpText;
-      tocNav.appendChild(tocJump);
-    }
-
-    tocNav.appendChild(toggle);
-  }
-
-  var toc = document.getElementById('toc');
-  if (toc) {
-    createSidebarToggle();
-    toggleSidebar(sidebarMedia.matches);
-
-    /* If the sidebar has been manually opened and is currently overlaying the text
-       (window too small for the MQ to add the margin to body),
-       then auto-close the sidebar once you click on something in there. */
-    toc.addEventListener('click', function(e) {
-      if(e.target.tagName.toLowerCase() == "a" && document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
-        toggleSidebar(false);
-      }
-    }, false);
-  }
-  else {
-    console.warn("Can't find Table of Contents. Please use <nav id='toc'> around the ToC.");
-  }
-
-  /* Wrap tables in case they overflow */
-  var tables = document.querySelectorAll(':not(.overlarge) > table.data, :not(.overlarge) > table.index');
-  var numTables = tables.length;
-  for (var i = 0; i < numTables; i++) {
-    var table = tables[i];
-    var wrapper = document.createElement('div');
-    wrapper.className = 'overlarge';
-    table.parentNode.insertBefore(wrapper, table);
-    wrapper.appendChild(table);
-  }
-
-})();
-</script>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
@@ -2736,8 +2587,6 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
-   <dt id="biblio-rfc2119">[RFC2119]
-   <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
    <dt id="biblio-webgpu">[WEBGPU]
    <dd>Kai Ninomiya; Brandon Jones; Jim Blandy. <a href="https://gpuweb.github.io/gpuweb/"><cite>WebGPU</cite></a>. URL: <a href="https://gpuweb.github.io/gpuweb/">https://gpuweb.github.io/gpuweb/</a>
    <dt id="biblio-webidl">[WEBIDL]
@@ -3026,11 +2875,11 @@ let dfnPanelData = {
 "dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-writable"},
 "dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
 "dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
-"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.1. SocketOptions dictionary"},{"refs":[{"id":"ref-for-dom-socketinfo-alpn\u2460"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-alpn"},
+"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-alpn"},
 "dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
 "dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
 "dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
-"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[],"url":"#dom-socketoptions-alpn"},
+"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-alpn"},
 "dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
 "dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
 "enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"3. connect"}],"url":"#enumdef-securetransportkind"},
@@ -3448,6 +3297,7 @@ let refsData = {
 "#dom-socketinfo-localaddress": {"displayText":"localAddress","export":true,"for_":["SocketInfo"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"localAddress","type":"dict-member","url":"#dom-socketinfo-localaddress"},
 "#dom-socketinfo-remoteaddress": {"displayText":"remoteAddress","export":true,"for_":["SocketInfo"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"remoteAddress","type":"dict-member","url":"#dom-socketinfo-remoteaddress"},
 "#dom-socketoptions-allowhalfopen": {"displayText":"allowHalfOpen","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"allowHalfOpen","type":"dict-member","url":"#dom-socketoptions-allowhalfopen"},
+"#dom-socketoptions-alpn": {"displayText":"alpn","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"alpn","type":"dict-member","url":"#dom-socketoptions-alpn"},
 "#dom-socketoptions-securetransport": {"displayText":"secureTransport","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"secureTransport","type":"dict-member","url":"#dom-socketoptions-securetransport"},
 "#dom-socketoptions-sni": {"displayText":"sni","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"sni","type":"dict-member","url":"#dom-socketoptions-sni"},
 "#enumdef-securetransportkind": {"displayText":"SecureTransportKind","export":true,"for_":[],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"SecureTransportKind","type":"enum","url":"#enumdef-securetransportkind"},
