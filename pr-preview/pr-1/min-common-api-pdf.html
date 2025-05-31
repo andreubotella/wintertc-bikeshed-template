@@ -13,7 +13,563 @@
   </style>
   <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://min-common-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="6199f2368b1840be1d0858eedf501fe753e232c3" name="revision">
+  <meta content="ef125d531916f418e50973ca9d96ea90eb56d02f" name="revision">
+  <meta content="dark light" name="color-scheme">
+<style>/* Boilerplate: style-autolinks */
+.css.css, .property.property, .descriptor.descriptor {
+    color: var(--a-normal-text);
+    font-size: inherit;
+    font-family: inherit;
+}
+.css::before, .property::before, .descriptor::before {
+    content: "‘";
+}
+.css::after, .property::after, .descriptor::after {
+    content: "’";
+}
+.property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+}
+.type { /* CSS value <type> */
+    font-style: italic;
+}
+pre .property::before, pre .property::after {
+    content: "";
+}
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {
+    content: "‘";
+}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {
+    content: "’";
+}
+
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after {
+    content: "";
+}
+
+[data-link-type=element],
+[data-link-type=element-attr] {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+}
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after  { content: ">" }
+
+[data-link-type=biblio] {
+    white-space: pre;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+</style>
+<style>/* Boilerplate: style-colors */
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
+:root {
+    color-scheme: light dark;
+
+    --text: black;
+    --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+
+    --logo-bg: #1a5e9a;
+    --logo-active-bg: #c00;
+    --logo-text: white;
+
+    --tocnav-normal-text: #707070;
+    --tocnav-normal-bg: var(--bg);
+    --tocnav-hover-text: var(--tocnav-normal-text);
+    --tocnav-hover-bg: #f8f8f8;
+    --tocnav-active-text: #c00;
+    --tocnav-active-bg: var(--tocnav-normal-bg);
+
+    --tocsidebar-text: var(--text);
+    --tocsidebar-bg: #f7f8f9;
+    --tocsidebar-shadow: rgba(0,0,0,.1);
+    --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+    --toclink-text: var(--text);
+    --toclink-underline: #3980b5;
+    --toclink-visited-text: var(--toclink-text);
+    --toclink-visited-underline: #054572;
+
+    --heading-text: #005a9c;
+
+    --hr-text: var(--text);
+
+    --algo-border: #def;
+
+    --del-text: red;
+    --del-bg: transparent;
+    --ins-text: #080;
+    --ins-bg: transparent;
+
+    --a-normal-text: #034575;
+    --a-normal-underline: #bbb;
+    --a-visited-text: var(--a-normal-text);
+    --a-visited-underline: #707070;
+    --a-hover-bg: rgba(75%, 75%, 75%, .25);
+    --a-active-text: #c00;
+    --a-active-underline: #c00;
+
+    --blockquote-border: silver;
+    --blockquote-bg: transparent;
+    --blockquote-text: currentcolor;
+
+    --issue-border: #e05252;
+    --issue-bg: #fbe9e9;
+    --issue-text: var(--text);
+    --issueheading-text: #831616;
+
+    --example-border: #e0cb52;
+    --example-bg: #fcfaee;
+    --example-text: var(--text);
+    --exampleheading-text: #574b0f;
+
+    --note-border: #52e052;
+    --note-bg: #e9fbe9;
+    --note-text: var(--text);
+    --noteheading-text: hsl(120, 70%, 30%);
+    --notesummary-underline: silver;
+
+    --assertion-border: #aaa;
+    --assertion-bg: #eee;
+    --assertion-text: black;
+
+    --advisement-border: orange;
+    --advisement-bg: #fec;
+    --advisement-text: var(--text);
+    --advisementheading-text: #b35f00;
+
+    --warning-border: red;
+    --warning-bg: hsla(40,100%,50%,0.95);
+    --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
+
+    --def-border: #8ccbf2;
+    --def-bg: #def;
+    --def-text: var(--text);
+    --defrow-border: #bbd7e9;
+
+    --datacell-border: silver;
+
+    --indexinfo-text: #707070;
+
+    --indextable-hover-text: black;
+    --indextable-hover-bg: #f7f8f9;
+
+    --outdatedspec-bg: rgba(0, 0, 0, .5);
+    --outdatedspec-text: black;
+    --outdated-bg: maroon;
+    --outdated-text: white;
+    --outdated-shadow: red;
+
+    --editedrec-bg: darkorange;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+</style>
+<style>/* Boilerplate: style-counters */
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}
+</style>
+<style>/* Boilerplate: style-dfn-panel */
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+    --dfnpanel-target-bg: #ffc;
+    --dfnpanel-target-outline: orange;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+        --dfnpanel-target-bg: #333;
+        --dfnpanel-target-outline: silver;
+    }
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    width: 20em;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel a:focus {
+    outline: 5px auto Highlight;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: 8px;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+    transition: left 1s ease-out, bottom 1s ease-out;
+}
+
+.dfn-panel .link-item:hover {
+    text-decoration: underline;
+}
+.dfn-panel .link-item .copy-icon {
+    opacity: 0;
+}
+.dfn-panel .link-item:hover .copy-icon,
+.dfn-panel .link-item .copy-icon:focus {
+    opacity: 1;
+}
+
+.dfn-panel .copy-icon {
+    display: inline-block;
+    margin-right: 0.5em;
+    width: 0.85em;
+    height: 1em;
+    border-radius: 3px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.dfn-panel .copy-icon .icon {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dfn-panel .copy-icon .icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: #ccc;
+    opacity: 0.25;
+    transform: translate(3px, -3px);
+}
+
+.dfn-panel .copy-icon:active .icon::before {
+    opacity: 1;
+}
+
+.dfn-paneled[role="button"] { cursor: help; }
+
+.highlighted {
+    animation: target-fade 3s;
+}
+
+@keyframes target-fade {
+    from {
+        background-color: var(--dfnpanel-target-bg);
+        outline: 5px solid var(--dfnpanel-target-outline);
+    }
+    to {
+        color: var(--a-normal-text);
+        background-color: transparent;
+        outline: transparent;
+    }
+}
+</style>
+<style>/* Boilerplate: style-issues */
+a[href].issue-return {
+    float: right;
+    float: inline-end;
+    color: var(--issueheading-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+<style>/* Boilerplate: style-md-lists */
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}
+</style>
+<style>/* Boilerplate: style-ref-hints */
+:root {
+    --ref-hint-bg: #ddd;
+    --ref-hint-text: var(--text);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ref-hint-bg: #222;
+        --ref-hint-text: var(--text);
+    }
+}
+
+.ref-hint {
+    display: inline-block;
+    position: absolute;
+    z-index: 35;
+    width: 20em;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.5em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--ref-hint-bg);
+    color: var(--ref-hint-text);
+    border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
+}
+
+.ref-hint * { margin: 0; padding: 0; text-indent: 0; }
+
+.ref-hint ul { padding: 0 0 0 1em; list-style: none; }
+</style>
+<style>/* Boilerplate: style-selflinks */
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+.example > a.self-link,
+.note > a.self-link,
+.issue > a.self-link {
+    /* These blocks are overflow:auto, so positioning outside
+       doesn't work. */
+    left: auto;
+    right: 0;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: var(--selflink-hover-text);
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }
+</style>
  <body>
   <div class="full-page-svg" id="front-cover">
    <h1 class="shortname"><span class="status">Standard</span> Ecma-XXX</h1>
@@ -41,6 +597,7 @@
        <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
        <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
       </ol>
+     <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
      <li>
       <a href="#copyright--software-license"><span class="secno"></span> <span class="content">Copyright &amp; Software License</span></a>
       <ol class="toc">
@@ -58,6 +615,7 @@
       <dd><a class="u-url" href="https://min-common-api.proposal.wintercg.org/">https://min-common-api.proposal.wintercg.org/</a>
       <dt>Issue Tracking:
       <dd><a href="https://github.com/wintercg/proposal-minimum-common-api/issues/">GitHub</a>
+      <dd><a href="#issues-index">Inline In Spec</a>
       <dt class="editor">Editor:
       <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:jsnell@cloudflare.com">James M Snell</a> (<a class="p-org org" href="https://cloudflare.com/">Cloudflare</a>)
      </dl>
@@ -66,7 +624,7 @@
    <main>
     <h2 class="heading settled" data-level="1" id="terminology"><span class="secno">1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
     <p>The Web Platform is the combination of technology standards defined by organizations such as the W3C, the WHATWG, and others as implemented by Web Browsers.</p>
-    <p>A <dfn data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime<a class="self-link" href="#web-interoperable-runtime"></a></dfn> is any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.
+    <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime</dfn> is any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.
 While this term is intentionally broad to also encompass Web Browsers, the primary focus here is on outlining expectations for non-browser runtimes.</p>
     <h2 class="heading settled" data-level="2" id="api-index"><span class="secno">2. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
     <p>All <a data-link-type="dfn" href="#web-interoperable-runtime" id="ref-for-web-interoperable-runtime">Web-interoperable Runtimes</a> conforming to this specification SHALL implement each of the following Web Platform APIs in accordance with their normative requirements except where modified here. Where any conforming runtime environment chooses (either by necessity or otherwise) to diverge from a normative requirement of the specification, clear explanations of such divergence MUST be made clearly and readily available in the documentation.</p>
@@ -384,6 +942,15 @@ product-version = token
     <div data-fill-with="property-index"></div>
     <div data-fill-with="idl-index"></div>
     <div data-fill-with="cddl-index"></div>
+    <div data-fill-with="issues-index">
+     <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+     <div style="counter-reset:issue">
+      <div class="issue"> The <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata">FormData</a></code> constructor optionally takes <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/forms.html#htmlformelement">HTMLFormElement</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement">HTMLElement</a></code> as parameters.
+TODO: Figure out what implementations without DOM support should do here.
+Node.js and Deno throw if the first parameter is not <code>undefined</code> but ignore the second parameter.
+Cloudflare Workers ignores all parameters. <a class="issue-return" href="#issue-92f53c35" title="Jump to section">↵</a></div>
+     </div>
+    </div>
     <div data-fill-with="copyright">
      <h2 class="no-num heading settled" id="copyright--software-license"><span class="content">Copyright &amp; Software License</span><a class="self-link" href="#copyright--software-license"></a></h2>
      <p class="ECMAaddress">Ecma International</p>
@@ -410,3 +977,926 @@ product-version = token
     </div>
    </main>
   </div>
+<script>/* Boilerplate: script-dom-helper */
+"use strict";
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}</script>
+<script>/* Boilerplate: script-dfn-panel */
+"use strict";
+{
+let dfnPanelData = {
+"055c88fa": {"dfnID":"055c88fa","dfnText":"clearTimeout(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-cleartimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
+"056fb0bd": {"dfnID":"056fb0bd","dfnText":"TextEncoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoder"},
+"08a12aad": {"dfnID":"08a12aad","dfnText":"Response","external":true,"refSections":[{"refs":[{"id":"ref-for-response"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#response"},
+"122f01fb": {"dfnID":"122f01fb","dfnText":"setInterval(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-setinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
+"129bdae8": {"dfnID":"129bdae8","dfnText":"Event","external":true,"refSections":[{"refs":[{"id":"ref-for-event"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#event"},
+"15ed4f00": {"dfnID":"15ed4f00","dfnText":"compileStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compilestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
+"18c65a7a": {"dfnID":"18c65a7a","dfnText":"HTMLFormElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlformelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
+"1b28d572": {"dfnID":"1b28d572","dfnText":"URLPattern","external":true,"refSections":[{"refs":[{"id":"ref-for-urlpattern"}],"title":"2. Common API Index"}],"url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
+"1e249f40": {"dfnID":"1e249f40","dfnText":"TextDecoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
+"29228fdf": {"dfnID":"29228fdf","dfnText":"Module","external":true,"refSections":[{"refs":[{"id":"ref-for-module"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#module"},
+"2bc0cdf4": {"dfnID":"2bc0cdf4","dfnText":"EventTarget","external":true,"refSections":[{"refs":[{"id":"ref-for-eventtarget"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#eventtarget"},
+"2ce6f6bb": {"dfnID":"2ce6f6bb","dfnText":"fetch(input)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-global-fetch"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
+"2e66eaf1": {"dfnID":"2e66eaf1","dfnText":"AbortController","external":true,"refSections":[{"refs":[{"id":"ref-for-abortcontroller"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortcontroller"},
+"32d74a61": {"dfnID":"32d74a61","dfnText":"Table","external":true,"refSections":[{"refs":[{"id":"ref-for-table"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#table"},
+"3332e595": {"dfnID":"3332e595","dfnText":"setTimeout(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-settimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
+"3711a638": {"dfnID":"3711a638","dfnText":"compile(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compile"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
+"3b35d8a9": {"dfnID":"3b35d8a9","dfnText":"timeOrigin","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-timeorigin"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
+"3cdef7e1": {"dfnID":"3cdef7e1","dfnText":"userAgent","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator-useragent"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator-useragent\u2460"},{"id":"ref-for-dom-navigator-useragent\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
+"3ce2d948": {"dfnID":"3ce2d948","dfnText":"Global","external":true,"refSections":[{"refs":[{"id":"ref-for-global"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#global"},
+"417f81da": {"dfnID":"417f81da","dfnText":"TextEncoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoderstream"},
+"43617e61": {"dfnID":"43617e61","dfnText":"btoa(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-btoa"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
+"47e93e3e": {"dfnID":"47e93e3e","dfnText":"TransformStream","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstream"},
+"529179ea": {"dfnID":"529179ea","dfnText":"Crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
+"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
+"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
+"5d7209e9": {"dfnID":"5d7209e9","dfnText":"Window","external":true,"refSections":[{"refs":[{"id":"ref-for-window"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
+"5fc623fc": {"dfnID":"5fc623fc","dfnText":"CryptoKey","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-CryptoKey"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
+"61cd38cd": {"dfnID":"61cd38cd","dfnText":"FormData","external":true,"refSections":[{"refs":[{"id":"ref-for-formdata"},{"id":"ref-for-formdata\u2460"}],"title":"2. Common API Index"}],"url":"https://xhr.spec.whatwg.org/#formdata"},
+"630c6156": {"dfnID":"630c6156","dfnText":"clearInterval(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-clearinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
+"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
+"7b1760b0": {"dfnID":"7b1760b0","dfnText":"console","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-console"}],"title":"2. Common API Index"}],"url":"https://console.spec.whatwg.org/#namespacedef-console"},
+"83c59a3a": {"dfnID":"83c59a3a","dfnText":"WorkerGlobalScope","external":true,"refSections":[{"refs":[{"id":"ref-for-workerglobalscope"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
+"84eed482": {"dfnID":"84eed482","dfnText":"TextDecoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoder"},
+"98cffeee": {"dfnID":"98cffeee","dfnText":"atob(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-atob"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
+"9927ae47": {"dfnID":"9927ae47","dfnText":"ReadableByteStreamController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablebytestreamcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
+"99bfa32c": {"dfnID":"99bfa32c","dfnText":"WritableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
+"9ca1c179": {"dfnID":"9ca1c179","dfnText":"Memory","external":true,"refSections":[{"refs":[{"id":"ref-for-memory"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#memory"},
+"9cae8b68": {"dfnID":"9cae8b68","dfnText":"ReadableStreamDefaultReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
+"9feefb27": {"dfnID":"9feefb27","dfnText":"WebAssembly","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-webassembly"},{"id":"ref-for-namespacedef-webassembly\u2460"},{"id":"ref-for-namespacedef-webassembly\u2461"},{"id":"ref-for-namespacedef-webassembly\u2462"},{"id":"ref-for-namespacedef-webassembly\u2463"},{"id":"ref-for-namespacedef-webassembly\u2464"},{"id":"ref-for-namespacedef-webassembly\u2465"},{"id":"ref-for-namespacedef-webassembly\u2466"},{"id":"ref-for-namespacedef-webassembly\u2467"},{"id":"ref-for-namespacedef-webassembly\u2468"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
+"a0768d9f": {"dfnID":"a0768d9f","dfnText":"navigator","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator\u2460"},{"id":"ref-for-dom-navigator\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
+"a3a1d384": {"dfnID":"a3a1d384","dfnText":"Instance","external":true,"refSections":[{"refs":[{"id":"ref-for-instance"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#instance"},
+"a845eee0": {"dfnID":"a845eee0","dfnText":"instantiateStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiatestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
+"adfe3014": {"dfnID":"adfe3014","dfnText":"URLSearchParams","external":true,"refSections":[{"refs":[{"id":"ref-for-urlsearchparams"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#urlsearchparams"},
+"aee9d099": {"dfnID":"aee9d099","dfnText":"performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-performance"},{"id":"ref-for-dom-windoworworkerglobalscope-performance\u2460"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
+"b08d0bb2": {"dfnID":"b08d0bb2","dfnText":"HTMLElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
+"b484b574": {"dfnID":"b484b574","dfnText":"ReadableStreamBYOBReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
+"b7d73f5b": {"dfnID":"b7d73f5b","dfnText":"Blob","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Blob"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
+"bd1abd53": {"dfnID":"bd1abd53","dfnText":"TransformStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
+"be0af01c": {"dfnID":"be0af01c","dfnText":"validate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-validate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
+"bfc1c271": {"dfnID":"bfc1c271","dfnText":"Worker","external":true,"refSections":[{"refs":[{"id":"ref-for-worker"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
+"c04c9568": {"dfnID":"c04c9568","dfnText":"ByteLengthQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-bytelengthqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
+"c6083cc6": {"dfnID":"c6083cc6","dfnText":"queueMicrotask(callback)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-queuemicrotask"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
+"cca3cdb2": {"dfnID":"cca3cdb2","dfnText":"AbortSignal","external":true,"refSections":[{"refs":[{"id":"ref-for-abortsignal"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortsignal"},
+"cd028611": {"dfnID":"cd028611","dfnText":"File","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-file"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-file"},
+"ce760f06": {"dfnID":"ce760f06","dfnText":"ReadableStreamBYOBRequest","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobrequest"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
+"cf02c2dd": {"dfnID":"cf02c2dd","dfnText":"SubtleCrypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-SubtleCrypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
+"d62af025": {"dfnID":"d62af025","dfnText":"now()","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-now"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-now"},
+"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"2. Common API Index"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
+"e806d5a8": {"dfnID":"e806d5a8","dfnText":"Headers","external":true,"refSections":[{"refs":[{"id":"ref-for-headers"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#headers"},
+"eb1fb636": {"dfnID":"eb1fb636","dfnText":"CountQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-countqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
+"ed3ab0a3": {"dfnID":"ed3ab0a3","dfnText":"crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
+"f06432d7": {"dfnID":"f06432d7","dfnText":"URL","external":true,"refSections":[{"refs":[{"id":"ref-for-url"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#url"},
+"f20d405b": {"dfnID":"f20d405b","dfnText":"instantiate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
+"f2f85335": {"dfnID":"f2f85335","dfnText":"structuredClone(value, options)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-structuredclone"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
+"f9da6f1f": {"dfnID":"f9da6f1f","dfnText":"Request","external":true,"refSections":[{"refs":[{"id":"ref-for-request"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#request"},
+"web-interoperable-runtime": {"dfnID":"web-interoperable-runtime","dfnText":"Web-interoperable Runtime","external":false,"refSections":[{"refs":[{"id":"ref-for-web-interoperable-runtime"}],"title":"2. Common API Index"}],"url":"#web-interoperable-runtime"},
+};
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    genAllDfnPanels();
+
+    document.body.addEventListener("click", (e) => {
+        // If not handled already, just hide all dfn panels.
+        hideAllDfnPanels();
+    });
+});
+
+window.addEventListener("resize", () => {
+    // Pin any visible dfn panel
+    queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>positionDfnPanel(el));
+});
+
+function genAllDfnPanels() {
+    for(const panelData of Object.values(dfnPanelData)) {
+        const dfnID = panelData.dfnID;
+        const dfn = document.getElementById(dfnID);
+        if(!dfn) {
+            console.log(`Can't find dfn#${dfnID}.`, panelData);
+            continue;
+        }
+        dfn.panelData = panelData;
+        insertDfnPopupAction(dfn);
+    }
+}
+
+function genDfnPanel(dfn, { dfnID, url, dfnText, refSections, external }) {
+    const dfnPanel = mk.aside({
+        class: "dfn-panel on",
+        id: `infopanel-for-${dfnID}`,
+        "data-for": dfnID,
+        "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+        },
+        mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+            `Info about the '${dfnText}' ${external?"external":""} reference.`),
+        mk.a({href:url, class:"dfn-link"}, url),
+        refSections.length == 0 ? [] :
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({ href: `#${ref.id}` },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        genLinkingSyntaxes(dfn),
+    );
+
+    dfnPanel.addEventListener('click', (event) => {
+        if (event.target.nodeName == 'A') {
+            scrollToTargetAndHighlight(event);
+            pinDfnPanel(dfnPanel);
+        }
+        event.stopPropagation();
+        refocusOnTarget(event);
+    });
+    dfnPanel.addEventListener('keydown', (event) => {
+        if(event.keyCode == 27) { // Escape key
+            hideDfnPanel({dfnPanel});
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    });
+
+    dfnPanel.dfn = dfn;
+    dfn.dfnPanel = dfnPanel;
+    return dfnPanel;
+}
+
+
+
+function hideAllDfnPanels() {
+    // Delete the currently-active dfn panel.
+    queryAll(".dfn-panel").forEach(dfnPanel=>hideDfnPanel({dfnPanel}));
+}
+
+function showDfnPanel(dfn) {
+    hideAllDfnPanels(); // Only display one at a time.
+
+    dfn.setAttribute("aria-expanded", "true");
+
+    const dfnPanel = genDfnPanel(dfn, dfn.panelData);
+
+    // Give the dfn a unique tabindex, and then
+    // give all the tabbable panel bits successive indexes.
+    let tabIndex = 100;
+    dfn.tabIndex = tabIndex++;
+    const tabbable = dfnPanel.querySelectorAll(":is(a, button)");
+    for (const el of tabbable) {
+        el.tabIndex = tabIndex++;
+    }
+
+    append(document.body, dfnPanel);
+    positionDfnPanel(dfnPanel);
+}
+
+function positionDfnPanel(dfnPanel) {
+    const dfn = dfnPanel.dfn;
+    const dfnPos = getBounds(dfn);
+    dfnPanel.style.top = dfnPos.bottom + "px";
+    dfnPanel.style.left = dfnPos.left + "px";
+
+    const panelPos = dfnPanel.getBoundingClientRect();
+    const panelMargin = 8;
+    const maxRight = document.body.parentNode.clientWidth - panelMargin;
+    if (panelPos.right > maxRight) {
+        const overflowAmount = panelPos.right - maxRight;
+        const newLeft = Math.max(panelMargin, dfnPos.left - overflowAmount);
+        dfnPanel.style.left = newLeft + "px";
+    }
+}
+
+function pinDfnPanel(dfnPanel) {
+    // Switch it to "activated" state, which pins it.
+    dfnPanel.classList.add("activated");
+    dfnPanel.style.position = "fixed";
+    dfnPanel.style.left = null;
+    dfnPanel.style.top = null;
+}
+
+function hideDfnPanel({dfn, dfnPanel}) {
+    if(!dfnPanel) dfnPanel = dfn.dfnPanel;
+    if(!dfn) dfn = dfnPanel.dfn;
+    dfn.dfnPanel = undefined;
+    dfnPanel.dfn = undefined;
+    dfn.setAttribute("aria-expanded", "false");
+    dfn.tabIndex = undefined;
+    dfnPanel.remove()
+}
+
+function toggleDfnPanel(dfn) {
+    if(dfn.dfnPanel) {
+        hideDfnPanel(dfn);
+    } else {
+        showDfnPanel(dfn);
+    }
+}
+
+function insertDfnPopupAction(dfn) {
+    dfn.setAttribute('role', 'button');
+    dfn.setAttribute('aria-expanded', 'false')
+    dfn.tabIndex = 0;
+    dfn.classList.add('has-dfn-panel');
+    dfn.addEventListener('click', (event) => {
+        toggleDfnPanel(dfn);
+        event.stopPropagation();
+    });
+    dfn.addEventListener('keypress', (event) => {
+        const kc = event.keyCode;
+        // 32->Space, 13->Enter
+        if(kc == 32 || kc == 13) {
+            toggleDfnPanel(dfn);
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    });
+}
+
+function refocusOnTarget(event) {
+    const target = event.target;
+    setTimeout(() => {
+        // Refocus on the event.target element.
+        // This is needed after browser scrolls to the destination.
+        target.focus();
+    });
+}
+
+// TODO: shared util
+// Returns the root-level absolute position {left and top} of element.
+function getBounds(el, relativeTo=document.body) {
+    const relativeRect = relativeTo.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const top = elRect.top - relativeRect.top;
+    const left = elRect.left - relativeRect.left;
+    return {
+        top,
+        left,
+        bottom: top + elRect.height,
+        right: left + elRect.width,
+    }
+}
+
+function scrollToTargetAndHighlight(event) {
+    let hash = event.target.hash;
+    if (hash) {
+        hash = decodeURIComponent(hash.substring(1));
+        const dest = document.getElementById(hash);
+        if (dest) {
+            dest.classList.add('highlighted');
+            setTimeout(() => dest.classList.remove('highlighted'), 1000);
+        }
+    }
+}
+
+// Functions, divided by link type, that wrap an autolink's
+// contents with the appropriate outer syntax.
+// Alternately, a string naming another type they format
+// the same as.
+function needsFor(type) {
+    switch(type) {
+        case "descriptor":
+        case "value":
+        case "element-attr":
+        case "attr-value":
+        case "element-state":
+        case "method":
+        case "constructor":
+        case "argument":
+        case "attribute":
+        case "const":
+        case "dict-member":
+        case "event":
+        case "enum-value":
+        case "stringifier":
+        case "serializer":
+        case "iterator":
+        case "maplike":
+        case "setlike":
+        case "state":
+        case "mode":
+        case "context":
+        case "facet": return true;
+
+        default: return false;
+    }
+}
+function refusesFor(type) {
+    switch(type) {
+        case "property":
+        case "element":
+        case "interface":
+        case "namespace":
+        case "callback":
+        case "dictionary":
+        case "enum":
+        case "exception":
+        case "typedef":
+        case "http-header":
+        case "permission": return true;
+
+        default: return false;
+    }
+}
+function linkFormatterFromType(type) {
+    switch(type) {
+        case 'scheme':
+        case 'permission':
+        case 'dfn': return (text) => `[=${text}=]`;
+
+        case 'abstract-op': return (text) => `[\$${text}\$]`;
+
+        case 'function':
+        case 'at-rule':
+        case 'selector':
+        case 'value': return (text) => `''${text}''`;
+
+        case 'http-header': return (text) => `[:${text}:]`;
+
+        case 'interface':
+        case 'constructor':
+        case 'method':
+        case 'argument':
+        case 'attribute':
+        case 'callback':
+        case 'dictionary':
+        case 'dict-member':
+        case 'enum':
+        case 'enum-value':
+        case 'exception':
+        case 'const':
+        case 'typedef':
+        case 'stringifier':
+        case 'serializer':
+        case 'iterator':
+        case 'maplike':
+        case 'setlike':
+        case 'extended-attribute':
+        case 'event':
+        case 'idl': return (text) => `{{${text}}}`;
+
+        case 'element-state':
+        case 'element-attr':
+        case 'attr-value':
+        case 'element': return (element) => `<{${element}}>`;
+
+        case 'grammar': return (text) => `${text} (within a <pre class=prod>)`;
+
+        case 'type': return (text)=> `<<${text}>>`;
+
+        case 'descriptor':
+        case 'property': return (text) => `'${text}'`;
+
+        default: return;
+    };
+};
+
+function genLinkingSyntaxes(dfn) {
+    if(dfn.tagName != "DFN") return;
+
+    const type = dfn.getAttribute('data-dfn-type');
+    if(!type) {
+        console.log(`<dfn> doesn't have a data-dfn-type:`, dfn);
+        return [];
+    }
+
+    // Return a function that wraps link text based on the type
+    const linkFormatter = linkFormatterFromType(type);
+    if(!linkFormatter) {
+        console.log(`<dfn> has an unknown data-dfn-type:`, dfn);
+        return [];
+    }
+
+    let ltAlts;
+    if(dfn.hasAttribute('data-lt')) {
+        ltAlts = dfn.getAttribute('data-lt')
+            .split("|")
+            .map(x=>x.trim());
+    } else {
+        ltAlts = [dfn.textContent.trim()];
+    }
+    if(type == "type") {
+        // lt of "<foo>", but "foo" is the interior;
+        // <<foo/bar>> is how you write it with a for,
+        // not <foo/<bar>> or whatever.
+        for(var i = 0; i < ltAlts.length; i++) {
+            const lt = ltAlts[i];
+            const match = /<(.*)>/.exec(lt);
+            if(match) { ltAlts[i] = match[1]; }
+        }
+    }
+
+    let forAlts;
+    if(dfn.hasAttribute('data-dfn-for')) {
+        forAlts = dfn.getAttribute('data-dfn-for')
+            .split(",")
+            .map(x=>x.trim());
+    } else {
+        forAlts = [''];
+    }
+
+    let linkingSyntaxes = [];
+    if(!needsFor(type)) {
+        for(const lt of ltAlts) {
+            linkingSyntaxes.push(linkFormatter(lt));
+        }
+    }
+    if(!refusesFor(type)) {
+        for(const f of forAlts) {
+            linkingSyntaxes.push(linkFormatter(`${f}/${ltAlts[0]}`))
+        }
+    }
+    return [
+        mk.b({}, 'Possible linking syntaxes:'),
+        mk.ul({},
+            ...linkingSyntaxes.map(link => {
+                const copyLink = async () =>
+                    await navigator.clipboard.writeText(link);
+                return mk.li({},
+                    mk.div({ class: 'link-item' },
+                        mk.button({
+                            class: 'copy-icon', title: 'Copy',
+                            type: 'button',
+                            _onclick: copyLink,
+                            tabindex: 0,
+                        }, mk.span({ class: 'icon' }) ),
+                        mk.span({}, link)
+                    )
+                );
+            })
+        )
+    ];
+}
+}
+</script>
+<script>/* Boilerplate: script-ref-hints */
+"use strict";
+{
+let refsData = {
+"#web-interoperable-runtime": {"displayText":"web-interoperable runtime","export":true,"for_":[],"level":"","normative":true,"shortname":"minimum-common-api","spec":"minimum-common-api","status":"local","text":"web-interoperable runtime","type":"dfn","url":"#web-interoperable-runtime"},
+"https://console.spec.whatwg.org/#namespacedef-console": {"displayText":"console","export":true,"for_":[],"level":"1","normative":true,"shortname":"console","spec":"console","status":"current","text":"console","type":"namespace","url":"https://console.spec.whatwg.org/#namespacedef-console"},
+"https://dom.spec.whatwg.org/#abortcontroller": {"displayText":"AbortController","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"AbortController","type":"interface","url":"https://dom.spec.whatwg.org/#abortcontroller"},
+"https://dom.spec.whatwg.org/#abortsignal": {"displayText":"AbortSignal","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"AbortSignal","type":"interface","url":"https://dom.spec.whatwg.org/#abortsignal"},
+"https://dom.spec.whatwg.org/#event": {"displayText":"Event","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"Event","type":"interface","url":"https://dom.spec.whatwg.org/#event"},
+"https://dom.spec.whatwg.org/#eventtarget": {"displayText":"EventTarget","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"EventTarget","type":"interface","url":"https://dom.spec.whatwg.org/#eventtarget"},
+"https://encoding.spec.whatwg.org/#textdecoder": {"displayText":"TextDecoder","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextDecoder","type":"interface","url":"https://encoding.spec.whatwg.org/#textdecoder"},
+"https://encoding.spec.whatwg.org/#textdecoderstream": {"displayText":"TextDecoderStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextDecoderStream","type":"interface","url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
+"https://encoding.spec.whatwg.org/#textencoder": {"displayText":"TextEncoder","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextEncoder","type":"interface","url":"https://encoding.spec.whatwg.org/#textencoder"},
+"https://encoding.spec.whatwg.org/#textencoderstream": {"displayText":"TextEncoderStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextEncoderStream","type":"interface","url":"https://encoding.spec.whatwg.org/#textencoderstream"},
+"https://fetch.spec.whatwg.org/#dom-global-fetch": {"displayText":"fetch(input)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"fetch(input)","type":"method","url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
+"https://fetch.spec.whatwg.org/#headers": {"displayText":"Headers","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Headers","type":"interface","url":"https://fetch.spec.whatwg.org/#headers"},
+"https://fetch.spec.whatwg.org/#request": {"displayText":"Request","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Request","type":"interface","url":"https://fetch.spec.whatwg.org/#request"},
+"https://fetch.spec.whatwg.org/#response": {"displayText":"Response","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Response","type":"interface","url":"https://fetch.spec.whatwg.org/#response"},
+"https://html.spec.whatwg.org/multipage/dom.html#htmlelement": {"displayText":"HTMLElement","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"HTMLElement","type":"interface","url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
+"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement": {"displayText":"HTMLFormElement","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"HTMLFormElement","type":"interface","url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
+"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window": {"displayText":"Window","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"Window","type":"interface","url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
+"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone": {"displayText":"structuredClone(value, options)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"structuredClone(value, options)","type":"method","url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
+"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator": {"displayText":"navigator","export":true,"for_":["Window"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"navigator","type":"attribute","url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
+"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent": {"displayText":"userAgent","export":true,"for_":["NavigatorID"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"userAgent","type":"attribute","url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
+"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval": {"displayText":"clearInterval(id)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"clearInterval(id)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
+"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout": {"displayText":"clearTimeout(id)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"clearTimeout(id)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
+"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask": {"displayText":"queueMicrotask(callback)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"queueMicrotask(callback)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
+"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval": {"displayText":"setInterval(handler, timeout, ...arguments)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"setInterval(handler, timeout, ...arguments)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
+"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout": {"displayText":"setTimeout(handler, timeout, ...arguments)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"setTimeout(handler, timeout, ...arguments)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob": {"displayText":"atob(data)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"atob(data)","type":"method","url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa": {"displayText":"btoa(data)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"btoa(data)","type":"method","url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
+"https://html.spec.whatwg.org/multipage/workers.html#worker": {"displayText":"Worker","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"Worker","type":"interface","url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
+"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope": {"displayText":"WorkerGlobalScope","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"WorkerGlobalScope","type":"interface","url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
+"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy": {"displayText":"ByteLengthQueuingStrategy","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ByteLengthQueuingStrategy","type":"interface","url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
+"https://streams.spec.whatwg.org/#countqueuingstrategy": {"displayText":"CountQueuingStrategy","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"CountQueuingStrategy","type":"interface","url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
+"https://streams.spec.whatwg.org/#readablebytestreamcontroller": {"displayText":"ReadableByteStreamController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableByteStreamController","type":"interface","url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
+"https://streams.spec.whatwg.org/#readablestream": {"displayText":"ReadableStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableStream","type":"interface","url":"https://streams.spec.whatwg.org/#readablestream"},
+"https://streams.spec.whatwg.org/#readablestreambyobreader": {"displayText":"ReadableStreamBYOBReader","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableStreamBYOBReader","type":"interface","url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
+"https://streams.spec.whatwg.org/#readablestreambyobrequest": {"displayText":"ReadableStreamBYOBRequest","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableStreamBYOBRequest","type":"interface","url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
+"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller": {"displayText":"ReadableStreamDefaultController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableStreamDefaultController","type":"interface","url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
+"https://streams.spec.whatwg.org/#readablestreamdefaultreader": {"displayText":"ReadableStreamDefaultReader","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ReadableStreamDefaultReader","type":"interface","url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
+"https://streams.spec.whatwg.org/#transformstream": {"displayText":"TransformStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"TransformStream","type":"interface","url":"https://streams.spec.whatwg.org/#transformstream"},
+"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller": {"displayText":"TransformStreamDefaultController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"TransformStreamDefaultController","type":"interface","url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
+"https://streams.spec.whatwg.org/#writablestream": {"displayText":"WritableStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"WritableStream","type":"interface","url":"https://streams.spec.whatwg.org/#writablestream"},
+"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller": {"displayText":"WritableStreamDefaultController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"WritableStreamDefaultController","type":"interface","url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
+"https://url.spec.whatwg.org/#url": {"displayText":"URL","export":true,"for_":[],"level":"1","normative":true,"shortname":"url","spec":"url","status":"current","text":"URL","type":"interface","url":"https://url.spec.whatwg.org/#url"},
+"https://url.spec.whatwg.org/#urlsearchparams": {"displayText":"URLSearchParams","export":true,"for_":[],"level":"1","normative":true,"shortname":"url","spec":"url","status":"current","text":"URLSearchParams","type":"interface","url":"https://url.spec.whatwg.org/#urlsearchparams"},
+"https://urlpattern.spec.whatwg.org/#urlpattern": {"displayText":"URLPattern","export":true,"for_":[],"level":"1","normative":true,"shortname":"urlpattern","spec":"urlpattern","status":"current","text":"URLPattern","type":"interface","url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
+"https://w3c.github.io/FileAPI/#dfn-Blob": {"displayText":"Blob","export":true,"for_":[],"level":"1","normative":true,"shortname":"fileapi","spec":"fileapi","status":"current","text":"Blob","type":"interface","url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
+"https://w3c.github.io/FileAPI/#dfn-file": {"displayText":"File","export":true,"for_":[],"level":"1","normative":true,"shortname":"fileapi","spec":"fileapi","status":"current","text":"File","type":"interface","url":"https://w3c.github.io/FileAPI/#dfn-file"},
+"https://w3c.github.io/hr-time/#dom-performance-now": {"displayText":"now()","export":true,"for_":["Performance"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"now()","type":"method","url":"https://w3c.github.io/hr-time/#dom-performance-now"},
+"https://w3c.github.io/hr-time/#dom-performance-timeorigin": {"displayText":"timeOrigin","export":true,"for_":["Performance"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"timeOrigin","type":"attribute","url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
+"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance": {"displayText":"performance","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"performance","type":"attribute","url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
+"https://w3c.github.io/webcrypto/#dfn-Crypto": {"displayText":"Crypto","export":true,"for_":[],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"Crypto","type":"interface","url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
+"https://w3c.github.io/webcrypto/#dfn-CryptoKey": {"displayText":"CryptoKey","export":true,"for_":[],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"CryptoKey","type":"interface","url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
+"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto": {"displayText":"SubtleCrypto","export":true,"for_":[],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"SubtleCrypto","type":"interface","url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
+"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto": {"displayText":"crypto","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"crypto","type":"attribute","url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
+"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile": {"displayText":"compile(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"compile(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
+"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate": {"displayText":"instantiate(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"instantiate(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
+"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate": {"displayText":"validate(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"validate(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
+"https://webassembly.github.io/spec/js-api/#global": {"displayText":"Global","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Global","type":"interface","url":"https://webassembly.github.io/spec/js-api/#global"},
+"https://webassembly.github.io/spec/js-api/#instance": {"displayText":"Instance","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Instance","type":"interface","url":"https://webassembly.github.io/spec/js-api/#instance"},
+"https://webassembly.github.io/spec/js-api/#memory": {"displayText":"Memory","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Memory","type":"interface","url":"https://webassembly.github.io/spec/js-api/#memory"},
+"https://webassembly.github.io/spec/js-api/#module": {"displayText":"Module","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Module","type":"interface","url":"https://webassembly.github.io/spec/js-api/#module"},
+"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly": {"displayText":"WebAssembly","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"WebAssembly","type":"namespace","url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
+"https://webassembly.github.io/spec/js-api/#table": {"displayText":"Table","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Table","type":"interface","url":"https://webassembly.github.io/spec/js-api/#table"},
+"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming": {"displayText":"compileStreaming(source)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-web-api","spec":"wasm-web-api-2","status":"current","text":"compileStreaming(source)","type":"method","url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
+"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming": {"displayText":"instantiateStreaming(source)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-web-api","spec":"wasm-web-api-2","status":"current","text":"instantiateStreaming(source)","type":"method","url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
+"https://webidl.spec.whatwg.org/#idl-DOMException": {"displayText":"DOMException","export":true,"for_":[],"level":"1","normative":true,"shortname":"webidl","spec":"webidl","status":"current","text":"DOMException","type":"interface","url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
+"https://xhr.spec.whatwg.org/#formdata": {"displayText":"FormData","export":true,"for_":[],"level":"1","normative":true,"shortname":"xhr","spec":"xhr","status":"current","text":"FormData","type":"interface","url":"https://xhr.spec.whatwg.org/#formdata"},
+};
+
+function mkRefHint(link, ref) {
+    const linkText = link.textContent;
+    let dfnTextElements = '';
+    if (ref.displayText.toLowerCase() != linkText.toLowerCase()) {
+        // Give the original term if it's being displayed in a different way.
+        // But allow casing differences, they're insignificant.
+        dfnTextElements =
+            mk.li({},
+                mk.b({}, "Term: "),
+                mk.span({}, ref.displayText)
+            );
+    }
+    const forList = ref.for_;
+    let forListElements;
+    if(forList.length == 0) {
+        forListElements = [];
+    } else if(forList.length == 1) {
+        forListElements = mk.li({},
+            mk.b({}, "For: "),
+            mk.span({}, forList[0]),
+        );
+    } else {
+        forListElements = mk.li({},
+            mk.b({}, "For: "),
+            mk.ul({},
+                ...forList.map(forItem =>
+                    mk.li({},
+                        mk.span({}, forItem)
+                    ),
+                ),
+            ),
+        );
+    }
+    const url = ref.url;
+    const safeUrl = encodeURIComponent(url);
+    const hintPanel = mk.aside({
+        class: "ref-hint",
+        id: `ref-hint-for-${safeUrl}`,
+        "data-for": url,
+        "aria-labelled-by": `ref-hint-for-${safeUrl}`,
+    },
+        mk.ul({},
+            dfnTextElements,
+            mk.li({},
+                mk.b({}, "URL: "),
+                mk.a({ href: url, class: "ref" }, url),
+            ),
+            mk.li({},
+                mk.b({}, "Type: "),
+                mk.span({}, `${ref.type}`),
+            ),
+            mk.li({},
+                mk.b({}, "Spec: "),
+                mk.span({}, `${ref.spec ? ref.spec : ''}`),
+            ),
+            forListElements
+        ),
+    );
+    hintPanel.forLink = link;
+    setupRefHintEventListeners(link, hintPanel);
+    return hintPanel;
+}
+
+function hideAllRefHints() {
+    queryAll(".ref-hint").forEach(el=>hideRefHint(el));
+}
+
+function hideRefHint(refHint) {
+    const link = refHint.forLink;
+    link.setAttribute("aria-expanded", "false");
+    if(refHint.teardownEventListeners) {
+        refHint.teardownEventListeners();
+    }
+    refHint.remove();
+}
+
+function showRefHint(link) {
+    if(link.classList.contains("dfn-link")) return;
+    const url = link.getAttribute("href");
+    const refHintKey = link.getAttribute("data-refhint-key");
+    let key = url;
+    if(refHintKey) {
+        key = refHintKey + "_" + url;
+    }
+    const ref = refsData[key];
+    if(!ref) return;
+
+    hideAllRefHints(); // Only display one at this time.
+
+    const refHint = mkRefHint(link, ref);
+    append(document.body, refHint);
+    link.setAttribute("aria-expanded", "true");
+    positionRefHint(refHint);
+}
+
+function setupRefHintEventListeners(link, refHint) {
+    if (refHint.teardownEventListeners) return;
+    // Add event handlers to hide the refHint after the user moves away
+    // from both the link and refHint, if not hovering either within one second.
+    let timeout = null;
+    const startHidingRefHint = (event) => {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        timeout = setTimeout(() => {
+            hideRefHint(refHint);
+        }, 1000);
+    }
+    const resetHidingRefHint = (event) => {
+        if (timeout) clearTimeout(timeout);
+        timeout = null;
+    };
+    link.addEventListener("mouseleave", startHidingRefHint);
+    link.addEventListener("mouseenter", resetHidingRefHint);
+    link.addEventListener("blur", startHidingRefHint);
+    link.addEventListener("focus", resetHidingRefHint);
+    refHint.addEventListener("mouseleave", startHidingRefHint);
+    refHint.addEventListener("mouseenter", resetHidingRefHint);
+    refHint.addEventListener("blur", startHidingRefHint);
+    refHint.addEventListener("focus", resetHidingRefHint);
+
+    refHint.teardownEventListeners = () => {
+        // remove event listeners
+        resetHidingRefHint();
+        link.removeEventListener("mouseleave", startHidingRefHint);
+        link.removeEventListener("mouseenter", resetHidingRefHint);
+        link.removeEventListener("blur", startHidingRefHint);
+        link.removeEventListener("focus", resetHidingRefHint);
+        refHint.removeEventListener("mouseleave", startHidingRefHint);
+        refHint.removeEventListener("mouseenter", resetHidingRefHint);
+        refHint.removeEventListener("blur", startHidingRefHint);
+        refHint.removeEventListener("focus", resetHidingRefHint);
+    };
+}
+
+function positionRefHint(refHint) {
+    const link = refHint.forLink;
+    const linkPos = getBounds(link);
+    refHint.style.top = linkPos.bottom + "px";
+    refHint.style.left = linkPos.left + "px";
+
+    const panelPos = refHint.getBoundingClientRect();
+    const panelMargin = 8;
+    const maxRight = document.body.parentNode.clientWidth - panelMargin;
+    if (panelPos.right > maxRight) {
+        const overflowAmount = panelPos.right - maxRight;
+        const newLeft = Math.max(panelMargin, linkPos.left - overflowAmount);
+        refHint.style.left = newLeft + "px";
+    }
+}
+
+// TODO: shared util
+// Returns the root-level absolute position {left and top} of element.
+function getBounds(el, relativeTo=document.body) {
+    const relativeRect = relativeTo.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const top = elRect.top - relativeRect.top;
+    const left = elRect.left - relativeRect.left;
+    return {
+        top,
+        left,
+        bottom: top + elRect.height,
+        right: left + elRect.width,
+    }
+}
+
+function showRefHintListener(e) {
+    // If the target isn't in a link (or is a link),
+    // just ignore it.
+    let link = e.target.closest("a");
+    if(!link) return;
+
+    // If the target is in a ref-hint panel
+    // (aka a link in the already-open one),
+    // also just ignore it.
+    if(link.closest(".ref-hint")) return;
+
+    // Otherwise, show the panel for the link.
+    showRefHint(link);
+}
+
+function hideAllHintsListener(e) {
+    // If the click is inside a ref-hint panel, ignore it.
+    if(e.target.closest(".ref-hint")) return;
+    // Otherwise, close all the current panels.
+    hideAllRefHints();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("mousedown", showRefHintListener);
+    document.body.addEventListener("focus", showRefHintListener);
+
+    document.body.addEventListener("click", hideAllHintsListener);
+});
+
+window.addEventListener("resize", () => {
+    // Hide any open ref hint.
+    hideAllRefHints();
+});
+}
+</script>
