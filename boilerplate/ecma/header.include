@@ -15,7 +15,6 @@
     <time class="dt-updated" datetime="[ISODATE]">[DATE]</time></h2>
   <div data-fill-with="spec-metadata"></div>
   <div data-fill-with="warning"></div>
-  <p class='copyright' data-fill-with='copyright'></p>
   <hr title="Separator for header">
 </div>
 
