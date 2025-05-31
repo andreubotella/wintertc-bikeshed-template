@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://min-common-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="65d20ade3a5ea2e445d62bc0e17be3e808c7e016" name="revision">
+  <meta content="6139a6732448a578c0d31a65c780a2abe717a149" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2080,20 +2080,20 @@ dfn > a.self-link::before      { content: "#"; }
     <li><a href="#global-scope"><span class="secno">3</span> <span class="content">The Global Scope</span></a>
     <li><a href="#navigator-useragent-requirements"><span class="secno">4</span> <span class="content">Requirements for navigator.userAgent</span></a>
     <li><a href="#extensions"><span class="secno">5</span> <span class="content">Extensions</span></a>
-    <li><a href="#copyright-notice"><span class="secno">6</span> <span class="content">Copyright Notice</span></a>
-    <li><a href="#software-license"><span class="secno">7</span> <span class="content">Software License</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
       <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
+    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
      </ol>
-    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
+    <li><a href="#copyright-notice"><span class="secno">6</span> <span class="content">Copyright Notice</span></a>
+    <li><a href="#software-license"><span class="secno">7</span> <span class="content">Software License</span></a>
    </ol>
   </nav>
   <main>
@@ -2247,6 +2247,189 @@ product-version = token
    <h2 class="heading settled" data-level="5" id="extensions"><span class="secno">5. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
    <p>Runtime-specific extensions to any Web Platform API MAY be implemented by conforming runtimes. Such extensions MUST be defined so that their use neither contradicts nor causes the non-conformance of normative functionality of any Web Platform API.</p>
    <p>Application use of such extensions must be carefully considered, as doing so reduces interoperability and portability of code across runtimes.</p>
+   <div data-fill-with="index">
+    <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+    <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+    <ul class="index">
+     <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 1</span>
+    </ul>
+    <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+    <ul class="index">
+     <li>
+      <a data-link-type="biblio">[CONSOLE]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="7b1760b0">console</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[DOM]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="2e66eaf1">AbortController</span>
+       <li><span class="dfn-paneled" id="cca3cdb2">AbortSignal</span>
+       <li><span class="dfn-paneled" id="129bdae8">Event</span>
+       <li><span class="dfn-paneled" id="2bc0cdf4">EventTarget</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[ENCODING]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="84eed482">TextDecoder</span>
+       <li><span class="dfn-paneled" id="1e249f40">TextDecoderStream</span>
+       <li><span class="dfn-paneled" id="056fb0bd">TextEncoder</span>
+       <li><span class="dfn-paneled" id="417f81da">TextEncoderStream</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[FETCH]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="e806d5a8">Headers</span>
+       <li><span class="dfn-paneled" id="f9da6f1f">Request</span>
+       <li><span class="dfn-paneled" id="08a12aad">Response</span>
+       <li><span class="dfn-paneled" id="2ce6f6bb">fetch(input)</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[FileAPI]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="b7d73f5b">Blob</span>
+       <li><span class="dfn-paneled" id="cd028611">File</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[HR-TIME-3]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="d62af025">now()</span>
+       <li><span class="dfn-paneled" id="aee9d099">performance</span>
+       <li><span class="dfn-paneled" id="3b35d8a9">timeOrigin</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[HTML]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="b08d0bb2">HTMLElement</span>
+       <li><span class="dfn-paneled" id="18c65a7a">HTMLFormElement</span>
+       <li><span class="dfn-paneled" id="5d7209e9">Window</span>
+       <li><span class="dfn-paneled" id="bfc1c271">Worker</span>
+       <li><span class="dfn-paneled" id="83c59a3a">WorkerGlobalScope</span>
+       <li><span class="dfn-paneled" id="98cffeee">atob(data)</span>
+       <li><span class="dfn-paneled" id="43617e61">btoa(data)</span>
+       <li><span class="dfn-paneled" id="630c6156">clearInterval(id)</span>
+       <li><span class="dfn-paneled" id="055c88fa">clearTimeout(id)</span>
+       <li><span class="dfn-paneled" id="a0768d9f">navigator</span>
+       <li><span class="dfn-paneled" id="c6083cc6">queueMicrotask(callback)</span>
+       <li><span class="dfn-paneled" id="122f01fb">setInterval(handler, timeout, ...arguments)</span>
+       <li><span class="dfn-paneled" id="3332e595">setTimeout(handler, timeout, ...arguments)</span>
+       <li><span class="dfn-paneled" id="f2f85335">structuredClone(value, options)</span>
+       <li><span class="dfn-paneled" id="3cdef7e1">userAgent</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[STREAMS]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="c04c9568">ByteLengthQueuingStrategy</span>
+       <li><span class="dfn-paneled" id="eb1fb636">CountQueuingStrategy</span>
+       <li><span class="dfn-paneled" id="9927ae47">ReadableByteStreamController</span>
+       <li><span class="dfn-paneled" id="59ed4e57">ReadableStream</span>
+       <li><span class="dfn-paneled" id="b484b574">ReadableStreamBYOBReader</span>
+       <li><span class="dfn-paneled" id="ce760f06">ReadableStreamBYOBRequest</span>
+       <li><span class="dfn-paneled" id="66e988ae">ReadableStreamDefaultController</span>
+       <li><span class="dfn-paneled" id="9cae8b68">ReadableStreamDefaultReader</span>
+       <li><span class="dfn-paneled" id="47e93e3e">TransformStream</span>
+       <li><span class="dfn-paneled" id="bd1abd53">TransformStreamDefaultController</span>
+       <li><span class="dfn-paneled" id="59dc45b5">WritableStream</span>
+       <li><span class="dfn-paneled" id="99bfa32c">WritableStreamDefaultController</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[URL]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="f06432d7">URL</span>
+       <li><span class="dfn-paneled" id="adfe3014">URLSearchParams</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[URLPATTERN]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="1b28d572">URLPattern</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WASM-JS-API-2]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="3ce2d948">Global</span>
+       <li><span class="dfn-paneled" id="a3a1d384">Instance</span>
+       <li><span class="dfn-paneled" id="9ca1c179">Memory</span>
+       <li><span class="dfn-paneled" id="29228fdf">Module</span>
+       <li><span class="dfn-paneled" id="32d74a61">Table</span>
+       <li><span class="dfn-paneled" id="9feefb27">WebAssembly</span>
+       <li><span class="dfn-paneled" id="3711a638">compile(bytes)</span>
+       <li><span class="dfn-paneled" id="f20d405b">instantiate(bytes)</span>
+       <li><span class="dfn-paneled" id="be0af01c">validate(bytes)</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WASM-WEB-API-2]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="15ed4f00">compileStreaming(source)</span>
+       <li><span class="dfn-paneled" id="a845eee0">instantiateStreaming(source)</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WEBCRYPTO-2]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="529179ea">Crypto</span>
+       <li><span class="dfn-paneled" id="5fc623fc">CryptoKey</span>
+       <li><span class="dfn-paneled" id="cf02c2dd">SubtleCrypto</span>
+       <li><span class="dfn-paneled" id="ed3ab0a3">crypto</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WEBIDL]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="dca2de17">DOMException</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[XHR]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="61cd38cd">FormData</span>
+      </ul>
+    </ul>
+   </div>
+   <div data-fill-with="property-index"></div>
+   <div data-fill-with="idl-index"></div>
+   <div data-fill-with="cddl-index"></div>
+   <div data-fill-with="issues-index">
+    <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+    <div style="counter-reset:issue">
+     <div class="issue"> The <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata">FormData</a></code> constructor optionally takes <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/forms.html#htmlformelement">HTMLFormElement</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement">HTMLElement</a></code> as parameters.
+TODO: Figure out what implementations without DOM support should do here.
+Node.js and Deno throw if the first parameter is not <code>undefined</code> but ignore the second parameter.
+Cloudflare Workers ignores all parameters. <a class="issue-return" href="#issue-92f53c35" title="Jump to section">↵</a></div>
+    </div>
+   </div>
+   <div data-fill-with="references">
+    <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+    <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+    <dl>
+     <dt id="biblio-console">[CONSOLE]
+     <dd>Dominic Farolino; Robert Kowalski; Terin Stock. <a href="https://console.spec.whatwg.org/"><cite>Console Standard</cite></a>. Living Standard. URL: <a href="https://console.spec.whatwg.org/">https://console.spec.whatwg.org/</a>
+     <dt id="biblio-dom">[DOM]
+     <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
+     <dt id="biblio-encoding">[ENCODING]
+     <dd>Anne van Kesteren. <a href="https://encoding.spec.whatwg.org/"><cite>Encoding Standard</cite></a>. Living Standard. URL: <a href="https://encoding.spec.whatwg.org/">https://encoding.spec.whatwg.org/</a>
+     <dt id="biblio-fetch">[FETCH]
+     <dd>Anne van Kesteren. <a href="https://fetch.spec.whatwg.org/"><cite>Fetch Standard</cite></a>. Living Standard. URL: <a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>
+     <dt id="biblio-fileapi">[FileAPI]
+     <dd>Marijn Kruisselbrink. <a href="https://w3c.github.io/FileAPI/"><cite>File API</cite></a>. URL: <a href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</a>
+     <dt id="biblio-hr-time-3">[HR-TIME-3]
+     <dd>Yoav Weiss. <a href="https://w3c.github.io/hr-time/"><cite>High Resolution Time</cite></a>. URL: <a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a>
+     <dt id="biblio-html">[HTML]
+     <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+     <dt id="biblio-streams">[STREAMS]
+     <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
+     <dt id="biblio-url">[URL]
+     <dd>Anne van Kesteren. <a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a>
+     <dt id="biblio-urlpattern">[URLPATTERN]
+     <dd>Ben Kelly; Jeremy Roman; 宍戸俊哉 (Shunya Shishido). <a href="https://urlpattern.spec.whatwg.org/"><cite>URL Pattern Standard</cite></a>. Living Standard. URL: <a href="https://urlpattern.spec.whatwg.org/">https://urlpattern.spec.whatwg.org/</a>
+     <dt id="biblio-wasm-js-api-2">[WASM-JS-API-2]
+     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/js-api/"><cite>WebAssembly JavaScript Interface</cite></a>. URL: <a href="https://webassembly.github.io/spec/js-api/">https://webassembly.github.io/spec/js-api/</a>
+     <dt id="biblio-wasm-web-api-2">[WASM-WEB-API-2]
+     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/web-api/"><cite>WebAssembly Web API</cite></a>. URL: <a href="https://webassembly.github.io/spec/web-api/">https://webassembly.github.io/spec/web-api/</a>
+     <dt id="biblio-webcrypto-2">[WEBCRYPTO-2]
+     <dd>Daniel Huigens. <a href="https://w3c.github.io/webcrypto/"><cite>Web Cryptography Level 2</cite></a>. URL: <a href="https://w3c.github.io/webcrypto/">https://w3c.github.io/webcrypto/</a>
+     <dt id="biblio-webidl">[WEBIDL]
+     <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
+     <dt id="biblio-xhr">[XHR]
+     <dd>Anne van Kesteren. <a href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
+    </dl>
+   </div>
    <div data-fill-with="copyright">
     <h1>Copyright &amp; Software License</h1>
     <p class="ECMAaddress">Ecma International</p>
@@ -2299,180 +2482,6 @@ product-version = token
     <p>THIS SOFTWARE IS PROVIDED BY THE ECMA INTERNATIONAL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ECMA INTERNATIONAL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
    </div>
   </main>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
-  <ul class="index">
-   <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 1</span>
-  </ul>
-  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
-  <ul class="index">
-   <li>
-    <a data-link-type="biblio">[CONSOLE]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="7b1760b0">console</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[DOM]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="2e66eaf1">AbortController</span>
-     <li><span class="dfn-paneled" id="cca3cdb2">AbortSignal</span>
-     <li><span class="dfn-paneled" id="129bdae8">Event</span>
-     <li><span class="dfn-paneled" id="2bc0cdf4">EventTarget</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[ENCODING]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="84eed482">TextDecoder</span>
-     <li><span class="dfn-paneled" id="1e249f40">TextDecoderStream</span>
-     <li><span class="dfn-paneled" id="056fb0bd">TextEncoder</span>
-     <li><span class="dfn-paneled" id="417f81da">TextEncoderStream</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[FETCH]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="e806d5a8">Headers</span>
-     <li><span class="dfn-paneled" id="f9da6f1f">Request</span>
-     <li><span class="dfn-paneled" id="08a12aad">Response</span>
-     <li><span class="dfn-paneled" id="2ce6f6bb">fetch(input)</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[FileAPI]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="b7d73f5b">Blob</span>
-     <li><span class="dfn-paneled" id="cd028611">File</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[HR-TIME-3]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="d62af025">now()</span>
-     <li><span class="dfn-paneled" id="aee9d099">performance</span>
-     <li><span class="dfn-paneled" id="3b35d8a9">timeOrigin</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[HTML]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="b08d0bb2">HTMLElement</span>
-     <li><span class="dfn-paneled" id="18c65a7a">HTMLFormElement</span>
-     <li><span class="dfn-paneled" id="5d7209e9">Window</span>
-     <li><span class="dfn-paneled" id="bfc1c271">Worker</span>
-     <li><span class="dfn-paneled" id="83c59a3a">WorkerGlobalScope</span>
-     <li><span class="dfn-paneled" id="98cffeee">atob(data)</span>
-     <li><span class="dfn-paneled" id="43617e61">btoa(data)</span>
-     <li><span class="dfn-paneled" id="630c6156">clearInterval(id)</span>
-     <li><span class="dfn-paneled" id="055c88fa">clearTimeout(id)</span>
-     <li><span class="dfn-paneled" id="a0768d9f">navigator</span>
-     <li><span class="dfn-paneled" id="c6083cc6">queueMicrotask(callback)</span>
-     <li><span class="dfn-paneled" id="122f01fb">setInterval(handler, timeout, ...arguments)</span>
-     <li><span class="dfn-paneled" id="3332e595">setTimeout(handler, timeout, ...arguments)</span>
-     <li><span class="dfn-paneled" id="f2f85335">structuredClone(value, options)</span>
-     <li><span class="dfn-paneled" id="3cdef7e1">userAgent</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[STREAMS]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="c04c9568">ByteLengthQueuingStrategy</span>
-     <li><span class="dfn-paneled" id="eb1fb636">CountQueuingStrategy</span>
-     <li><span class="dfn-paneled" id="9927ae47">ReadableByteStreamController</span>
-     <li><span class="dfn-paneled" id="59ed4e57">ReadableStream</span>
-     <li><span class="dfn-paneled" id="b484b574">ReadableStreamBYOBReader</span>
-     <li><span class="dfn-paneled" id="ce760f06">ReadableStreamBYOBRequest</span>
-     <li><span class="dfn-paneled" id="66e988ae">ReadableStreamDefaultController</span>
-     <li><span class="dfn-paneled" id="9cae8b68">ReadableStreamDefaultReader</span>
-     <li><span class="dfn-paneled" id="47e93e3e">TransformStream</span>
-     <li><span class="dfn-paneled" id="bd1abd53">TransformStreamDefaultController</span>
-     <li><span class="dfn-paneled" id="59dc45b5">WritableStream</span>
-     <li><span class="dfn-paneled" id="99bfa32c">WritableStreamDefaultController</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[URL]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="f06432d7">URL</span>
-     <li><span class="dfn-paneled" id="adfe3014">URLSearchParams</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[URLPATTERN]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="1b28d572">URLPattern</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[WASM-JS-API-2]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="3ce2d948">Global</span>
-     <li><span class="dfn-paneled" id="a3a1d384">Instance</span>
-     <li><span class="dfn-paneled" id="9ca1c179">Memory</span>
-     <li><span class="dfn-paneled" id="29228fdf">Module</span>
-     <li><span class="dfn-paneled" id="32d74a61">Table</span>
-     <li><span class="dfn-paneled" id="9feefb27">WebAssembly</span>
-     <li><span class="dfn-paneled" id="3711a638">compile(bytes)</span>
-     <li><span class="dfn-paneled" id="f20d405b">instantiate(bytes)</span>
-     <li><span class="dfn-paneled" id="be0af01c">validate(bytes)</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[WASM-WEB-API-2]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="15ed4f00">compileStreaming(source)</span>
-     <li><span class="dfn-paneled" id="a845eee0">instantiateStreaming(source)</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[WEBCRYPTO-2]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="529179ea">Crypto</span>
-     <li><span class="dfn-paneled" id="5fc623fc">CryptoKey</span>
-     <li><span class="dfn-paneled" id="cf02c2dd">SubtleCrypto</span>
-     <li><span class="dfn-paneled" id="ed3ab0a3">crypto</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[WEBIDL]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="dca2de17">DOMException</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[XHR]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="61cd38cd">FormData</span>
-    </ul>
-  </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-  <dl>
-   <dt id="biblio-console">[CONSOLE]
-   <dd>Dominic Farolino; Robert Kowalski; Terin Stock. <a href="https://console.spec.whatwg.org/"><cite>Console Standard</cite></a>. Living Standard. URL: <a href="https://console.spec.whatwg.org/">https://console.spec.whatwg.org/</a>
-   <dt id="biblio-dom">[DOM]
-   <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
-   <dt id="biblio-encoding">[ENCODING]
-   <dd>Anne van Kesteren. <a href="https://encoding.spec.whatwg.org/"><cite>Encoding Standard</cite></a>. Living Standard. URL: <a href="https://encoding.spec.whatwg.org/">https://encoding.spec.whatwg.org/</a>
-   <dt id="biblio-fetch">[FETCH]
-   <dd>Anne van Kesteren. <a href="https://fetch.spec.whatwg.org/"><cite>Fetch Standard</cite></a>. Living Standard. URL: <a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>
-   <dt id="biblio-fileapi">[FileAPI]
-   <dd>Marijn Kruisselbrink. <a href="https://w3c.github.io/FileAPI/"><cite>File API</cite></a>. URL: <a href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</a>
-   <dt id="biblio-hr-time-3">[HR-TIME-3]
-   <dd>Yoav Weiss. <a href="https://w3c.github.io/hr-time/"><cite>High Resolution Time</cite></a>. URL: <a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a>
-   <dt id="biblio-html">[HTML]
-   <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
-   <dt id="biblio-streams">[STREAMS]
-   <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
-   <dt id="biblio-url">[URL]
-   <dd>Anne van Kesteren. <a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a>
-   <dt id="biblio-urlpattern">[URLPATTERN]
-   <dd>Ben Kelly; Jeremy Roman; 宍戸俊哉 (Shunya Shishido). <a href="https://urlpattern.spec.whatwg.org/"><cite>URL Pattern Standard</cite></a>. Living Standard. URL: <a href="https://urlpattern.spec.whatwg.org/">https://urlpattern.spec.whatwg.org/</a>
-   <dt id="biblio-wasm-js-api-2">[WASM-JS-API-2]
-   <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/js-api/"><cite>WebAssembly JavaScript Interface</cite></a>. URL: <a href="https://webassembly.github.io/spec/js-api/">https://webassembly.github.io/spec/js-api/</a>
-   <dt id="biblio-wasm-web-api-2">[WASM-WEB-API-2]
-   <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/web-api/"><cite>WebAssembly Web API</cite></a>. URL: <a href="https://webassembly.github.io/spec/web-api/">https://webassembly.github.io/spec/web-api/</a>
-   <dt id="biblio-webcrypto-2">[WEBCRYPTO-2]
-   <dd>Daniel Huigens. <a href="https://w3c.github.io/webcrypto/"><cite>Web Cryptography Level 2</cite></a>. URL: <a href="https://w3c.github.io/webcrypto/">https://w3c.github.io/webcrypto/</a>
-   <dt id="biblio-webidl">[WEBIDL]
-   <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
-   <dt id="biblio-xhr">[XHR]
-   <dd>Anne van Kesteren. <a href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
-  </dl>
-  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
-  <div style="counter-reset:issue">
-   <div class="issue"> The <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata">FormData</a></code> constructor optionally takes <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/forms.html#htmlformelement">HTMLFormElement</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement">HTMLElement</a></code> as parameters.
-TODO: Figure out what implementations without DOM support should do here.
-Node.js and Deno throw if the first parameter is not <code>undefined</code> but ignore the second parameter.
-Cloudflare Workers ignores all parameters. <a class="issue-return" href="#issue-92f53c35" title="Jump to section">↵</a></div>
-  </div>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";
 function query(sel) { return document.querySelector(sel); }
