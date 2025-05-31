@@ -83,6 +83,8 @@ jobs:
                 EOL
 
             - name: Deploy
-              uses: actions/upload-artifact@v4
+              uses: peaceiris/actions-gh-pages@v4
+              if: github.ref == 'refs/heads/main'
               with:
-                path: ./output
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./output
