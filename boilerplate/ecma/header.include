@@ -4,12 +4,22 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>[TITLE]</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://wintertc.org/static/logo.svg" rel="icon">
   <style data-fill-with="stylesheet">
   </style>
 </head>
 <body class="h-entry">
 <div class="head">
-  <p data-fill-with="logo"></p>
+  <p>
+    <a class="logo" href="https://ecma-international.org/">
+      <img alt="ECMA International" src="https://www.ecma-international.org/wp-content/uploads/logo-ecma.svg">
+    </a>
+  </p>
+  <p>
+    <a class="logo" href="https://wintertc.org/">
+      <img alt="WinterTC" src="https://wintertc.org/static/logo.svg">
+    </a>
+  </p>
   <h1 id="title" class="p-name no-ref">[TITLE]</h1>
   <h2 id="profile-and-date" class="no-num no-toc no-ref">[LONGSTATUS],
     <time class="dt-updated" datetime="[ISODATE]">[DATE]</time></h2>
