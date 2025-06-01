@@ -6,7 +6,7 @@ The contents of this file will be appended in that one when the build happens.
 
 */
 
-org "ecma" {
+org "wintertc" {
     group "wintertc"
 
     status "DRAFT" "Draft"
