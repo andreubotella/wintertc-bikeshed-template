@@ -10,7 +10,7 @@
 </head>
 <body class="h-entry">
 <div class="head">
-  <p data-fill-with="logo"></p>
+  <div data-fill-with="logo"></div>
   <h1 id="title" class="p-name no-ref">[TITLE]</h1>
   <h2 id="profile-and-date" class="no-num no-toc no-ref">[LONGSTATUS],
     <time class="dt-updated" datetime="[ISODATE]">[DATE]</time></h2>
