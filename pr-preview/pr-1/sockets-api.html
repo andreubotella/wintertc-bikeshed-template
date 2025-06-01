@@ -1489,9 +1489,21 @@ Possible extra rowspan handling
 		}
 	}
 </style>
+<style>
+    img.darkmode-aware {
+      background: transparent;
+    }
+    .logo {
+      display: flex;
+      gap: 1em;
+    }
+    .logo img {
+      max-height: 70px;
+    }
+  </style>
   <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="a12d3d3bc5d15dc745b221dd692afb55730f5dc0" name="revision">
+  <meta content="2490d556191f6925c497761530cff2ccfacd39f3" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2176,8 +2188,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </style>
  <body class="h-entry">
   <div class="head">
-   <p> <a class="logo" href="https://wintertc.org/"> <img alt="WinterTC" class="darkmode-aware" src="https://wintertc.org/static/logo.svg"> </a> </p>
-   <p> <a class="logo" href="https://ecma-international.org/"> <img alt="ECMA International" class="darkmode-aware" src="https://www.ecma-international.org/wp-content/uploads/logo-ecma.svg"> </a> </p>
+   <p class="logo"> <a href="https://ecma-international.org/"> <img alt="ECMA International" src="https://wintertc.org/static/logos/ecma.svg"> </a> <a href="https://wintertc.org/"> <img alt="WinterTC" class="darkmode-aware" src="https://wintertc.org/static/logo.svg"> </a> </p>
    <h1 class="p-name no-ref" id="title">Sockets API</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-06-01">1 June 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
@@ -2481,7 +2492,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
       <dt><code class="idl"><a data-link-type="idl" href="#dom-securetransportkind-starttls" id="ref-for-dom-securetransportkind-starttls">starttls</a></code>
       <dd>Initially the same as the <code>off</code> option, the connection continues in plain text until the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls②">startTls()</a></code> method is called
      </dl>
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> member 
     <dd> The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-sni" id="ref-for-dom-socketoptions-sni">sni</a></code> member 
     <dd> The Server Name Indication TLS option to send as part of the TLS handshake. If specified, requests that the server send a certificate with a matching common name. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport②">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
@@ -2503,7 +2514,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
     <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> property 
     <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
    </dl>
    <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
@@ -2915,11 +2926,11 @@ let dfnPanelData = {
 "dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-writable"},
 "dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
 "dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
-"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-alpn"},
+"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketinfo-alpn"},
 "dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
 "dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
 "dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
-"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-alpn"},
+"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketoptions-alpn"},
 "dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
 "dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
 "enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"3. connect"}],"url":"#enumdef-securetransportkind"},
