@@ -3,6 +3,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <title>Sockets API</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <link href="https://wintertc.org/static/logo.svg" rel="icon">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
  *
@@ -1488,9 +1489,21 @@ Possible extra rowspan handling
 		}
 	}
 </style>
+<style>
+    img.darkmode-aware {
+      background: transparent;
+    }
+    .logo {
+      display: flex;
+      gap: 1em;
+    }
+    .logo img {
+      max-height: 70px;
+    }
+  </style>
   <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="a3f848a0b2b8af61103f719ba9135b25614d343b" name="revision">
+  <meta content="19a325cd70b0d2c41998b6b25641bb9edadf4ee1" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2175,9 +2188,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"></p>
+   <p class="logo"> <a href="https://ecma-international.org/"> <img alt="ECMA International" src="https://wintertc.org/static/logos/ecma.svg"> </a> <a href="https://wintertc.org/"> <img alt="WinterTC" class="darkmode-aware" src="https://wintertc.org/static/logo.svg"> </a> </p>
    <h1 class="p-name no-ref" id="title">Sockets API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-05-31">31 May 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft, <time class="dt-updated" datetime="2025-06-01">1 June 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2243,12 +2256,18 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
       <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
+    <li><a href="#idl-index"><span class="secno"></span> <span class="content">IDL Index</span></a>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
      </ol>
-    <li><a href="#idl-index"><span class="secno"></span> <span class="content">IDL Index</span></a>
+    <li>
+     <a href="#copyright--software-license"><span class="secno"></span> <span class="content">Copyright &amp; Software License</span></a>
+     <ol class="toc">
+      <li><a href="#copyright-notice"><span class="secno"></span> <span class="content">Copyright Notice</span></a>
+      <li><a href="#software-license"><span class="secno"></span> <span class="content">Software License</span></a>
+     </ol>
    </ol>
   </nav>
   <main>
@@ -2473,7 +2492,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
       <dt><code class="idl"><a data-link-type="idl" href="#dom-securetransportkind-starttls" id="ref-for-dom-securetransportkind-starttls">starttls</a></code>
       <dd>Initially the same as the <code>off</code> option, the connection continues in plain text until the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls②">startTls()</a></code> method is called
      </dl>
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> member 
     <dd> The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-sni" id="ref-for-dom-socketoptions-sni">sni</a></code> member 
     <dd> The Server Name Indication TLS option to send as part of the TLS handshake. If specified, requests that the server send a certificate with a matching common name. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport②">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
@@ -2495,7 +2514,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
     <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property 
+    <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> property 
     <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
    </dl>
    <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
@@ -2512,89 +2531,81 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <dt> <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code> 
     <dd> A hostname/port combo separated by a colon. For example <code>"google.com:443"</code>. 
    </dl>
-   <div data-fill-with="copyright-and-license"></div>
-  </main>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
-  <ul class="index">
-   <li><a href="#dom-socketoptions-allowhalfopen">allowHalfOpen</a><span>, in § 3</span>
-   <li>
-    alpn
-    <ul>
-     <li><a href="#dom-socketinfo-alpn">dict-member for SocketInfo</a><span>, in § 2.2</span>
-     <li><a href="#dom-socketoptions-alpn">dict-member for SocketOptions</a><span>, in § 3</span>
+   <div data-fill-with="index">
+    <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+    <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+    <ul class="index">
+     <li><a href="#dom-socketoptions-allowhalfopen">allowHalfOpen</a><span>, in § 3</span>
+     <li>
+      alpn
+      <ul>
+       <li><a href="#dom-socketinfo-alpn">dict-member for SocketInfo</a><span>, in § 2.2</span>
+       <li><a href="#dom-socketoptions-alpn">dict-member for SocketOptions</a><span>, in § 3</span>
+      </ul>
+     <li><a href="#typedefdef-anysocketaddress">AnySocketAddress</a><span>, in § 3</span>
+     <li><a href="#binding-object">binding object</a><span>, in § 1.3</span>
+     <li><a href="#dom-socket-close">close()</a><span>, in § 2.2</span>
+     <li><a href="#dom-socket-closed">closed</a><span>, in § 2.2</span>
+     <li><a href="#dom-socket-close">close(reason)</a><span>, in § 2.2</span>
+     <li><a href="#connect">Connect</a><span>, in § 3</span>
+     <li><a href="#connect-concept">connect</a><span>, in § 1.2</span>
+     <li><a href="#dom-connect-connect">connect(address)</a><span>, in § 3</span>
+     <li><a href="#dom-connect-connect">connect(address, opts)</a><span>, in § 3</span>
+     <li><a href="#dom-socketaddress-hostname">hostname</a><span>, in § 3</span>
+     <li><a href="#dom-socketinfo-localaddress">localAddress</a><span>, in § 2.2</span>
+     <li><a href="#dom-securetransportkind-off">"off"</a><span>, in § 3</span>
+     <li><a href="#dom-securetransportkind-on">"on"</a><span>, in § 3</span>
+     <li><a href="#dom-socket-opened">opened</a><span>, in § 2.2</span>
+     <li><a href="#dom-socketaddress-port">port</a><span>, in § 3</span>
+     <li><a href="#dom-socket-readable">readable</a><span>, in § 2.2</span>
+     <li><a href="#dom-socketinfo-remoteaddress">remoteAddress</a><span>, in § 2.2</span>
+     <li><a href="#dom-socketoptions-securetransport">secureTransport</a><span>, in § 3</span>
+     <li><a href="#enumdef-securetransportkind">SecureTransportKind</a><span>, in § 3</span>
+     <li><a href="#dom-socketoptions-sni">sni</a><span>, in § 3</span>
+     <li><a href="#socket">Socket</a><span>, in § 2.2</span>
+     <li><a href="#socket-concept">socket</a><span>, in § 1.1</span>
+     <li><a href="#dictdef-socketaddress">SocketAddress</a><span>, in § 3</span>
+     <li><a href="#socketerror">SocketError</a><span>, in § 2.5</span>
+     <li><a href="#dictdef-socketinfo">SocketInfo</a><span>, in § 2.2</span>
+     <li><a href="#dictdef-socketoptions">SocketOptions</a><span>, in § 3</span>
+     <li><a href="#dom-securetransportkind-starttls">"starttls"</a><span>, in § 3</span>
+     <li><a href="#dom-socket-starttls">startTls()</a><span>, in § 2.2</span>
+     <li><a href="#dom-socket-writable">writable</a><span>, in § 2.2</span>
     </ul>
-   <li><a href="#typedefdef-anysocketaddress">AnySocketAddress</a><span>, in § 3</span>
-   <li><a href="#binding-object">binding object</a><span>, in § 1.3</span>
-   <li><a href="#dom-socket-close">close()</a><span>, in § 2.2</span>
-   <li><a href="#dom-socket-closed">closed</a><span>, in § 2.2</span>
-   <li><a href="#dom-socket-close">close(reason)</a><span>, in § 2.2</span>
-   <li><a href="#connect">Connect</a><span>, in § 3</span>
-   <li><a href="#connect-concept">connect</a><span>, in § 1.2</span>
-   <li><a href="#dom-connect-connect">connect(address)</a><span>, in § 3</span>
-   <li><a href="#dom-connect-connect">connect(address, opts)</a><span>, in § 3</span>
-   <li><a href="#dom-socketaddress-hostname">hostname</a><span>, in § 3</span>
-   <li><a href="#dom-socketinfo-localaddress">localAddress</a><span>, in § 2.2</span>
-   <li><a href="#dom-securetransportkind-off">"off"</a><span>, in § 3</span>
-   <li><a href="#dom-securetransportkind-on">"on"</a><span>, in § 3</span>
-   <li><a href="#dom-socket-opened">opened</a><span>, in § 2.2</span>
-   <li><a href="#dom-socketaddress-port">port</a><span>, in § 3</span>
-   <li><a href="#dom-socket-readable">readable</a><span>, in § 2.2</span>
-   <li><a href="#dom-socketinfo-remoteaddress">remoteAddress</a><span>, in § 2.2</span>
-   <li><a href="#dom-socketoptions-securetransport">secureTransport</a><span>, in § 3</span>
-   <li><a href="#enumdef-securetransportkind">SecureTransportKind</a><span>, in § 3</span>
-   <li><a href="#dom-socketoptions-sni">sni</a><span>, in § 3</span>
-   <li><a href="#socket">Socket</a><span>, in § 2.2</span>
-   <li><a href="#socket-concept">socket</a><span>, in § 1.1</span>
-   <li><a href="#dictdef-socketaddress">SocketAddress</a><span>, in § 3</span>
-   <li><a href="#socketerror">SocketError</a><span>, in § 2.5</span>
-   <li><a href="#dictdef-socketinfo">SocketInfo</a><span>, in § 2.2</span>
-   <li><a href="#dictdef-socketoptions">SocketOptions</a><span>, in § 3</span>
-   <li><a href="#dom-securetransportkind-starttls">"starttls"</a><span>, in § 3</span>
-   <li><a href="#dom-socket-starttls">startTls()</a><span>, in § 2.2</span>
-   <li><a href="#dom-socket-writable">writable</a><span>, in § 2.2</span>
-  </ul>
-  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
-  <ul class="index">
-   <li>
-    <a data-link-type="biblio">[WEBGPU]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="2e67bda2">info</span>
+    <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+    <ul class="index">
+     <li>
+      <a data-link-type="biblio">[WEBGPU]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="2e67bda2">info</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WEBIDL]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="dca2de17">DOMException</span>
+       <li><span class="dfn-paneled" id="8855a9aa">DOMString</span>
+       <li><span class="dfn-paneled" id="c807e273">NewObject</span>
+       <li><span class="dfn-paneled" id="bdbd19d1">Promise</span>
+       <li><span class="dfn-paneled" id="82ca3efc">TypeError</span>
+       <li><span class="dfn-paneled" id="dacde8b5">a new promise</span>
+       <li><span class="dfn-paneled" id="6c6b1005">any</span>
+       <li><span class="dfn-paneled" id="5372cca8">boolean</span>
+       <li><span class="dfn-paneled" id="3b90bdcd">resolve</span>
+       <li><span class="dfn-paneled" id="5f90bbfb">undefined</span>
+       <li><span class="dfn-paneled" id="450958f7">unsigned short</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[WHATWG-STREAMS]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="59ed4e57">ReadableStream</span>
+       <li><span class="dfn-paneled" id="66e988ae">ReadableStreamDefaultController</span>
+       <li><span class="dfn-paneled" id="59dc45b5">WritableStream</span>
+      </ul>
     </ul>
-   <li>
-    <a data-link-type="biblio">[WEBIDL]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="dca2de17">DOMException</span>
-     <li><span class="dfn-paneled" id="8855a9aa">DOMString</span>
-     <li><span class="dfn-paneled" id="c807e273">NewObject</span>
-     <li><span class="dfn-paneled" id="bdbd19d1">Promise</span>
-     <li><span class="dfn-paneled" id="82ca3efc">TypeError</span>
-     <li><span class="dfn-paneled" id="dacde8b5">a new promise</span>
-     <li><span class="dfn-paneled" id="6c6b1005">any</span>
-     <li><span class="dfn-paneled" id="5372cca8">boolean</span>
-     <li><span class="dfn-paneled" id="3b90bdcd">resolve</span>
-     <li><span class="dfn-paneled" id="5f90bbfb">undefined</span>
-     <li><span class="dfn-paneled" id="450958f7">unsigned short</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[WHATWG-STREAMS]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="59ed4e57">ReadableStream</span>
-     <li><span class="dfn-paneled" id="66e988ae">ReadableStreamDefaultController</span>
-     <li><span class="dfn-paneled" id="59dc45b5">WritableStream</span>
-    </ul>
-  </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-  <dl>
-   <dt id="biblio-webgpu">[WEBGPU]
-   <dd>Kai Ninomiya; Brandon Jones; Jim Blandy. <a href="https://gpuweb.github.io/gpuweb/"><cite>WebGPU</cite></a>. URL: <a href="https://gpuweb.github.io/gpuweb/">https://gpuweb.github.io/gpuweb/</a>
-   <dt id="biblio-webidl">[WEBIDL]
-   <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
-   <dt id="biblio-whatwg-streams">[WHATWG-STREAMS]
-   <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
-  </dl>
-  <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
+   </div>
+   <div data-fill-with="property-index"></div>
+   <div data-fill-with="idl-index">
+    <h2 class="no-num no-ref heading settled" id="idl-index"><span class="content">IDL Index</span><a class="self-link" href="#idl-index"></a></h2>
 <pre class="idl highlight def">[Exposed=*]
 <c- b>dictionary</c-> <a href="#dictdef-socketinfo"><code><c- g>SocketInfo</c-></code></a> {
   <a class="idl-code" data-link-type="interface" href="https://webidl.spec.whatwg.org/#idl-DOMString"><c- b>DOMString</c-></a> <a data-default="null" data-type="DOMString" href="#dom-socketinfo-remoteaddress"><code><c- g>remoteAddress</c-></code></a> = <c- b>null</c->;
@@ -2639,6 +2650,46 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
 };
 
 </pre>
+   </div>
+   <div data-fill-with="cddl-index"></div>
+   <div data-fill-with="issues-index"></div>
+   <div data-fill-with="references">
+    <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+    <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+    <dl>
+     <dt id="biblio-webgpu">[WEBGPU]
+     <dd>Kai Ninomiya; Brandon Jones; Jim Blandy. <a href="https://gpuweb.github.io/gpuweb/"><cite>WebGPU</cite></a>. URL: <a href="https://gpuweb.github.io/gpuweb/">https://gpuweb.github.io/gpuweb/</a>
+     <dt id="biblio-webidl">[WEBIDL]
+     <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
+     <dt id="biblio-whatwg-streams">[WHATWG-STREAMS]
+     <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
+    </dl>
+   </div>
+   <div data-fill-with="copyright">
+    <h2 class="no-num heading settled" id="copyright--software-license"><span class="content">Copyright &amp; Software License</span><a class="self-link" href="#copyright--software-license"></a></h2>
+    <p class="ECMAaddress">Ecma International</p>
+    <p class="ECMAaddress">Rue du Rhone 114</p>
+    <p class="ECMAaddress">CH-1204 Geneva</p>
+    <p class="ECMAaddress">Tel: +41 22 849 6000</p>
+    <p class="ECMAaddress">Fax: +41 22 849 6001</p>
+    <p class="ECMAaddress">Web: <a href="https://ecma-international.org/">https://ecma-international.org/</a></p>
+    <h3 class="no-num heading settled" id="copyright-notice"><span class="content">Copyright Notice</span><a class="self-link" href="#copyright-notice"></a></h3>
+    <p>© 2025 Ecma International</p>
+    <p>This draft document may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to Ecma International, except as needed for the purpose of developing any document or deliverable produced by Ecma International.</p>
+    <p>This disclaimer is valid only prior to final version of this document. After approval all rights on the standard are reserved by Ecma International.</p>
+    <p>The limited permissions are granted through the standardization phase and will not be revoked by Ecma International or its successors or assigns during this time.</p>
+    <p>This document and the information contained herein is provided on an "AS IS" basis and ECMA INTERNATIONAL DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+    <h3 class="no-num heading settled" id="software-license"><span class="content">Software License</span><a class="self-link" href="#software-license"></a></h3>
+    <p>All Software contained in this document ("Software") is protected by copyright and is being made available under the "BSD License", included below. This Software may be subject to third party rights (rights from parties other than Ecma International), including patent rights, and no licenses under such third party rights are granted under this license even if the third party concerned is a member of Ecma International. SEE THE ECMA CODE OF CONDUCT IN PATENT MATTERS AVAILABLE AT <a href="https://ecma-international.org/memento/codeofconduct.htm">https://ecma-international.org/memento/codeofconduct.htm</a> FOR INFORMATION REGARDING THE LICENSING OF PATENT CLAIMS THAT ARE REQUIRED TO IMPLEMENT ECMA INTERNATIONAL STANDARDS.</p>
+    <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+    <ol>
+     <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+     <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+     <li>Neither the name of the authors nor Ecma International may be used to endorse or promote products derived from this software without specific prior written permission.
+    </ol>
+    <p>THIS SOFTWARE IS PROVIDED BY THE ECMA INTERNATIONAL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ECMA INTERNATIONAL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+   </div>
+  </main>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";
 function query(sel) { return document.querySelector(sel); }
@@ -2875,11 +2926,11 @@ let dfnPanelData = {
 "dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-writable"},
 "dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
 "dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
-"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-alpn"},
+"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketinfo-alpn"},
 "dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
 "dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
 "dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
-"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-alpn"},
+"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketoptions-alpn"},
 "dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
 "dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
 "enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"3. connect"}],"url":"#enumdef-securetransportkind"},
