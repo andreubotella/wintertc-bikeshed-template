@@ -11,13 +11,13 @@
 <body class="h-entry">
 <div class="head">
   <p>
-    <a class="logo" href="https://ecma-international.org/">
-      <img alt="ECMA International" src="https://www.ecma-international.org/wp-content/uploads/logo-ecma.svg">
+    <a class="logo" href="https://wintertc.org/">
+      <img alt="WinterTC" src="https://wintertc.org/static/logo.svg" class="darkmode-aware">
     </a>
   </p>
   <p>
-    <a class="logo" href="https://wintertc.org/">
-      <img alt="WinterTC" src="https://wintertc.org/static/logo.svg">
+    <a class="logo" href="https://ecma-international.org/">
+      <img alt="ECMA International" src="https://www.ecma-international.org/wp-content/uploads/logo-ecma.svg" class="darkmode-aware">
     </a>
   </p>
   <h1 id="title" class="p-name no-ref">[TITLE]</h1>
