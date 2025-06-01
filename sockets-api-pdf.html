@@ -13,7 +13,7 @@
   </style>
   <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="cd1bc034d8fee1ca405be2a3827a30cc1ab4e5dc" name="revision">
+  <meta content="dd3e240750e4246908d758ffae4dc1c190b33d48" name="revision">
 <style>/* Boilerplate: style-idl-highlighting */
 pre.idl.highlight {
     background: var(--borderedblock-bg, var(--def-bg));
@@ -400,7 +400,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
      <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
      <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> property 
+     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn①">alpn</a></code> property 
      <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
     </dl>
     <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
