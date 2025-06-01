@@ -7,17 +7,27 @@
   <link href="https://wintertc.org/static/logo.svg" rel="icon">
   <style data-fill-with="stylesheet">
   </style>
+  <style>
+    img.darkmode-aware {
+      background: transparent;
+    }
+    .logo {
+      display: flex;
+      gap: 1em;
+    }
+    .logo img {
+      max-height: 70px;
+    }
+  </style>
 </head>
 <body class="h-entry">
 <div class="head">
-  <p>
-    <a class="logo" href="https://wintertc.org/">
-      <img alt="WinterTC" src="https://wintertc.org/static/logo.svg" class="darkmode-aware">
+  <p class="logo">
+    <a href="https://ecma-international.org/">
+      <img alt="ECMA International" src="https://wintertc.org/static/logos/ecma.svg">
     </a>
-  </p>
-  <p>
-    <a class="logo" href="https://ecma-international.org/">
-      <img alt="ECMA International" src="https://www.ecma-international.org/wp-content/uploads/logo-ecma.svg" class="darkmode-aware">
+    <a href="https://wintertc.org/">
+      <img alt="WinterTC" src="https://wintertc.org/static/logo.svg" class="darkmode-aware">
     </a>
   </p>
   <h1 id="title" class="p-name no-ref">[TITLE]</h1>
