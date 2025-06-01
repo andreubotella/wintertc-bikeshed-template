@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+  pull_request:
+      types:
+        - opened
+        - reopened
+        - synchronize
+        - closed
 jobs:
     run:
         runs-on: ubuntu-22.04
@@ -88,3 +94,9 @@ jobs:
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 publish_dir: ./output
+
+            - name: Deploy PR Preview
+              uses: rossjrw/pr-preview-action@v1.4.8
+              if: github.ref != 'refs/heads/main'
+              with:
+                source-dir: ./output
