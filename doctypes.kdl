@@ -2,7 +2,7 @@
 
 See https://github.com/speced/bikeshed-boilerplate/blob/main/boilerplate/doctypes.kdl
 
-The contents of this file will be appended in that one when the build happens.
+The orgs defined in this KDL file will be included in that one.
 
 */
 

@@ -53,8 +53,9 @@ jobs:
                 set -e
                 BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
                 BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
+                sudo rm -rf "$BOILERPLATE"/{ecma,wintertc}
                 sudo cp -r ./boilerplate/* "$BOILERPLATE"/
-                sudo cat "$BOILERPLATE"/doctypes.kdl ./doctypes.kdl > "$BOILERPLATE"/doctypes.kdl
+                sudo python3 ./patch-doctypes.py "$BOILERPLATE"/doctypes.kdl
 
             - name: Build specs
               run: |
