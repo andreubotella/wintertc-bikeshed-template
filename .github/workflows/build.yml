@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - name: Install bikeshed
-              run: pip3 install bikeshed && bikeshed update
+              run: pip3 install bikeshed kdl-py && bikeshed update
 
             - name: Install Prince PDF printer
               run: |
