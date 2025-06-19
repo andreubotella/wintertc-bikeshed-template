@@ -11,9 +11,9 @@
       display: list-item;
     }
   </style>
-  <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
+  <meta content="Bikeshed version 275834c42, updated Wed Jun 11 14:18:15 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="c491a11af272ed90dbc44f5ddabe7d6a33677041" name="revision">
+  <meta content="0d9fb3ff8b8ca0ee94242363b8d0c1666155fca9" name="revision">
 <style>/* Boilerplate: style-idl-highlighting */
 pre.idl.highlight {
     background: var(--borderedblock-bg, var(--def-bg));
@@ -81,7 +81,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body>
   <div class="full-page-svg" id="front-cover">
    <h1 class="shortname"><span class="status">Standard</span> Ecma-XXX</h1>
-   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 1 June 2025</h1>
+   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 19 June 2025</h1>
    <h1 class="title">Sockets API</h1>
   </div>
   <div class="full-page-svg" id="inside-cover"></div>
@@ -144,9 +144,19 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       </ol>
     </ol>
    </div>
-    <emu-intro> <h1 class="no-num">Introduction</h1> <div data-fill-with="introduction"> <p>This document defines an API for establishing TCP connections in Non-Browser JavaScript runtime
-environments. Existing standard APIs are reused as much as possible, for example <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream">WritableStream</a></code> are used for reading and writing from a <a data-link-type="dfn" href="#socket-concept" id="ref-for-socket-concept">socket</a>. Some options are inspired
-by the existing Node.js <code>net.Socket</code> API.</p> </div> </emu-intro> 
+   
+    <emu-intro>
+      <h1 class="no-num">Introduction</h1>
+      <div data-fill-with="introduction">
+
+<p>This document defines an API for establishing TCP connections in Non-Browser JavaScript runtime
+environments. Existing standard APIs are reused as much as possible, for example <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream">ReadableStream</a></code>
+and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream">WritableStream</a></code> are used for reading and writing from a <a data-link-type="dfn" href="#socket-concept" id="ref-for-socket-concept">socket</a>. Some options are inspired
+by the existing Node.js <code>net.Socket</code> API.</p>
+
+</div>
+    </emu-intro>
+    
    <div id="metadata-block">
     <h1 class="no-num no-toc no-ref">Contributing to this Specification</h1>
     <div data-fill-with="spec-metadata">
@@ -187,7 +197,9 @@ tls_socket<c- p>.</c->connect<c- p>(</c-><c- u>"example.com:1234"</c-><c- p>);</
     <h2 class="heading settled" data-level="2" id="socket-section"><span class="secno">2. </span><span class="content">Socket</span><a class="self-link" href="#socket-section"></a></h2>
     <h3 class="heading settled" data-level="2.1" id="using-a-socket"><span class="secno">2.1. </span><span class="content">Using a socket</span><a class="self-link" href="#using-a-socket"></a></h3>
     <div class="example" id="example-1c1d030e">
-     <a class="self-link" href="#example-1c1d030e"></a> A basic example of using connect with an echo server. 
+     <a class="self-link" href="#example-1c1d030e"></a>
+A basic example of using connect with an echo server.
+  
 <pre class="highlight"><c- a>const</c-> socket <c- o>=</c-> connect<c- p>({</c-> hostname<c- o>:</c-> <c- u>"my-url.com"</c-><c- p>,</c-> port<c- o>:</c-> <c- mf>43</c-> <c- p>});</c->
 
 <c- a>const</c-> writer <c- o>=</c-> socket<c- p>.</c->writable<c- p>.</c->getWriter<c- p>();</c->
@@ -226,7 +238,10 @@ console<c- p>.</c->log<c- p>(</c->Buffer<c- p>.</c-><c- kr>from</c-><c- p>(</c->
     <h4 class="heading settled" data-level="2.3.1" id="readable-attribute"><span class="secno">2.3.1. </span><span class="content">readable</span><a class="self-link" href="#readable-attribute"></a></h4>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-readable" id="ref-for-dom-socket-readable">readable</a></code> attribute is a <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream④">ReadableStream</a></code> which receives data from the server the socket is connected to.</p>
     <div class="example" id="example-f99ed967">
-     <a class="self-link" href="#example-f99ed967"></a> The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑤">ReadableStream</a></code> usage to read data from a socket: 
+     <a class="self-link" href="#example-f99ed967"></a>
+  The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑤">ReadableStream</a></code> usage to read data from a socket:
+
+  
 <pre class="highlight"><c- k>import</c-> <c- p>{</c-> connect <c- p>}</c-> <c- kr>from</c-> <c- t>'sockets'</c-><c- p>;</c->
 <c- a>const</c-> socket <c- o>=</c-> connect<c- p>(</c-><c- u>"google.com:80"</c-><c- p>);</c->
 
@@ -250,7 +265,10 @@ reader<c- p>.</c->releaseLock<c- p>();</c->
     <h4 class="heading settled" data-level="2.3.2" id="writable-attribute"><span class="secno">2.3.2. </span><span class="content">writable</span><a class="self-link" href="#writable-attribute"></a></h4>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-writable" id="ref-for-dom-socket-writable">writable</a></code> attribute is a <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream④">WritableStream</a></code> which sends data to the server the socket is connected to.</p>
     <div class="example" id="example-789f6df2">
-     <a class="self-link" href="#example-789f6df2"></a> The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑤">WritableStream</a></code> usage to write data to a socket: 
+     <a class="self-link" href="#example-789f6df2"></a>
+  The below example shows typical <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑤">WritableStream</a></code> usage to write data to a socket:
+
+  
 <pre class="highlight"><c- k>import</c-> <c- p>{</c-> connect <c- p>}</c-> <c- kr>from</c-> <c- t>'sockets'</c-><c- p>;</c->
 <c- a>const</c-> socket <c- o>=</c-> connect<c- p>(</c-><c- u>"google.com:80"</c-><c- p>);</c->
 
@@ -274,10 +292,13 @@ following circumstances:</p>
      <li>the socket was constructed with the <code>allowHalfOpen</code> parameter set to <code>false</code>, the ReadableStream is being read from, and the remote connection sends a FIN packet (graceful closure) or a RST packet
     </ul>
     <div class="note" role="note">
-      The current Cloudflare Workers implementation behaves as described above, specifically the
+     
+  The current Cloudflare Workers implementation behaves as described above, specifically the
   ReadableStream needs to be read until completion for the <code>closed</code> promise to resolve, if the
   ReadableStream is not read then even if the server closes the connection the <code>closed</code> promise
-  will not resolve. 
+  will not resolve.
+
+
      <p>Whether the promise should resolve without the ReadableStream being read is up for discussion.</p>
     </div>
     <p>It can also be rejected with a <a data-link-type="dfn" href="#socketerror" id="ref-for-socketerror">SocketError</a> when a socket connection could not be established under the following circumstances:</p>
@@ -290,7 +311,8 @@ following circumstances:</p>
     <h4 class="heading settled" data-level="2.4.1" id="close-method"><span class="secno">2.4.1. </span><span class="content">close(optional any reason)</span><a class="self-link" href="#close-method"></a></h4>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-close" id="ref-for-dom-socket-close②">close()</a></code> method closes the socket and its underlying connection. It returns the same promise as the <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed①">closed</a></code> attribute.</p>
     <p>When called, the <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑥">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑥">WritableStream</a></code> associated with the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket⑤">Socket</a></code> will
-be canceled and aborted, respectively. If the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason">reason</a></code> argument is specified, the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason①">reason</a></code> will be passed on to both the <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑦">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑦">WritableStream</a></code>.</p>
+be canceled and aborted, respectively. If the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason">reason</a></code> argument is specified, the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason①">reason</a></code>
+will be passed on to both the <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream⑦">ReadableStream</a></code> and <code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream⑦">WritableStream</a></code>.</p>
     <p>If the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened④">opened</a></code> promise is still pending, it will be rejected with the <code class="idl"><a data-link-type="idl" href="#dom-socket-close-reason-reason" id="ref-for-dom-socket-close-reason-reason②">reason</a></code>.</p>
     <h4 class="heading settled" data-level="2.4.2" id="starttls-method"><span class="secno">2.4.2. </span><span class="content">startTls()</span><a class="self-link" href="#starttls-method"></a></h4>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls">startTls()</a></code> method enables opportunistic TLS (otherwise known as <a href="https://en.wikipedia.org/wiki/Opportunistic_TLS">StartTLS</a>) which is a requirement for some protocols (primarily postgres/mysql and other DB protocols).</p>
@@ -301,7 +323,10 @@ be canceled and aborted, respectively. If the <code class="idl"><a data-link-typ
      <li>a new socket is created and returned from the <code>startTls</code> call
     </ul>
     <aside class="example" id="example-004c2e94">
-     <a class="self-link" href="#example-004c2e94"></a> Here is a simple code example showing usage of the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls①">startTls()</a></code> method: 
+     <a class="self-link" href="#example-004c2e94"></a>
+Here is a simple code example showing usage of the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls①">startTls()</a></code> method:
+
+  
 <pre class="highlight"><c- k>import</c-> <c- p>{</c-> connect <c- p>}</c-> <c- kr>from</c-> <c- t>'sockets'</c-><c- p>;</c->
 <c- a>let</c-> sock <c- o>=</c-> connect<c- p>(</c-><c- u>"google.com:443"</c-><c- p>,</c-> <c- p>{</c-> secureTransport<c- o>:</c-> <c- u>"starttls"</c-> <c- p>});</c->
 <c- c1>// ... some code here ...</c->
@@ -320,7 +345,9 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <p class="note" role="note">Arguably, this should be a type of <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMException" id="ref-for-idl-DOMException">DOMException</a></code> rather than <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror">TypeError</a></code>. More discussion is necessary on the form and structure of socket-related errors.</p>
     <p><dfn data-dfn-type="dfn" data-export id="socketerror">SocketError<a class="self-link" href="#socketerror"></a></dfn> is an instance of <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror①">TypeError</a></code>. The error message should start with <code>"SocketError: "</code>.</p>
     <div class="example" id="example-007dd165">
-     <a class="self-link" href="#example-007dd165"></a> An <code>"connection failed"</code> SocketError. 
+     <a class="self-link" href="#example-007dd165"></a>
+  An <code>"connection failed"</code> SocketError.
+  
 <pre class="highlight"><c- k>throw</c-> <c- ow>new</c-> SocketError<c- p>(</c-><c- t>'connection failed'</c-><c- p>);</c->
 </pre>
      <p>Should result in the following error: <code>Uncaught SocketError [TypeError]: SocketError: connection failed</code>.</p>
@@ -352,8 +379,10 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect③">connect()</a></code> method performs the following steps:</p>
     <ol>
      <li>New <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket⑧">Socket</a></code> instance is created with each of its attributes initialised immediately.
-     <li>The socket’s <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened⑤">opened</a></code> promise is set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#a-new-promise" id="ref-for-a-new-promise">a new promise</a>. Set <var>opened</var>.[[PromiseIsHandled]] to true. 
-     <li>The socket’s <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed②">closed</a></code> promise is set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#a-new-promise" id="ref-for-a-new-promise①">a new promise</a>. Set <var>closed</var>.[[PromiseIsHandled]] to true. 
+     <li>The socket’s <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened⑤">opened</a></code> promise is set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#a-new-promise" id="ref-for-a-new-promise">a new promise</a>. Set <var>opened</var>.[[PromiseIsHandled]] to true.
+  
+     <li>The socket’s <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed②">closed</a></code> promise is set to <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#a-new-promise" id="ref-for-a-new-promise①">a new promise</a>. Set <var>closed</var>.[[PromiseIsHandled]] to true.
+  
      <li>The created <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket⑨">Socket</a></code> instance is returned immediately in a <i>pending</i> state.
      <li>A connection is established to the specified <code class="idl"><a data-link-type="idl" href="#dictdef-socketaddress" id="ref-for-dictdef-socketaddress①">SocketAddress</a></code> asynchronously.
      <li>Once the connection is established, set <var>info</var> to a new <code class="idl"><a data-link-type="idl" href="#dictdef-socketinfo" id="ref-for-dictdef-socketinfo②">SocketInfo</a></code>, and <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#resolve" id="ref-for-resolve">Resolve</a> <var>opened</var> with <var>info</var>. For a socket using secure transport, the connection is considered to be established once the secure handshake has been completed.
@@ -362,14 +391,21 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     </ol>
     <p>At any point during the creation of the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①⓪">Socket</a></code> instance, <code>connect</code> may throw a <a data-link-type="dfn" href="#socketerror" id="ref-for-socketerror③">SocketError</a>. One case where this can happen is if the input address is incorrectly formatted.</p>
     <div class="note" role="note">
-      The implementation may consider blocking connections to certain hostname/port combinations which can pose a threat of abuse or security vulnerability. 
+     
+  The implementation may consider blocking connections to certain hostname/port combinations which can pose a threat of abuse or security vulnerability.
+
+
      <p>For example, port 25 may be blocked to prevent abuse of SMTP servers and private IPs can be blocked to avoid connecting to private services hosted locally (or on the server’s LAN).</p>
     </div>
     <h3 class="heading settled" data-level="3.1" id="socketoptions-dictionary"><span class="secno">3.1. </span><span class="content"><code>SocketOptions</code> dictionary</span><a class="self-link" href="#socketoptions-dictionary"></a></h3>
     <dl>
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport">secureTransport</a></code> member 
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport">secureTransport</a></code> member
+  
      <dd>
-       The secure transport mode to use. 
+      
+    The secure transport mode to use.
+    
       <dl>
        <dt><code class="idl"><a data-link-type="idl" href="#dom-securetransportkind-off" id="ref-for-dom-securetransportkind-off">off</a></code>
        <dd>A connection is established in plain text.
@@ -378,13 +414,25 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
        <dt><code class="idl"><a data-link-type="idl" href="#dom-securetransportkind-starttls" id="ref-for-dom-securetransportkind-starttls">starttls</a></code>
        <dd>Initially the same as the <code>off</code> option, the connection continues in plain text until the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls②">startTls()</a></code> method is called
       </dl>
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member 
-     <dd> The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-sni" id="ref-for-dom-socketoptions-sni">sni</a></code> member 
-     <dd> The Server Name Indication TLS option to send as part of the TLS handshake. If specified, requests that the server send a certificate with a matching common name. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport②">secureTransport</a></code> is <code>on</code> or <code>starttls</code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-allowhalfopen" id="ref-for-dom-socketoptions-allowhalfopen">allowHalfOpen</a></code> member 
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member
+  
      <dd>
-       This option is similar to that offered by the Node.js <code>net</code> module and allows interoperability with code which utilizes it. 
+    The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>.
+  
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-sni" id="ref-for-dom-socketoptions-sni">sni</a></code> member
+  
+     <dd>
+    The Server Name Indication TLS option to send as part of the TLS handshake. If specified, requests that the server send a certificate with a matching common name. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport②">secureTransport</a></code> is <code>on</code> or <code>starttls</code>.
+  
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-allowhalfopen" id="ref-for-dom-socketoptions-allowhalfopen">allowHalfOpen</a></code> member
+  
+     <dd>
+      
+    This option is similar to that offered by the Node.js <code>net</code> module and allows interoperability with code which utilizes it.
+    
       <dl>
        <dt>false
        <dd>The WritableStream- and the socket instance- will be automatically closed when a
@@ -395,27 +443,47 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     </dl>
     <h3 class="heading settled" data-level="3.2" id="socketinfo-dictionary"><span class="secno">3.2. </span><span class="content"><code>SocketInfo</code> dictionary</span><a class="self-link" href="#socketinfo-dictionary"></a></h3>
     <dl>
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-remoteaddress" id="ref-for-dom-socketinfo-remoteaddress">remoteAddress</a></code> member 
-     <dd> Provides the hostname/port combo of the remote peer the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①①">Socket</a></code> is connected to, for example <code>"example.com:443"</code>.
-    This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member 
-     <dd> Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>. 
-     <dt> <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property 
-     <dd> If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-remoteaddress" id="ref-for-dom-socketinfo-remoteaddress">remoteAddress</a></code> member
+  
+     <dd>
+    Provides the hostname/port combo of the remote peer the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①①">Socket</a></code> is connected to, for example <code>"example.com:443"</code>.
+    This value may or may not be the same as the address provided to the <code class="idl"><a data-link-type="idl" href="#dom-connect-connect" id="ref-for-dom-connect-connect④">connect()</a></code> method used to create the <code class="idl"><a data-link-type="idl" href="#socket" id="ref-for-socket①②">Socket</a></code>.
+  
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-localaddress" id="ref-for-dom-socketinfo-localaddress">localAddress</a></code> member
+  
+     <dd>
+    Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>.
+  
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property
+  
+     <dd>
+    If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
+  
     </dl>
     <h3 class="heading settled" data-level="3.3" id="anysocketaddress-type"><span class="secno">3.3. </span><span class="content"><code>AnySocketAddress</code> type</span><a class="self-link" href="#anysocketaddress-type"></a></h3>
     <dl>
-     <dt> <code class="idl"><a data-link-type="idl" href="#dictdef-socketaddress" id="ref-for-dictdef-socketaddress②">SocketAddress</a></code> dictionary 
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="#dictdef-socketaddress" id="ref-for-dictdef-socketaddress②">SocketAddress</a></code> dictionary
+  
      <dd>
-       The address to connect to. For example <code>{ hostname: "google.com", port: 443 }</code>. 
+      
+    The address to connect to. For example <code>{ hostname: "google.com", port: 443 }</code>.
+    
       <dl>
        <dt><code class="idl"><a data-link-type="idl" href="#dom-socketaddress-hostname" id="ref-for-dom-socketaddress-hostname">hostname</a></code>
        <dd>A connection is established in plain text.
        <dt><code class="idl"><a data-link-type="idl" href="#dom-socketaddress-port" id="ref-for-dom-socketaddress-port">port</a></code>
        <dd>A TLS connection is established using default CAs
       </dl>
-     <dt> <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code> 
-     <dd> A hostname/port combo separated by a colon. For example <code>"google.com:443"</code>. 
+     <dt>
+    <code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMString" id="ref-for-idl-DOMString⑦">DOMString</a></code>
+  
+     <dd>
+    A hostname/port combo separated by a colon. For example <code>"google.com:443"</code>.
+  
     </dl>
     <div data-fill-with="references">
      <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
