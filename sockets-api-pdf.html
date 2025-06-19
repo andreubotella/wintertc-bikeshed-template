@@ -13,7 +13,7 @@
   </style>
   <meta content="Bikeshed version 275834c42, updated Wed Jun 11 14:18:15 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="3319df4f947df423143910eb91ec64e2a4259589" name="revision">
+  <meta content="42beb91bfb1fa7341513145e0efd96df51f47b7f" name="revision">
 <style>/* Boilerplate: style-idl-highlighting */
 pre.idl.highlight {
     background: var(--borderedblock-bg, var(--def-bg));
@@ -415,7 +415,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
        <dd>Initially the same as the <code>off</code> option, the connection continues in plain text until the <code class="idl"><a data-link-type="idl" href="#dom-socket-starttls" id="ref-for-dom-socket-starttls②">startTls()</a></code> method is called
       </dl>
      <dt>
-    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> member
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> member
   
      <dd>
     The Application-Layer Protocol Negotiation list to send, as an array of strings. If the server agrees with one of the protocols specified in this list, it will return the matching protocol in the <code class="idl"><a data-link-type="idl" href="https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info" id="ref-for-dom-gpuadapter-info">info</a></code> property. May be specified if and only if <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-securetransport" id="ref-for-dom-socketoptions-securetransport①">secureTransport</a></code> is <code>on</code> or <code>starttls</code>.
@@ -457,7 +457,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>.
   
      <dt>
-    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn">alpn</a></code> property
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn①">alpn</a></code> property
   
      <dd>
     If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 

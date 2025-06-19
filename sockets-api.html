@@ -1503,7 +1503,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 275834c42, updated Wed Jun 11 14:18:15 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="3319df4f947df423143910eb91ec64e2a4259589" name="revision">
+  <meta content="42beb91bfb1fa7341513145e0efd96df51f47b7f" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2568,7 +2568,7 @@ new readers and writers from the new socket returned by <code>startTls</code>.</
     Optionally provides the hostname/port combo of the local network endpoint, for example <code>"localhost:12345"</code>.
   
     <dt>
-    <code class="idl"><a data-link-type="idl" href="#dom-socketoptions-alpn" id="ref-for-dom-socketoptions-alpn">alpn</a></code> property
+    <code class="idl"><a data-link-type="idl" href="#dom-socketinfo-alpn" id="ref-for-dom-socketinfo-alpn①">alpn</a></code> property
   
     <dd>
     If the server agrees with one of the protocols specified in the <code>alpn</code> negotiation list, returns that protocol name as a string, otherwise <code>null</code>. 
@@ -2991,11 +2991,11 @@ let dfnPanelData = {
 "dom-socket-writable": {"dfnID":"dom-socket-writable","dfnText":"writable","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socket-writable"}],"title":"2.3.2. writable"},{"refs":[{"id":"ref-for-dom-socket-writable\u2460"}],"title":"3. connect"}],"url":"#dom-socket-writable"},
 "dom-socketaddress-hostname": {"dfnID":"dom-socketaddress-hostname","dfnText":"hostname","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-hostname"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-hostname"},
 "dom-socketaddress-port": {"dfnID":"dom-socketaddress-port","dfnText":"port","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketaddress-port"}],"title":"3.3. AnySocketAddress type"}],"url":"#dom-socketaddress-port"},
-"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketinfo-alpn"},
+"dom-socketinfo-alpn": {"dfnID":"dom-socketinfo-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-alpn"}],"title":"3.1. SocketOptions dictionary"},{"refs":[{"id":"ref-for-dom-socketinfo-alpn\u2460"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-alpn"},
 "dom-socketinfo-localaddress": {"dfnID":"dom-socketinfo-localaddress","dfnText":"localAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-localaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-localaddress"},
 "dom-socketinfo-remoteaddress": {"dfnID":"dom-socketinfo-remoteaddress","dfnText":"remoteAddress","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketinfo-remoteaddress"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketinfo-remoteaddress"},
 "dom-socketoptions-allowhalfopen": {"dfnID":"dom-socketoptions-allowhalfopen","dfnText":"allowHalfOpen","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-allowhalfopen"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-allowhalfopen"},
-"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-alpn"}],"title":"3.2. SocketInfo dictionary"}],"url":"#dom-socketoptions-alpn"},
+"dom-socketoptions-alpn": {"dfnID":"dom-socketoptions-alpn","dfnText":"alpn","external":false,"refSections":[],"url":"#dom-socketoptions-alpn"},
 "dom-socketoptions-securetransport": {"dfnID":"dom-socketoptions-securetransport","dfnText":"secureTransport","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-securetransport"},{"id":"ref-for-dom-socketoptions-securetransport\u2460"},{"id":"ref-for-dom-socketoptions-securetransport\u2461"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-securetransport"},
 "dom-socketoptions-sni": {"dfnID":"dom-socketoptions-sni","dfnText":"sni","external":false,"refSections":[{"refs":[{"id":"ref-for-dom-socketoptions-sni"}],"title":"3.1. SocketOptions dictionary"}],"url":"#dom-socketoptions-sni"},
 "enumdef-securetransportkind": {"dfnID":"enumdef-securetransportkind","dfnText":"SecureTransportKind","external":false,"refSections":[{"refs":[{"id":"ref-for-enumdef-securetransportkind"}],"title":"3. connect"}],"url":"#enumdef-securetransportkind"},
@@ -3413,7 +3413,6 @@ let refsData = {
 "#dom-socketinfo-localaddress": {"displayText":"localAddress","export":true,"for_":["SocketInfo"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"localAddress","type":"dict-member","url":"#dom-socketinfo-localaddress"},
 "#dom-socketinfo-remoteaddress": {"displayText":"remoteAddress","export":true,"for_":["SocketInfo"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"remoteAddress","type":"dict-member","url":"#dom-socketinfo-remoteaddress"},
 "#dom-socketoptions-allowhalfopen": {"displayText":"allowHalfOpen","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"allowHalfOpen","type":"dict-member","url":"#dom-socketoptions-allowhalfopen"},
-"#dom-socketoptions-alpn": {"displayText":"alpn","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"alpn","type":"dict-member","url":"#dom-socketoptions-alpn"},
 "#dom-socketoptions-securetransport": {"displayText":"secureTransport","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"secureTransport","type":"dict-member","url":"#dom-socketoptions-securetransport"},
 "#dom-socketoptions-sni": {"displayText":"sni","export":true,"for_":["SocketOptions"],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"sni","type":"dict-member","url":"#dom-socketoptions-sni"},
 "#enumdef-securetransportkind": {"displayText":"SecureTransportKind","export":true,"for_":[],"level":"","normative":true,"shortname":"common-web-platform-api","spec":"common-web-platform-api","status":"local","text":"SecureTransportKind","type":"enum","url":"#enumdef-securetransportkind"},
