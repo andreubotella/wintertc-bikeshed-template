@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - name: Install bikeshed
-              run: pip install bikeshed kdl-py && bikeshed update
+              run: pip3 install bikeshed && bikeshed update
 
             - name: Install Prince PDF printer
               run: |
@@ -53,9 +53,9 @@ jobs:
                 set -e
                 BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
                 BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
-                sudo rm -rf "$BOILERPLATE"/{ecma,wintertc}
-                sudo cp -r ./boilerplate/* "$BOILERPLATE"/
-                sudo python3 ./patch-doctypes.py "$BOILERPLATE"/doctypes.kdl
+                rm -rf "$BOILERPLATE"/{ecma,wintertc}
+                cp -r ./boilerplate/* "$BOILERPLATE"/
+                python3 ./patch-doctypes.py "$BOILERPLATE"/doctypes.kdl
 
             - name: Build specs
               run: |
