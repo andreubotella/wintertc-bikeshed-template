@@ -62,9 +62,9 @@ jobs:
                   fonts-dejavu-extra \
                   fonts-noto
 
-            - name: Fetch Ecmarkup PR \#600 (for Ecma stylesheets and images)
+            - name: Fetch Ecmarkup repo (for Ecma stylesheets and images)
               run: |
-                git clone -b pdf-gen-fixes --depth=1 https://github.com/gesa/ecmarkup.git
+                git clone --depth=1 https://github.com/tc39/ecmarkup.git
 
             - name: PDF generation
               run: |
