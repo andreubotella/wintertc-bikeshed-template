@@ -15,6 +15,27 @@ jobs:
         steps:
             - name: Install bikeshed
               run: pip3 install bikeshed && bikeshed update
+            
+            - name: Clone repository
+              uses: actions/checkout@v2
+
+            - name: Add Bikeshed template
+              run: |
+                set -e
+                BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
+                BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
+                rm -rf "$BOILERPLATE"/{ecma,wintertc}
+                cp -r ./boilerplate/* "$BOILERPLATE"/
+                python3 ./patch-doctypes.py "$BOILERPLATE"/doctypes.kdl
+
+            - name: Build specs
+              run: |
+                set -e
+                mkdir output
+                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api.html
+                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api-pdf.html --md-status=PDF
+                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api.html
+                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api-pdf.html --md-status=PDF
 
             - name: Install Prince PDF printer
               run: |
@@ -40,31 +61,10 @@ jobs:
                   fonts-ibm-plex \
                   fonts-dejavu-extra \
                   fonts-noto
-            
-            - name: Clone repository
-              uses: actions/checkout@v2
 
             - name: Fetch Ecmarkup PR \#600 (for Ecma stylesheets and images)
               run: |
                 git clone -b pdf-gen-fixes --depth=1 https://github.com/gesa/ecmarkup.git
-
-            - name: Add Bikeshed template
-              run: |
-                set -e
-                BIKESHED_LIB="$(python3 -c "import bikeshed; print(bikeshed.__file__)")"
-                BOILERPLATE="$(dirname "$BIKESHED_LIB")/spec-data/boilerplate"
-                rm -rf "$BOILERPLATE"/{ecma,wintertc}
-                cp -r ./boilerplate/* "$BOILERPLATE"/
-                python3 ./patch-doctypes.py "$BOILERPLATE"/doctypes.kdl
-
-            - name: Build specs
-              run: |
-                set -e
-                mkdir output
-                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api.html
-                bikeshed spec ./specs/min-common-api.bs ./output/min-common-api-pdf.html --md-status=PDF
-                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api.html
-                bikeshed spec ./specs/sockets-api.bs ./output/sockets-api-pdf.html --md-status=PDF
 
             - name: PDF generation
               run: |
