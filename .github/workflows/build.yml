@@ -11,10 +11,10 @@ on:
         - closed
 jobs:
     run:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
         steps:
             - name: Install bikeshed
-              run: pip3 install bikeshed kdl && bikeshed update
+              run: pip3 install bikeshed && bikeshed update
             
             - name: Clone repository
               uses: actions/checkout@v2
