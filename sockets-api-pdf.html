@@ -11,9 +11,9 @@
       display: list-item;
     }
   </style>
-  <meta content="Bikeshed version 275834c42, updated Wed Jun 11 14:18:15 2025 -0700" name="generator">
+  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
   <link href="https://sockets-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="42beb91bfb1fa7341513145e0efd96df51f47b7f" name="revision">
+  <meta content="2c11cce73efbc7511f046c66d4e53c7df7ffadf8" name="revision">
 <style>/* Boilerplate: style-idl-highlighting */
 pre.idl.highlight {
     background: var(--borderedblock-bg, var(--def-bg));
@@ -81,7 +81,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
  <body>
   <div class="full-page-svg" id="front-cover">
    <h1 class="shortname"><span class="status">Standard</span> Ecma-XXX</h1>
-   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 19 June 2025</h1>
+   <h1 class="version" data-year="2025">1<sup>st</sup> Edition / 6 October 2025</h1>
    <h1 class="title">Sockets API</h1>
   </div>
   <div class="full-page-svg" id="inside-cover"></div>
@@ -283,7 +283,7 @@ successfully established, or is rejected if the connection fails. For sockets wh
 the resolution of the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened①">opened</a></code> promise indicates the completion of the secure handshake.</p>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened②">opened</a></code> promise resolves a <code class="idl"><a data-link-type="idl" href="#dictdef-socketinfo" id="ref-for-dictdef-socketinfo①">SocketInfo</a></code> dictionary that optionally provides details
 about the connection that has been established.</p>
-    <p>By default, the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened③">opened</a></code> promise is <code class="idl"><a data-link-type="idl">marked as handled</a></code>.</p>
+    <p>By default, the <code class="idl"><a data-link-type="idl" href="#dom-socket-opened" id="ref-for-dom-socket-opened③">opened</a></code> promise is <code class="idl"><u class="link-error" data-lt="marked as handled" title="LINK ERROR: No &apos;idl&apos; refs found for &apos;marked as handled&apos;.">marked as handled</u></code>.</p>
     <h4 class="heading settled" data-level="2.3.4" id="closed-attribute"><span class="secno">2.3.4. </span><span class="content">closed</span><a class="self-link" href="#closed-attribute"></a></h4>
     <p>The <code class="idl"><a data-link-type="idl" href="#dom-socket-closed" id="ref-for-dom-socket-closed">closed</a></code> attribute is a promise which can be used to keep track of the socket state. It gets resolved under the
 following circumstances:</p>

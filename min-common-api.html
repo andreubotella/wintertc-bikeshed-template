@@ -1501,9 +1501,9 @@ Possible extra rowspan handling
       max-height: 70px;
     }
   </style>
-  <meta content="Bikeshed version 275834c42, updated Wed Jun 11 14:18:15 2025 -0700" name="generator">
-  <link href="https://min-common-api.proposal.wintercg.org/" rel="canonical">
-  <meta content="42beb91bfb1fa7341513145e0efd96df51f47b7f" name="revision">
+  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
+  <link href="https://min-common-api.proposal.wintertc.org/" rel="canonical">
+  <meta content="2c11cce73efbc7511f046c66d4e53c7df7ffadf8" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2070,14 +2070,13 @@ dfn > a.self-link::before      { content: "#"; }
 </a></p>
    <h1 class="p-name no-ref" id="title">Minimum Common Web Platform API</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft,
-    <time class="dt-updated" datetime="2025-06-19">19 June 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-10-06">6 October 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://min-common-api.proposal.wintercg.org/">https://min-common-api.proposal.wintercg.org/</a>
+     <dd><a class="u-url" href="https://min-common-api.proposal.wintertc.org/">https://min-common-api.proposal.wintertc.org/</a>
      <dt>Issue Tracking:
-     <dd><a href="https://github.com/wintercg/proposal-minimum-common-api/issues/">GitHub</a>
-     <dd><a href="#issues-index">Inline In Spec</a>
+     <dd><a href="https://github.com/WinterTC55/proposal-minimum-common-api/issues/">GitHub</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:jsnell@cloudflare.com">James M Snell</a> (<a class="p-org org" href="https://cloudflare.com/">Cloudflare</a>)
     </dl>
@@ -2094,22 +2093,30 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#intro"><span class="secno"></span> <span class="content">Introduction</span></a>
-    <li><a href="#terminology"><span class="secno">1</span> <span class="content">Terminology</span></a>
-    <li><a href="#api-index"><span class="secno">2</span> <span class="content">Common API Index</span></a>
-    <li><a href="#global-scope"><span class="secno">3</span> <span class="content">The Global Scope</span></a>
-    <li><a href="#navigator-useragent-requirements"><span class="secno">4</span> <span class="content">Requirements for navigator.userAgent</span></a>
-    <li><a href="#extensions"><span class="secno">5</span> <span class="content">Extensions</span></a>
+    <li><a href="#intro①"><span class="secno"></span> <span class="content">Introduction</span></a>
+    <li><a href="#scope"><span class="secno">1</span> <span class="content">Scope</span></a>
+    <li><a href="#conformance"><span class="secno">2</span> <span class="content">Conformance</span></a>
+    <li><a href="#TODO"><span class="secno">3</span> <span class="content">Normative references</span></a>
+    <li>
+     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+     <ol class="toc">
+      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+     </ol>
+    <li>
+     <a href="#terminology"><span class="secno">4</span> <span class="content">Terms and definitions</span></a>
+     <ol class="toc">
+      <li><a href="#term-web-platform"><span class="secno">4.1</span> <span class="content"><span>Web Platform</span></span></a>
+      <li><a href="#term-web-interoperable-runtime"><span class="secno">4.2</span> <span class="content"><span>Web-interoperable Runtime</span></span></a>
+     </ol>
+    <li><a href="#api-index"><span class="secno">5</span> <span class="content">Common API Index</span></a>
+    <li><a href="#global-scope"><span class="secno">6</span> <span class="content">The Global Scope</span></a>
+    <li><a href="#useragent-requirements"><span class="secno">7</span> <span class="content">Requirements for default User-Agent value</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
       <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
-     </ol>
-    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
-    <li>
-     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
-     <ol class="toc">
-      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
      </ol>
     <li>
      <a href="#copyright--software-license"><span class="secno"></span> <span class="content">Copyright &amp; Software License</span></a>
@@ -2121,163 +2128,272 @@ dfn > a.self-link::before      { content: "#"; }
   </nav>
   <main>
    <h2 class="no-num heading settled" id="intro"><span class="content">Introduction</span></h2>
-   <div data-fill-with="introduction">
-    <p>The Minimum Common Web Platform API is a curated subset of standardized Web Platform APIs intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p>
+   <div data-fill-with="introduction"></div>
+   <h2 class="no-num heading settled" id="intro①"><span class="content">Introduction</span></h2>
+   <p>There is a wide base of JavaScript runtime environments being used beyond web browsers, specifically in web server and edge platforms. An important part of the reason for this is the fact that JavaScript can be used both in the server and in the client side, which reduces the specialization needed to work in different parts of a single codebase, and allows reusing code across the server and client side.</p>
+   <p>But since code running in web browsers makes up the vast majority of JavaScript code, this is helped along if such runtimes support the same APIs as web browsers. So, unsurprisingly, more and more runtime environments have started supporting web platform APIs. However, the increase in such environments, as well as the different choices of web platform APIs, resulted in poor interoperability across such environments.</p>
+   <p>As such, this Ecma Standard defines the Minimum Common Web API specification, which lists a curated minimum subset of web platform APIs for server-side and edge runtimes to implement if they aim to be web-interoperable. This is the first edition of the standard, corresponding to the 2025 snapshot, and an additional snapshot will be published every year.</p>
+   <h2 class="heading settled" data-level="1" id="scope"><span class="secno">1. </span><span class="content">Scope</span><a class="self-link" href="#scope"></a></h2>
+   <p>This Standard defines the 2025 snapshot of the Minimum Common Web Platform API, a curated subset of APIs defined by web platform standards from W3C and WHATWG, which is intended to define a minimum set of capabilities common to Browser and Non-Browser JavaScript-based runtime environments.</p>
+   <h2 class="heading settled" data-level="2" id="conformance"><span class="secno">2. </span><span class="content">Conformance</span><a class="self-link" href="#conformance"></a></h2>
+   <p>A conforming implementation of the Minimum Common Web Platform API shall conform to ECMA-262, and additionally shall provide the interfaces and properties listed in this specification, according to their definition in the corresponding W3C or WHATWG standard.</p>
+   <p>Runtime-specific extensions to any Web Platform API may be implemented by conforming runtimes. Such extensions shall be defined so that their use neither contradicts, nor causes the non-conformance of, normative functionality of any Web Platform API. It is important to carefully consider use of such extensions, as it reduces interoperability and portability of code across runtimes.</p>
+   <p>This specification does not prohibit implementing additional Web Platform APIs beyond those listed here.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> For example, the <code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-performance" id="ref-for-dom-performance">Performance</a></code> API could be extended with additional methods or properties beyond those defined in the <a data-link-type="biblio" href="#biblio-hr-time" title="High Resolution Time">[HR-TIME]</a> specifications, such as those defined in the <a data-link-type="biblio" href="#biblio-performance-timeline" title="Performance Timeline">[PERFORMANCE-TIMELINE]</a> or <a data-link-type="biblio" href="#biblio-user-timing" title="User Timing Level 3">[USER-TIMING]</a> specifications.</p>
+   <h2 class="heading settled" data-level="3" id="TODO"><span class="secno">3. </span><span class="content">Normative references</span><a class="self-link" href="#TODO"></a></h2>
+   <p>The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+   <div data-fill-with="references">
+    <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+    <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+    <dl>
+     <dt id="biblio-compression">[COMPRESSION]
+     <dd>Adam Rice. <a href="https://compression.spec.whatwg.org/"><cite>Compression Standard</cite></a>. Living Standard. URL: <a href="https://compression.spec.whatwg.org/">https://compression.spec.whatwg.org/</a>
+     <dt id="biblio-console">[CONSOLE]
+     <dd>Dominic Farolino; Robert Kowalski; Terin Stock. <a href="https://console.spec.whatwg.org/"><cite>Console Standard</cite></a>. Living Standard. URL: <a href="https://console.spec.whatwg.org/">https://console.spec.whatwg.org/</a>
+     <dt id="biblio-dom">[DOM]
+     <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
+     <dt id="biblio-ecmascript">[ECMASCRIPT]
+     <dd><a href="https://tc39.es/ecma262/multipage/"><cite>ECMAScript Language Specification</cite></a>. URL: <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
+     <dt id="biblio-encoding">[ENCODING]
+     <dd>Anne van Kesteren. <a href="https://encoding.spec.whatwg.org/"><cite>Encoding Standard</cite></a>. Living Standard. URL: <a href="https://encoding.spec.whatwg.org/">https://encoding.spec.whatwg.org/</a>
+     <dt id="biblio-fetch">[FETCH]
+     <dd>Anne van Kesteren. <a href="https://fetch.spec.whatwg.org/"><cite>Fetch Standard</cite></a>. Living Standard. URL: <a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>
+     <dt id="biblio-fileapi">[FILEAPI]
+     <dd>Marijn Kruisselbrink. <a href="https://w3c.github.io/FileAPI/"><cite>File API</cite></a>. URL: <a href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</a>
+     <dt id="biblio-hr-time">[HR-TIME]
+     <dd>Yoav Weiss. <a href="https://w3c.github.io/hr-time/"><cite>High Resolution Time</cite></a>. URL: <a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a>
+     <dt id="biblio-html">[HTML]
+     <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+     <dt id="biblio-rfc7231">[RFC7231]
+     <dd>R. Fielding, Ed.; M. Nottingham, Ed.; J. Reschke, Ed.. <a href="https://httpwg.org/specs/rfc9110.html"><cite>HTTP Semantics</cite></a>. June 2022. Internet Standard. URL: <a href="https://httpwg.org/specs/rfc9110.html">https://httpwg.org/specs/rfc9110.html</a>
+     <dt id="biblio-streams">[STREAMS]
+     <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
+     <dt id="biblio-url">[URL]
+     <dd>Anne van Kesteren. <a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a>
+     <dt id="biblio-urlpattern">[URLPATTERN]
+     <dd>Ben Kelly; Jeremy Roman; 宍戸俊哉 (Shunya Shishido). <a href="https://urlpattern.spec.whatwg.org/"><cite>URL Pattern Standard</cite></a>. Living Standard. URL: <a href="https://urlpattern.spec.whatwg.org/">https://urlpattern.spec.whatwg.org/</a>
+     <dt id="biblio-wasm-js-api-2">[WASM-JS-API-2]
+     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/js-api/"><cite>WebAssembly JavaScript Interface</cite></a>. URL: <a href="https://webassembly.github.io/spec/js-api/">https://webassembly.github.io/spec/js-api/</a>
+     <dt id="biblio-wasm-web-api-2">[WASM-WEB-API-2]
+     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/web-api/"><cite>WebAssembly Web API</cite></a>. URL: <a href="https://webassembly.github.io/spec/web-api/">https://webassembly.github.io/spec/web-api/</a>
+     <dt id="biblio-webcrypto">[WEBCRYPTO]
+     <dd>Daniel Huigens. <a href="https://w3c.github.io/webcrypto/"><cite>Web Cryptography Level 2</cite></a>. URL: <a href="https://w3c.github.io/webcrypto/">https://w3c.github.io/webcrypto/</a>
+     <dt id="biblio-webidl">[WEBIDL]
+     <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
+     <dt id="biblio-xhr">[XHR]
+     <dd>Anne van Kesteren. <a href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
+    </dl>
+    <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+    <dl>
+     <dt id="biblio-performance-timeline">[PERFORMANCE-TIMELINE]
+     <dd>Nicolas Pena Moreno. <a href="https://w3c.github.io/performance-timeline/"><cite>Performance Timeline</cite></a>. URL: <a href="https://w3c.github.io/performance-timeline/">https://w3c.github.io/performance-timeline/</a>
+     <dt id="biblio-user-timing">[USER-TIMING]
+     <dd>Nicolas Pena Moreno. <a href="https://w3c.github.io/user-timing/"><cite>User Timing Level 3</cite></a>. URL: <a href="https://w3c.github.io/user-timing/">https://w3c.github.io/user-timing/</a>
+    </dl>
    </div>
-   <h2 class="heading settled" data-level="1" id="terminology"><span class="secno">1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h2>
+   <h2 class="heading settled" data-level="4" id="terminology"><span class="secno">4. </span><span class="content">Terms and definitions</span><a class="self-link" href="#terminology"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="term-web-platform"><span class="secno">4.1. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-platform">Web Platform</dfn></span><a class="self-link" href="#term-web-platform"></a></h3>
    <p>The Web Platform is the combination of technology standards defined by organizations such as the W3C, the WHATWG, and others as implemented by Web Browsers.</p>
-   <p>A <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime</dfn> is any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.
-While this term is intentionally broad to also encompass Web Browsers, the primary focus here is on outlining expectations for non-browser runtimes.</p>
-   <h2 class="heading settled" data-level="2" id="api-index"><span class="secno">2. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
-   <p>All <a data-link-type="dfn" href="#web-interoperable-runtime" id="ref-for-web-interoperable-runtime">Web-interoperable Runtimes</a> conforming to this specification SHALL implement each of the following Web Platform APIs in accordance with their normative requirements except where modified here. Where any conforming runtime environment chooses (either by necessity or otherwise) to diverge from a normative requirement of the specification, clear explanations of such divergence MUST be made clearly and readily available in the documentation.</p>
-   <p>Interfaces:</p>
+   <h3 class="heading settled" data-level="4.2" id="term-web-interoperable-runtime"><span class="secno">4.2. </span><span class="content"><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="web-interoperable-runtime">Web-interoperable Runtime</dfn></span><a class="self-link" href="#term-web-interoperable-runtime"></a></h3>
+   <p>Any ECMAScript-based application runtime environment that implements the subset of Web Platform APIs outlined in this specification.</p>
+   <p>While this term is intentionally broad to also encompass Web Browsers, the primary focus here is on outlining expectations for non-browser runtimes.</p>
+   <h2 class="heading settled" data-level="5" id="api-index"><span class="secno">5. </span><span class="content">Common API Index</span><a class="self-link" href="#api-index"></a></h2>
+   <p>All <a data-link-type="dfn" href="#web-interoperable-runtime" id="ref-for-web-interoperable-runtime">Web-interoperable Runtimes</a> conforming to this specification shall implement each of the following Web Platform APIs. These should be implemented in accordance with their normative requirements except where modified here. Where any conforming runtime environment chooses (either by necessity or otherwise) to diverge from a normative requirement of the specification, clear explanations of such divergence shall be made clearly and readily available in the documentation.</p>
+   <p>All of the following interfaces shall be exposed on the global object accessible through <code>globalThis</code>, unless otherwise specified in this specification:</p>
    <ul>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortcontroller" id="ref-for-abortcontroller">AbortController</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortcontroller" id="ref-for-abortcontroller">AbortController</a></code> <a data-link-type="biblio" href="#biblio-dom" title="DOM Standard">[DOM]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal">AbortSignal</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#abortsignal" id="ref-for-abortsignal">AbortSignal</a></code> <a data-link-type="biblio" href="#biblio-dom" title="DOM Standard">[DOM]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob">Blob</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-Blob" id="ref-for-dfn-Blob">Blob</a></code> <a data-link-type="biblio" href="#biblio-fileapi" title="File API">[FILEAPI]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#bytelengthqueuingstrategy" id="ref-for-bytelengthqueuingstrategy">ByteLengthQueuingStrategy</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#bytelengthqueuingstrategy" id="ref-for-bytelengthqueuingstrategy">ByteLengthQueuingStrategy</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://wicg.github.io/compression/#compression-stream">CompressionStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://compression.spec.whatwg.org/#compressionstream" id="ref-for-compressionstream">CompressionStream</a></code> <a data-link-type="biblio" href="#biblio-compression" title="Compression Standard">[COMPRESSION]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#countqueuingstrategy" id="ref-for-countqueuingstrategy">CountQueuingStrategy</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#countqueuingstrategy" id="ref-for-countqueuingstrategy">CountQueuingStrategy</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-Crypto" id="ref-for-dfn-Crypto">Crypto</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-Crypto" id="ref-for-dfn-Crypto">Crypto</a></code> <a data-link-type="biblio" href="#biblio-webcrypto" title="Web Cryptography Level 2">[WEBCRYPTO]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-CryptoKey" id="ref-for-dfn-CryptoKey">CryptoKey</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-CryptoKey" id="ref-for-dfn-CryptoKey">CryptoKey</a></code> <a data-link-type="biblio" href="#biblio-webcrypto" title="Web Cryptography Level 2">[WEBCRYPTO]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://wicg.github.io/compression/#decompression-stream">DecompressionStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#customevent" id="ref-for-customevent">CustomEvent</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMException" id="ref-for-idl-DOMException">DOMException</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://compression.spec.whatwg.org/#decompressionstream" id="ref-for-decompressionstream">DecompressionStream</a></code> <a data-link-type="biblio" href="#biblio-compression" title="Compression Standard">[COMPRESSION]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#event" id="ref-for-event">Event</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://webidl.spec.whatwg.org/#idl-DOMException" id="ref-for-idl-DOMException">DOMException</a></code> <a data-link-type="biblio" href="#biblio-webidl" title="Web IDL Standard">[WEBIDL]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget">EventTarget</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#errorevent" id="ref-for-errorevent">ErrorEvent</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-file" id="ref-for-dfn-file">File</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#event" id="ref-for-event">Event</a></code> <a data-link-type="biblio" href="#biblio-dom" title="DOM Standard">[DOM]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata">FormData</a></code></p>
-     <p class="issue" id="issue-92f53c35"><a class="self-link" href="#issue-92f53c35"></a> The <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata①">FormData</a></code> constructor optionally takes <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/forms.html#htmlformelement" id="ref-for-htmlformelement">HTMLFormElement</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement" id="ref-for-htmlelement">HTMLElement</a></code> as parameters.
-TODO: Figure out what implementations without DOM support should do here.
-Node.js and Deno throw if the first parameter is not <code>undefined</code> but ignore the second parameter.
-Cloudflare Workers ignores all parameters.</p>
+     <p><code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget">EventTarget</a></code> <a data-link-type="biblio" href="#biblio-dom" title="DOM Standard">[DOM]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#headers" id="ref-for-headers">Headers</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/FileAPI/#dfn-file" id="ref-for-dfn-file">File</a></code> <a data-link-type="biblio" href="#biblio-fileapi" title="File API">[FILEAPI]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablebytestreamcontroller" id="ref-for-readablebytestreamcontroller">ReadableByteStreamController</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata" id="ref-for-formdata">FormData</a></code> <a data-link-type="biblio" href="#biblio-xhr" title="XMLHttpRequest Standard">[XHR]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream">ReadableStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#headers" id="ref-for-headers">Headers</a></code> <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreambyobreader" id="ref-for-readablestreambyobreader">ReadableStreamBYOBReader</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messagechannel" id="ref-for-messagechannel">MessageChannel</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreambyobrequest" id="ref-for-readablestreambyobrequest">ReadableStreamBYOBRequest</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/comms.html#messageevent" id="ref-for-messageevent">MessageEvent</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreamdefaultcontroller" id="ref-for-readablestreamdefaultcontroller">ReadableStreamDefaultController</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport">MessagePort</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreamdefaultreader" id="ref-for-readablestreamdefaultreader">ReadableStreamDefaultReader</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-performance" id="ref-for-dom-performance①">Performance</a></code> <a data-link-type="biblio" href="#biblio-hr-time" title="High Resolution Time">[HR-TIME]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#request" id="ref-for-request">Request</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#promiserejectionevent" id="ref-for-promiserejectionevent">PromiseRejectionEvent</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#response" id="ref-for-response">Response</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablebytestreamcontroller" id="ref-for-readablebytestreamcontroller">ReadableByteStreamController</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-SubtleCrypto" id="ref-for-dfn-SubtleCrypto">SubtleCrypto</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestream" id="ref-for-readablestream">ReadableStream</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textdecoder" id="ref-for-textdecoder">TextDecoder</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreambyobreader" id="ref-for-readablestreambyobreader">ReadableStreamBYOBReader</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textdecoderstream" id="ref-for-textdecoderstream">TextDecoderStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreambyobrequest" id="ref-for-readablestreambyobrequest">ReadableStreamBYOBRequest</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textencoder" id="ref-for-textencoder">TextEncoder</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreamdefaultcontroller" id="ref-for-readablestreamdefaultcontroller">ReadableStreamDefaultController</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textencoderstream" id="ref-for-textencoderstream">TextEncoderStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#readablestreamdefaultreader" id="ref-for-readablestreamdefaultreader">ReadableStreamDefaultReader</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#transformstream" id="ref-for-transformstream">TransformStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#request" id="ref-for-request">Request</a></code> <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#transformstreamdefaultcontroller" id="ref-for-transformstreamdefaultcontroller">TransformStreamDefaultController</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#response" id="ref-for-response">Response</a></code> <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#url" id="ref-for-url">URL</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dfn-SubtleCrypto" id="ref-for-dfn-SubtleCrypto">SubtleCrypto</a></code> <a data-link-type="biblio" href="#biblio-webcrypto" title="Web Cryptography Level 2">[WEBCRYPTO]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://urlpattern.spec.whatwg.org/#urlpattern" id="ref-for-urlpattern">URLPattern</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textdecoder" id="ref-for-textdecoder">TextDecoder</a></code> <a data-link-type="biblio" href="#biblio-encoding" title="Encoding Standard">[ENCODING]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#urlsearchparams" id="ref-for-urlsearchparams">URLSearchParams</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textdecoderstream" id="ref-for-textdecoderstream">TextDecoderStream</a></code> <a data-link-type="biblio" href="#biblio-encoding" title="Encoding Standard">[ENCODING]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#global" id="ref-for-global">Global</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textencoder" id="ref-for-textencoder">TextEncoder</a></code> <a data-link-type="biblio" href="#biblio-encoding" title="Encoding Standard">[ENCODING]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#instance" id="ref-for-instance">Instance</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://encoding.spec.whatwg.org/#textencoderstream" id="ref-for-textencoderstream">TextEncoderStream</a></code> <a data-link-type="biblio" href="#biblio-encoding" title="Encoding Standard">[ENCODING]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly②">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#memory" id="ref-for-memory">Memory</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#transformstream" id="ref-for-transformstream">TransformStream</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly③">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#module" id="ref-for-module">Module</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#transformstreamdefaultcontroller" id="ref-for-transformstreamdefaultcontroller">TransformStreamDefaultController</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly④">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#table" id="ref-for-table">Table</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#url" id="ref-for-url">URL</a></code> <a data-link-type="biblio" href="#biblio-url" title="URL Standard">[URL]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream">WritableStream</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://urlpattern.spec.whatwg.org/#urlpattern" id="ref-for-urlpattern">URLPattern</a></code> <a data-link-type="biblio" href="#biblio-urlpattern" title="URL Pattern Standard">[URLPATTERN]</a></p>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestreamdefaultcontroller" id="ref-for-writablestreamdefaultcontroller">WritableStreamDefaultController</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://url.spec.whatwg.org/#urlsearchparams" id="ref-for-urlsearchparams">URLSearchParams</a></code> <a data-link-type="biblio" href="#biblio-url" title="URL Standard">[URL]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#global" id="ref-for-global">Global</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#instance" id="ref-for-instance">Instance</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly②">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#memory" id="ref-for-memory">Memory</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly③">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#module" id="ref-for-module">Module</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly④">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#table" id="ref-for-table">Table</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑤">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#tag" id="ref-for-tag">Tag</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑥">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#exception" id="ref-for-exception">Exception</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑦">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#exceptiondef-compileerror" id="ref-for-exceptiondef-compileerror">CompileError</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑧">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#exceptiondef-linkerror" id="ref-for-exceptiondef-linkerror">LinkError</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑨">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#exceptiondef-runtimeerror" id="ref-for-exceptiondef-runtimeerror">RuntimeError</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestream" id="ref-for-writablestream">WritableStream</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestreamdefaultcontroller" id="ref-for-writablestreamdefaultcontroller">WritableStreamDefaultController</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
+    <li data-md>
+     <p><code class="idl"><a data-link-type="idl" href="https://streams.spec.whatwg.org/#writablestreamdefaultwriter" id="ref-for-writablestreamdefaultwriter">WritableStreamDefaultWriter</a></code> <a data-link-type="biblio" href="#biblio-streams" title="Streams Standard">[STREAMS]</a></p>
    </ul>
-   <p>Global methods / properties:</p>
+   <p>All of the following methods and properties shall be exposed on the global object accessible through <code>globalThis</code>, unless otherwise specified in this specification:</p>
    <ul>
     <li data-md>
-     <p><code class="idl"><a data-link-type="idl" href="https://tc39.es/ecma262/multipage/global-object.html#sec-globalthis">globalThis</a></code></p>
+     <p><code class="idl"><a data-link-type="idl" href="https://tc39.es/ecma262/multipage/global-object.html#sec-globalthis" id="ref-for-sec-globalthis">globalThis</a></code> <a data-link-type="biblio" href="#biblio-ecmascript" title="ECMAScript Language Specification">[ECMASCRIPT]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob" id="ref-for-dom-atob">atob()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob" id="ref-for-dom-atob">atob()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa" id="ref-for-dom-btoa">btoa()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa" id="ref-for-dom-btoa">btoa()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://console.spec.whatwg.org/#namespacedef-console" id="ref-for-namespacedef-console">console</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout" id="ref-for-dom-cleartimeout">clearTimeout()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto" id="ref-for-dom-windoworworkerglobalscope-crypto">crypto</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval" id="ref-for-dom-clearinterval">clearInterval()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#dom-global-fetch" id="ref-for-dom-global-fetch">fetch()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://console.spec.whatwg.org/#namespacedef-console" id="ref-for-namespacedef-console">console</a></code> <a data-link-type="biblio" href="#biblio-console" title="Console Standard">[CONSOLE]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent">userAgent</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto" id="ref-for-dom-windoworworkerglobalscope-crypto">crypto</a></code> <a data-link-type="biblio" href="#biblio-webcrypto" title="Web Cryptography Level 2">[WEBCRYPTO]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance" id="ref-for-dom-windoworworkerglobalscope-performance">performance</a></code>.<code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-performance-now" id="ref-for-dom-performance-now">now()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://fetch.spec.whatwg.org/#dom-global-fetch" id="ref-for-dom-global-fetch">fetch()</a></code> <a data-link-type="biblio" href="#biblio-fetch" title="Fetch Standard">[FETCH]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance" id="ref-for-dom-windoworworkerglobalscope-performance①">performance</a></code>.<code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-performance-timeorigin" id="ref-for-dom-performance-timeorigin">timeOrigin</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent">userAgent</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask" id="ref-for-dom-queuemicrotask">queueMicrotask()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror" id="ref-for-handler-onerror">onerror</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout" id="ref-for-dom-settimeout">setTimeout()</a></code> / globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout" id="ref-for-dom-cleartimeout">clearTimeout()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunhandledrejection" id="ref-for-handler-window-onunhandledrejection">onunhandledrejection</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval" id="ref-for-dom-setinterval">setInterval()</a></code> / globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval" id="ref-for-dom-clearinterval">clearInterval()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onrejectionhandled" id="ref-for-handler-window-onrejectionhandled">onrejectionhandled</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone" id="ref-for-dom-structuredclone">structuredClone()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance" id="ref-for-dom-windoworworkerglobalscope-performance">performance</a></code> <a data-link-type="biblio" href="#biblio-hr-time" title="High Resolution Time">[HR-TIME]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑤">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-compile" id="ref-for-dom-webassembly-compile">compile()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask" id="ref-for-dom-queuemicrotask">queueMicrotask()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑥">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming" id="ref-for-dom-webassembly-compilestreaming">compileStreaming()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-reporterror" id="ref-for-dom-reporterror">reportError()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑦">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate" id="ref-for-dom-webassembly-instantiate">instantiate()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-self" id="ref-for-dom-self">self</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑧">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming" id="ref-for-dom-webassembly-instantiatestreaming">instantiateStreaming()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout" id="ref-for-dom-settimeout">setTimeout()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
     <li data-md>
-     <p>globalThis.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly⑨">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-validate" id="ref-for-dom-webassembly-validate">validate()</a></code></p>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval" id="ref-for-dom-setinterval">setInterval()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone" id="ref-for-dom-structuredclone">structuredClone()</a></code> <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①⓪">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-compile" id="ref-for-dom-webassembly-compile">compile()</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①①">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming" id="ref-for-dom-webassembly-compilestreaming">compileStreaming()</a></code> <a data-link-type="biblio" href="#biblio-wasm-web-api-2" title="WebAssembly Web API">[WASM-WEB-API-2]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①②">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate" id="ref-for-dom-webassembly-instantiate">instantiate()</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①③">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming" id="ref-for-dom-webassembly-instantiatestreaming">instantiateStreaming()</a></code> <a data-link-type="biblio" href="#biblio-wasm-web-api-2" title="WebAssembly Web API">[WASM-WEB-API-2]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①④">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-jstag" id="ref-for-dom-webassembly-jstag">JSTag</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
+    <li data-md>
+     <p><code>globalThis.</code><code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#namespacedef-webassembly" id="ref-for-namespacedef-webassembly①⑤">WebAssembly</a></code>.<code class="idl"><a data-link-type="idl" href="https://webassembly.github.io/spec/js-api/#dom-webassembly-validate" id="ref-for-dom-webassembly-validate">validate()</a></code> <a data-link-type="biblio" href="#biblio-wasm-js-api-2" title="WebAssembly JavaScript Interface">[WASM-JS-API-2]</a></p>
    </ul>
-   <h2 class="heading settled" data-level="3" id="global-scope"><span class="secno">3. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
-   <p>The exact type of the global scope (<code>globalThis</code>) can vary across runtimes. Most Web Platform APIs are defined in terms that assume Web Browser environments that specifically expose types like <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#window" id="ref-for-window">Window</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#worker" id="ref-for-worker">Worker</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope" id="ref-for-workerglobalscope">WorkerGlobalScope</a></code>, and so forth. To simplify conformance, all Interfaces, methods, and properties defined by this specification MUST be exposed on the runtime’s relevant global scope (e,g., <code>globalThis.crypto</code>, <code>globalThis.ReadableStream</code>, etc).</p>
-   <p>With many runtimes, adding a new global-scoped property can introduce breaking changes when the new global conflicts with existing application code. Many Web Platform APIs define global properties using the <code>readonly</code> attribute. To avoid introducing breaking changes, runtimes conforming to this specification MAY choose to ignore the <code>readonly</code> attribute for properties being added to the global scope.</p>
-   <h2 class="heading settled" data-level="4" id="navigator-useragent-requirements"><span class="secno">4. </span><span class="content">Requirements for navigator.userAgent</span><a class="self-link" href="#navigator-useragent-requirements"></a></h2>
-   <p>The globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator①">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent①">userAgent</a></code> property is provided such that application code can reliably identify the runtime within which it is running.
-The value of the property is a string conforming to the <code class="idl"><a data-link-type="idl" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3"><code>User-Agent</code></a></code> construction in RFC 7231:</p>
+   <p>Web-interoperable runtimes that support workers shall also expose <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onerror" id="ref-for-handler-workerglobalscope-onerror">onerror</a></code>,
+<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onunhandledrejection" id="ref-for-handler-workerglobalscope-onunhandledrejection">onunhandledrejection</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onrejectionhandled" id="ref-for-handler-workerglobalscope-onrejectionhandled">onrejectionhandled</a></code> and
+<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#dom-workerglobalscope-self" id="ref-for-dom-workerglobalscope-self">self</a></code> on the worker’s <code>globalThis</code>,
+unless otherwise specified in this specification. <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a></p>
+   <h2 class="heading settled" data-level="6" id="global-scope"><span class="secno">6. </span><span class="content">The Global Scope</span><a class="self-link" href="#global-scope"></a></h2>
+   <p>The exact type of the global scope (<code>globalThis</code>) can vary across runtimes. Most Web Platform APIs are defined in terms that assume Web Browser environments that specifically expose types like <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#window" id="ref-for-window">Window</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope" id="ref-for-workerglobalscope">WorkerGlobalScope</a></code>, and so forth. To simplify conformance, all interfaces, methods, and properties defined by this specification shall be exposed on the runtime’s relevant global scope (e.g., <code>globalThis.crypto</code>, <code>globalThis.ReadableStream</code>, etc).</p>
+   <p>With many runtimes, adding a new global-scoped property can introduce breaking changes when the new global conflicts with existing application code. Many Web Platform APIs define global properties using <a data-link-type="dfn" href="https://webidl.spec.whatwg.org/#dfn-read-only" id="ref-for-dfn-read-only">the <code>readonly</code> attribute</a>. <a data-link-type="biblio" href="#biblio-webidl" title="Web IDL Standard">[WEBIDL]</a> To avoid introducing breaking changes, runtimes conforming to this specification may choose to ignore the <code>readonly</code> attribute for properties being added to the global scope. This allows users of these runtimes to delete or overwrite these properties if they conflict with existing application code.</p>
+   <p>The global object on <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#window" id="ref-for-window①">Window</a></code>-like and worker environments should always be an instance of <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget①">EventTarget</a></code>. Web-interoperable runtimes should follow the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#report-an-exception" id="ref-for-report-an-exception">report an exception</a> algorithm, and the JavaScript <a href="https://tc39.es/ecma262/#sec-host-promise-rejection-tracker">HostPromiseRejectionTracker</a> host hook, as defined in <a data-link-type="biblio" href="#biblio-html" title="HTML Standard">[HTML]</a>. This includes firing the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/indices.html#event-error" id="ref-for-event-error">error</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/indices.html#event-unhandledrejection" id="ref-for-event-unhandledrejection">unhandledrejection</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/indices.html#event-rejectionhandled" id="ref-for-event-rejectionhandled">rejectionhandled</a></code> events on the global object.</p>
+   <p>In cases where it is not possible to have the global object be an instance of <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget②">EventTarget</a></code> due to legacy reasons, the relevant events shall still be fired through a suitable alternative mechanism available at the global scope. This mechanism shall provide at least the same information that is provided by the relevant event interfaces if the global object were to be an <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget③">EventTarget</a></code>. Such runtimes shall not support the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror" id="ref-for-handler-onerror①">onerror</a></code>, <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunhandledrejection" id="ref-for-handler-window-onunhandledrejection①">onunhandledrejection</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onrejectionhandled" id="ref-for-handler-window-onrejectionhandled①">onrejectionhandled</a></code> global properties. Such runtimes are not required to implement the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#errorevent" id="ref-for-errorevent①">ErrorEvent</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/webappapis.html#promiserejectionevent" id="ref-for-promiserejectionevent①">PromiseRejectionEvent</a></code> interfaces.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> For example, in Node.js the global object does not implement <code class="idl"><a data-link-type="idl" href="https://dom.spec.whatwg.org/#eventtarget" id="ref-for-eventtarget④">EventTarget</a></code>, and the relevant events are fired on the <code>globalThis.process</code> object with the names <code>uncaughtException</code>, <code>unhandledRejection</code> and <code>rejectionHandled</code>, respectively.</p>
+   <h2 class="heading settled" data-level="7" id="useragent-requirements"><span class="secno">7. </span><span class="content">Requirements for default User-Agent value</span><a class="self-link" href="#useragent-requirements"></a></h2>
+   <p>The <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#default-user-agent-value" id="ref-for-default-user-agent-value">default `User-Agent` value</a> is provided such that application code can reliably identify the runtime within which it is running. The value shall be a string conforming to the <code class="idl"><a data-link-type="idl" href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.5.3"><code>User-Agent</code></a></code> construction in <a data-link-type="biblio" href="#biblio-rfc7231" title="HTTP Semantics">[RFC7231]</a>:</p>
 <pre>User-Agent      = product *( RWS ( product / comment ) )
 product         = token ["/" product-version]
 product-version = token
 </pre>
-   <p>While runtimes that implement globalThis.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator" id="ref-for-dom-navigator②">navigator</a></code>.<code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent" id="ref-for-dom-navigator-useragent②">userAgent</a></code> MUST provide a value that is conformant with the structure defined by RFC 7231, the value SHOULD be treated as a single, complete, opaque, unstructured value. It is RECOMMENDED that the value be limited to a single <code>product</code> token excluding the optional <code>product-version</code>. For instance, <code>navigator.userAgent = 'MyRuntime'</code>. The value SHOULD NOT include any <code>comment</code> components.</p>
-   <h2 class="heading settled" data-level="5" id="extensions"><span class="secno">5. </span><span class="content">Extensions</span><a class="self-link" href="#extensions"></a></h2>
-   <p>Runtime-specific extensions to any Web Platform API MAY be implemented by conforming runtimes. Such extensions MUST be defined so that their use neither contradicts nor causes the non-conformance of normative functionality of any Web Platform API.</p>
-   <p>Application use of such extensions must be carefully considered, as doing so reduces interoperability and portability of code across runtimes.</p>
+   <p>The <a data-link-type="dfn" href="https://fetch.spec.whatwg.org/#default-user-agent-value" id="ref-for-default-user-agent-value①">default `User-Agent` value</a> should be treated as a single, complete, opaque, unstructured value. It is recommended that the value be limited to a single <code>product</code> token excluding the optional <code>product-version</code>. The value should not include any <code>comment</code> components.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> For instance, <code>navigator.userAgent</code> could be set to <code>'MyRuntime'</code>.</p>
    <div data-fill-with="index">
     <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
     <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
     <ul class="index">
-     <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 1</span>
+     <li><a href="#web-interoperable-runtime">Web-interoperable Runtime</a><span>, in § 4.2</span>
+     <li><a href="#web-platform">Web Platform</a><span>, in § 4.1</span>
     </ul>
     <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
     <ul class="index">
+     <li>
+      <a data-link-type="biblio">[COMPRESSION]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="6e6d76ed">CompressionStream</span>
+       <li><span class="dfn-paneled" id="be4c4211">DecompressionStream</span>
+      </ul>
      <li>
       <a data-link-type="biblio">[CONSOLE]</a> defines the following terms:
       <ul>
@@ -2288,8 +2404,14 @@ product-version = token
       <ul>
        <li><span class="dfn-paneled" id="2e66eaf1">AbortController</span>
        <li><span class="dfn-paneled" id="cca3cdb2">AbortSignal</span>
+       <li><span class="dfn-paneled" id="0591e11c">CustomEvent</span>
        <li><span class="dfn-paneled" id="129bdae8">Event</span>
        <li><span class="dfn-paneled" id="2bc0cdf4">EventTarget</span>
+      </ul>
+     <li>
+      <a data-link-type="biblio">[ECMASCRIPT]</a> defines the following terms:
+      <ul>
+       <li><span class="dfn-paneled" id="566bb8fb">globalThis</span>
       </ul>
      <li>
       <a data-link-type="biblio">[ENCODING]</a> defines the following terms:
@@ -2305,38 +2427,53 @@ product-version = token
        <li><span class="dfn-paneled" id="e806d5a8">Headers</span>
        <li><span class="dfn-paneled" id="f9da6f1f">Request</span>
        <li><span class="dfn-paneled" id="08a12aad">Response</span>
+       <li><span class="dfn-paneled" id="1c099e04">default `User-Agent` value</span>
        <li><span class="dfn-paneled" id="2ce6f6bb">fetch(input)</span>
       </ul>
      <li>
-      <a data-link-type="biblio">[FileAPI]</a> defines the following terms:
+      <a data-link-type="biblio">[FILEAPI]</a> defines the following terms:
       <ul>
        <li><span class="dfn-paneled" id="b7d73f5b">Blob</span>
        <li><span class="dfn-paneled" id="cd028611">File</span>
       </ul>
      <li>
-      <a data-link-type="biblio">[HR-TIME-3]</a> defines the following terms:
+      <a data-link-type="biblio">[HR-TIME]</a> defines the following terms:
       <ul>
-       <li><span class="dfn-paneled" id="d62af025">now()</span>
+       <li><span class="dfn-paneled" id="bd45e189">Performance</span>
        <li><span class="dfn-paneled" id="aee9d099">performance</span>
-       <li><span class="dfn-paneled" id="3b35d8a9">timeOrigin</span>
       </ul>
      <li>
       <a data-link-type="biblio">[HTML]</a> defines the following terms:
       <ul>
-       <li><span class="dfn-paneled" id="b08d0bb2">HTMLElement</span>
-       <li><span class="dfn-paneled" id="18c65a7a">HTMLFormElement</span>
+       <li><span class="dfn-paneled" id="ccfe986b">ErrorEvent</span>
+       <li><span class="dfn-paneled" id="02fb8691">MessageChannel</span>
+       <li><span class="dfn-paneled" id="3e8c0e5f">MessageEvent</span>
+       <li><span class="dfn-paneled" id="df16744f">MessagePort</span>
+       <li><span class="dfn-paneled" id="c0934dbf">PromiseRejectionEvent</span>
        <li><span class="dfn-paneled" id="5d7209e9">Window</span>
-       <li><span class="dfn-paneled" id="bfc1c271">Worker</span>
        <li><span class="dfn-paneled" id="83c59a3a">WorkerGlobalScope</span>
        <li><span class="dfn-paneled" id="98cffeee">atob(data)</span>
        <li><span class="dfn-paneled" id="43617e61">btoa(data)</span>
        <li><span class="dfn-paneled" id="630c6156">clearInterval(id)</span>
        <li><span class="dfn-paneled" id="055c88fa">clearTimeout(id)</span>
+       <li><span class="dfn-paneled" id="544fc7df">error</span>
        <li><span class="dfn-paneled" id="a0768d9f">navigator</span>
+       <li><span class="dfn-paneled" id="daa15432">onerror <small>(for GlobalEventHandlers)</small></span>
+       <li><span class="dfn-paneled" id="bd534f6c">onerror <small>(for WorkerGlobalScope)</small></span>
+       <li><span class="dfn-paneled" id="88e7fa46">onrejectionhandled <small>(for WindowEventHandlers)</small></span>
+       <li><span class="dfn-paneled" id="8e0df635">onrejectionhandled <small>(for WorkerGlobalScope)</small></span>
+       <li><span class="dfn-paneled" id="eba883ec">onunhandledrejection <small>(for WindowEventHandlers)</small></span>
+       <li><span class="dfn-paneled" id="ffd62b07">onunhandledrejection <small>(for WorkerGlobalScope)</small></span>
        <li><span class="dfn-paneled" id="c6083cc6">queueMicrotask(callback)</span>
+       <li><span class="dfn-paneled" id="95ebcee5">rejectionhandled</span>
+       <li><span class="dfn-paneled" id="560275c7">report an exception</span>
+       <li><span class="dfn-paneled" id="6b152e3c">reportError(e)</span>
+       <li><span class="dfn-paneled" id="8b244842">self <small>(for Window)</small></span>
+       <li><span class="dfn-paneled" id="14e557d6">self <small>(for WorkerGlobalScope)</small></span>
        <li><span class="dfn-paneled" id="122f01fb">setInterval(handler, timeout, ...arguments)</span>
        <li><span class="dfn-paneled" id="3332e595">setTimeout(handler, timeout, ...arguments)</span>
        <li><span class="dfn-paneled" id="f2f85335">structuredClone(value, options)</span>
+       <li><span class="dfn-paneled" id="f1041b37">unhandledrejection</span>
        <li><span class="dfn-paneled" id="3cdef7e1">userAgent</span>
       </ul>
      <li>
@@ -2354,6 +2491,7 @@ product-version = token
        <li><span class="dfn-paneled" id="bd1abd53">TransformStreamDefaultController</span>
        <li><span class="dfn-paneled" id="59dc45b5">WritableStream</span>
        <li><span class="dfn-paneled" id="99bfa32c">WritableStreamDefaultController</span>
+       <li><span class="dfn-paneled" id="4f848e3e">WritableStreamDefaultWriter</span>
       </ul>
      <li>
       <a data-link-type="biblio">[URL]</a> defines the following terms:
@@ -2369,11 +2507,17 @@ product-version = token
      <li>
       <a data-link-type="biblio">[WASM-JS-API-2]</a> defines the following terms:
       <ul>
+       <li><span class="dfn-paneled" id="dd57410d">CompileError</span>
+       <li><span class="dfn-paneled" id="96071371">Exception</span>
        <li><span class="dfn-paneled" id="3ce2d948">Global</span>
        <li><span class="dfn-paneled" id="a3a1d384">Instance</span>
+       <li><span class="dfn-paneled" id="7957d613">JSTag</span>
+       <li><span class="dfn-paneled" id="4032b689">LinkError</span>
        <li><span class="dfn-paneled" id="9ca1c179">Memory</span>
        <li><span class="dfn-paneled" id="29228fdf">Module</span>
+       <li><span class="dfn-paneled" id="4e5a29a5">RuntimeError</span>
        <li><span class="dfn-paneled" id="32d74a61">Table</span>
+       <li><span class="dfn-paneled" id="d40d28a6">Tag</span>
        <li><span class="dfn-paneled" id="9feefb27">WebAssembly</span>
        <li><span class="dfn-paneled" id="3711a638">compile(bytes)</span>
        <li><span class="dfn-paneled" id="f20d405b">instantiate(bytes)</span>
@@ -2386,7 +2530,7 @@ product-version = token
        <li><span class="dfn-paneled" id="a845eee0">instantiateStreaming(source)</span>
       </ul>
      <li>
-      <a data-link-type="biblio">[WEBCRYPTO-2]</a> defines the following terms:
+      <a data-link-type="biblio">[WEBCRYPTO]</a> defines the following terms:
       <ul>
        <li><span class="dfn-paneled" id="529179ea">Crypto</span>
        <li><span class="dfn-paneled" id="5fc623fc">CryptoKey</span>
@@ -2397,6 +2541,7 @@ product-version = token
       <a data-link-type="biblio">[WEBIDL]</a> defines the following terms:
       <ul>
        <li><span class="dfn-paneled" id="dca2de17">DOMException</span>
+       <li><span class="dfn-paneled" id="bfc48225">read only</span>
       </ul>
      <li>
       <a data-link-type="biblio">[XHR]</a> defines the following terms:
@@ -2408,51 +2553,8 @@ product-version = token
    <div data-fill-with="property-index"></div>
    <div data-fill-with="idl-index"></div>
    <div data-fill-with="cddl-index"></div>
-   <div data-fill-with="issues-index">
-    <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
-    <div style="counter-reset:issue">
-     <div class="issue"> The <code class="idl"><a data-link-type="idl" href="https://xhr.spec.whatwg.org/#formdata">FormData</a></code> constructor optionally takes <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/forms.html#htmlformelement">HTMLFormElement</a></code> and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/dom.html#htmlelement">HTMLElement</a></code> as parameters.
-TODO: Figure out what implementations without DOM support should do here.
-Node.js and Deno throw if the first parameter is not <code>undefined</code> but ignore the second parameter.
-Cloudflare Workers ignores all parameters. <a class="issue-return" href="#issue-92f53c35" title="Jump to section">↵</a></div>
-    </div>
-   </div>
-   <div data-fill-with="references">
-    <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-    <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-    <dl>
-     <dt id="biblio-console">[CONSOLE]
-     <dd>Dominic Farolino; Robert Kowalski; Terin Stock. <a href="https://console.spec.whatwg.org/"><cite>Console Standard</cite></a>. Living Standard. URL: <a href="https://console.spec.whatwg.org/">https://console.spec.whatwg.org/</a>
-     <dt id="biblio-dom">[DOM]
-     <dd>Anne van Kesteren. <a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a>
-     <dt id="biblio-encoding">[ENCODING]
-     <dd>Anne van Kesteren. <a href="https://encoding.spec.whatwg.org/"><cite>Encoding Standard</cite></a>. Living Standard. URL: <a href="https://encoding.spec.whatwg.org/">https://encoding.spec.whatwg.org/</a>
-     <dt id="biblio-fetch">[FETCH]
-     <dd>Anne van Kesteren. <a href="https://fetch.spec.whatwg.org/"><cite>Fetch Standard</cite></a>. Living Standard. URL: <a href="https://fetch.spec.whatwg.org/">https://fetch.spec.whatwg.org/</a>
-     <dt id="biblio-fileapi">[FileAPI]
-     <dd>Marijn Kruisselbrink. <a href="https://w3c.github.io/FileAPI/"><cite>File API</cite></a>. URL: <a href="https://w3c.github.io/FileAPI/">https://w3c.github.io/FileAPI/</a>
-     <dt id="biblio-hr-time-3">[HR-TIME-3]
-     <dd>Yoav Weiss. <a href="https://w3c.github.io/hr-time/"><cite>High Resolution Time</cite></a>. URL: <a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a>
-     <dt id="biblio-html">[HTML]
-     <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
-     <dt id="biblio-streams">[STREAMS]
-     <dd>Adam Rice; et al. <a href="https://streams.spec.whatwg.org/"><cite>Streams Standard</cite></a>. Living Standard. URL: <a href="https://streams.spec.whatwg.org/">https://streams.spec.whatwg.org/</a>
-     <dt id="biblio-url">[URL]
-     <dd>Anne van Kesteren. <a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a>
-     <dt id="biblio-urlpattern">[URLPATTERN]
-     <dd>Ben Kelly; Jeremy Roman; 宍戸俊哉 (Shunya Shishido). <a href="https://urlpattern.spec.whatwg.org/"><cite>URL Pattern Standard</cite></a>. Living Standard. URL: <a href="https://urlpattern.spec.whatwg.org/">https://urlpattern.spec.whatwg.org/</a>
-     <dt id="biblio-wasm-js-api-2">[WASM-JS-API-2]
-     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/js-api/"><cite>WebAssembly JavaScript Interface</cite></a>. URL: <a href="https://webassembly.github.io/spec/js-api/">https://webassembly.github.io/spec/js-api/</a>
-     <dt id="biblio-wasm-web-api-2">[WASM-WEB-API-2]
-     <dd>. Ms2ger. <a href="https://webassembly.github.io/spec/web-api/"><cite>WebAssembly Web API</cite></a>. URL: <a href="https://webassembly.github.io/spec/web-api/">https://webassembly.github.io/spec/web-api/</a>
-     <dt id="biblio-webcrypto-2">[WEBCRYPTO-2]
-     <dd>Daniel Huigens. <a href="https://w3c.github.io/webcrypto/"><cite>Web Cryptography Level 2</cite></a>. URL: <a href="https://w3c.github.io/webcrypto/">https://w3c.github.io/webcrypto/</a>
-     <dt id="biblio-webidl">[WEBIDL]
-     <dd>Edgar Chen; Timothy Gu. <a href="https://webidl.spec.whatwg.org/"><cite>Web IDL Standard</cite></a>. Living Standard. URL: <a href="https://webidl.spec.whatwg.org/">https://webidl.spec.whatwg.org/</a>
-     <dt id="biblio-xhr">[XHR]
-     <dd>Anne van Kesteren. <a href="https://xhr.spec.whatwg.org/"><cite>XMLHttpRequest Standard</cite></a>. Living Standard. URL: <a href="https://xhr.spec.whatwg.org/">https://xhr.spec.whatwg.org/</a>
-    </dl>
-   </div>
+   <div data-fill-with="issues-index"></div>
+   <div data-fill-with="references"></div>
    <div data-fill-with="copyright">
     <h2 class="no-num heading settled" id="copyright--software-license"><span class="content">Copyright &amp; Software License</span><a class="self-link" href="#copyright--software-license"></a></h2>
     <p class="ECMAaddress">Ecma International</p>
@@ -2678,72 +2780,100 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"055c88fa": {"dfnID":"055c88fa","dfnText":"clearTimeout(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-cleartimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
-"056fb0bd": {"dfnID":"056fb0bd","dfnText":"TextEncoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoder"},
-"08a12aad": {"dfnID":"08a12aad","dfnText":"Response","external":true,"refSections":[{"refs":[{"id":"ref-for-response"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#response"},
-"122f01fb": {"dfnID":"122f01fb","dfnText":"setInterval(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-setinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
-"129bdae8": {"dfnID":"129bdae8","dfnText":"Event","external":true,"refSections":[{"refs":[{"id":"ref-for-event"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#event"},
-"15ed4f00": {"dfnID":"15ed4f00","dfnText":"compileStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compilestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
-"18c65a7a": {"dfnID":"18c65a7a","dfnText":"HTMLFormElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlformelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
-"1b28d572": {"dfnID":"1b28d572","dfnText":"URLPattern","external":true,"refSections":[{"refs":[{"id":"ref-for-urlpattern"}],"title":"2. Common API Index"}],"url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
-"1e249f40": {"dfnID":"1e249f40","dfnText":"TextDecoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
-"29228fdf": {"dfnID":"29228fdf","dfnText":"Module","external":true,"refSections":[{"refs":[{"id":"ref-for-module"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#module"},
-"2bc0cdf4": {"dfnID":"2bc0cdf4","dfnText":"EventTarget","external":true,"refSections":[{"refs":[{"id":"ref-for-eventtarget"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#eventtarget"},
-"2ce6f6bb": {"dfnID":"2ce6f6bb","dfnText":"fetch(input)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-global-fetch"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
-"2e66eaf1": {"dfnID":"2e66eaf1","dfnText":"AbortController","external":true,"refSections":[{"refs":[{"id":"ref-for-abortcontroller"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortcontroller"},
-"32d74a61": {"dfnID":"32d74a61","dfnText":"Table","external":true,"refSections":[{"refs":[{"id":"ref-for-table"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#table"},
-"3332e595": {"dfnID":"3332e595","dfnText":"setTimeout(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-settimeout"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
-"3711a638": {"dfnID":"3711a638","dfnText":"compile(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compile"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
-"3b35d8a9": {"dfnID":"3b35d8a9","dfnText":"timeOrigin","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-timeorigin"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
-"3cdef7e1": {"dfnID":"3cdef7e1","dfnText":"userAgent","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator-useragent"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator-useragent\u2460"},{"id":"ref-for-dom-navigator-useragent\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
-"3ce2d948": {"dfnID":"3ce2d948","dfnText":"Global","external":true,"refSections":[{"refs":[{"id":"ref-for-global"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#global"},
-"417f81da": {"dfnID":"417f81da","dfnText":"TextEncoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoderstream"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoderstream"},
-"43617e61": {"dfnID":"43617e61","dfnText":"btoa(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-btoa"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
-"47e93e3e": {"dfnID":"47e93e3e","dfnText":"TransformStream","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstream"},
-"529179ea": {"dfnID":"529179ea","dfnText":"Crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
-"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
-"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
-"5d7209e9": {"dfnID":"5d7209e9","dfnText":"Window","external":true,"refSections":[{"refs":[{"id":"ref-for-window"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
-"5fc623fc": {"dfnID":"5fc623fc","dfnText":"CryptoKey","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-CryptoKey"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
-"61cd38cd": {"dfnID":"61cd38cd","dfnText":"FormData","external":true,"refSections":[{"refs":[{"id":"ref-for-formdata"},{"id":"ref-for-formdata\u2460"}],"title":"2. Common API Index"}],"url":"https://xhr.spec.whatwg.org/#formdata"},
-"630c6156": {"dfnID":"630c6156","dfnText":"clearInterval(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-clearinterval"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
-"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
-"7b1760b0": {"dfnID":"7b1760b0","dfnText":"console","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-console"}],"title":"2. Common API Index"}],"url":"https://console.spec.whatwg.org/#namespacedef-console"},
-"83c59a3a": {"dfnID":"83c59a3a","dfnText":"WorkerGlobalScope","external":true,"refSections":[{"refs":[{"id":"ref-for-workerglobalscope"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
-"84eed482": {"dfnID":"84eed482","dfnText":"TextDecoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoder"}],"title":"2. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoder"},
-"98cffeee": {"dfnID":"98cffeee","dfnText":"atob(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-atob"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
-"9927ae47": {"dfnID":"9927ae47","dfnText":"ReadableByteStreamController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablebytestreamcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
-"99bfa32c": {"dfnID":"99bfa32c","dfnText":"WritableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
-"9ca1c179": {"dfnID":"9ca1c179","dfnText":"Memory","external":true,"refSections":[{"refs":[{"id":"ref-for-memory"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#memory"},
-"9cae8b68": {"dfnID":"9cae8b68","dfnText":"ReadableStreamDefaultReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
-"9feefb27": {"dfnID":"9feefb27","dfnText":"WebAssembly","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-webassembly"},{"id":"ref-for-namespacedef-webassembly\u2460"},{"id":"ref-for-namespacedef-webassembly\u2461"},{"id":"ref-for-namespacedef-webassembly\u2462"},{"id":"ref-for-namespacedef-webassembly\u2463"},{"id":"ref-for-namespacedef-webassembly\u2464"},{"id":"ref-for-namespacedef-webassembly\u2465"},{"id":"ref-for-namespacedef-webassembly\u2466"},{"id":"ref-for-namespacedef-webassembly\u2467"},{"id":"ref-for-namespacedef-webassembly\u2468"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
-"a0768d9f": {"dfnID":"a0768d9f","dfnText":"navigator","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator"}],"title":"2. Common API Index"},{"refs":[{"id":"ref-for-dom-navigator\u2460"},{"id":"ref-for-dom-navigator\u2461"}],"title":"4. Requirements for navigator.userAgent"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
-"a3a1d384": {"dfnID":"a3a1d384","dfnText":"Instance","external":true,"refSections":[{"refs":[{"id":"ref-for-instance"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#instance"},
-"a845eee0": {"dfnID":"a845eee0","dfnText":"instantiateStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiatestreaming"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
-"adfe3014": {"dfnID":"adfe3014","dfnText":"URLSearchParams","external":true,"refSections":[{"refs":[{"id":"ref-for-urlsearchparams"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#urlsearchparams"},
-"aee9d099": {"dfnID":"aee9d099","dfnText":"performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-performance"},{"id":"ref-for-dom-windoworworkerglobalscope-performance\u2460"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
-"b08d0bb2": {"dfnID":"b08d0bb2","dfnText":"HTMLElement","external":true,"refSections":[{"refs":[{"id":"ref-for-htmlelement"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
-"b484b574": {"dfnID":"b484b574","dfnText":"ReadableStreamBYOBReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobreader"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
-"b7d73f5b": {"dfnID":"b7d73f5b","dfnText":"Blob","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Blob"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
-"bd1abd53": {"dfnID":"bd1abd53","dfnText":"TransformStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstreamdefaultcontroller"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
-"be0af01c": {"dfnID":"be0af01c","dfnText":"validate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-validate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
-"bfc1c271": {"dfnID":"bfc1c271","dfnText":"Worker","external":true,"refSections":[{"refs":[{"id":"ref-for-worker"}],"title":"3. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
-"c04c9568": {"dfnID":"c04c9568","dfnText":"ByteLengthQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-bytelengthqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
-"c6083cc6": {"dfnID":"c6083cc6","dfnText":"queueMicrotask(callback)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-queuemicrotask"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
-"cca3cdb2": {"dfnID":"cca3cdb2","dfnText":"AbortSignal","external":true,"refSections":[{"refs":[{"id":"ref-for-abortsignal"}],"title":"2. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortsignal"},
-"cd028611": {"dfnID":"cd028611","dfnText":"File","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-file"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-file"},
-"ce760f06": {"dfnID":"ce760f06","dfnText":"ReadableStreamBYOBRequest","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobrequest"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
-"cf02c2dd": {"dfnID":"cf02c2dd","dfnText":"SubtleCrypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-SubtleCrypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
-"d62af025": {"dfnID":"d62af025","dfnText":"now()","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance-now"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance-now"},
-"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"2. Common API Index"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
-"e806d5a8": {"dfnID":"e806d5a8","dfnText":"Headers","external":true,"refSections":[{"refs":[{"id":"ref-for-headers"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#headers"},
-"eb1fb636": {"dfnID":"eb1fb636","dfnText":"CountQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-countqueuingstrategy"}],"title":"2. Common API Index"}],"url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
-"ed3ab0a3": {"dfnID":"ed3ab0a3","dfnText":"crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-crypto"}],"title":"2. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
-"f06432d7": {"dfnID":"f06432d7","dfnText":"URL","external":true,"refSections":[{"refs":[{"id":"ref-for-url"}],"title":"2. Common API Index"}],"url":"https://url.spec.whatwg.org/#url"},
-"f20d405b": {"dfnID":"f20d405b","dfnText":"instantiate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiate"}],"title":"2. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
-"f2f85335": {"dfnID":"f2f85335","dfnText":"structuredClone(value, options)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-structuredclone"}],"title":"2. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
-"f9da6f1f": {"dfnID":"f9da6f1f","dfnText":"Request","external":true,"refSections":[{"refs":[{"id":"ref-for-request"}],"title":"2. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#request"},
-"web-interoperable-runtime": {"dfnID":"web-interoperable-runtime","dfnText":"Web-interoperable Runtime","external":false,"refSections":[{"refs":[{"id":"ref-for-web-interoperable-runtime"}],"title":"2. Common API Index"}],"url":"#web-interoperable-runtime"},
+"02fb8691": {"dfnID":"02fb8691","dfnText":"MessageChannel","external":true,"refSections":[{"refs":[{"id":"ref-for-messagechannel"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/web-messaging.html#messagechannel"},
+"055c88fa": {"dfnID":"055c88fa","dfnText":"clearTimeout(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-cleartimeout"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-cleartimeout"},
+"056fb0bd": {"dfnID":"056fb0bd","dfnText":"TextEncoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoder"}],"title":"5. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoder"},
+"0591e11c": {"dfnID":"0591e11c","dfnText":"CustomEvent","external":true,"refSections":[{"refs":[{"id":"ref-for-customevent"}],"title":"5. Common API Index"}],"url":"https://dom.spec.whatwg.org/#customevent"},
+"08a12aad": {"dfnID":"08a12aad","dfnText":"Response","external":true,"refSections":[{"refs":[{"id":"ref-for-response"}],"title":"5. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#response"},
+"122f01fb": {"dfnID":"122f01fb","dfnText":"setInterval(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-setinterval"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
+"129bdae8": {"dfnID":"129bdae8","dfnText":"Event","external":true,"refSections":[{"refs":[{"id":"ref-for-event"}],"title":"5. Common API Index"}],"url":"https://dom.spec.whatwg.org/#event"},
+"14e557d6": {"dfnID":"14e557d6","dfnText":"self (for WorkerGlobalScope)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-workerglobalscope-self"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#dom-workerglobalscope-self"},
+"15ed4f00": {"dfnID":"15ed4f00","dfnText":"compileStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compilestreaming"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
+"1b28d572": {"dfnID":"1b28d572","dfnText":"URLPattern","external":true,"refSections":[{"refs":[{"id":"ref-for-urlpattern"}],"title":"5. Common API Index"}],"url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
+"1c099e04": {"dfnID":"1c099e04","dfnText":"default `User-Agent` value","external":true,"refSections":[{"refs":[{"id":"ref-for-default-user-agent-value"},{"id":"ref-for-default-user-agent-value\u2460"}],"title":"7. Requirements for default User-Agent value"}],"url":"https://fetch.spec.whatwg.org/#default-user-agent-value"},
+"1e249f40": {"dfnID":"1e249f40","dfnText":"TextDecoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoderstream"}],"title":"5. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
+"29228fdf": {"dfnID":"29228fdf","dfnText":"Module","external":true,"refSections":[{"refs":[{"id":"ref-for-module"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#module"},
+"2bc0cdf4": {"dfnID":"2bc0cdf4","dfnText":"EventTarget","external":true,"refSections":[{"refs":[{"id":"ref-for-eventtarget"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-eventtarget\u2460"},{"id":"ref-for-eventtarget\u2461"},{"id":"ref-for-eventtarget\u2462"},{"id":"ref-for-eventtarget\u2463"}],"title":"6. The Global Scope"}],"url":"https://dom.spec.whatwg.org/#eventtarget"},
+"2ce6f6bb": {"dfnID":"2ce6f6bb","dfnText":"fetch(input)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-global-fetch"}],"title":"5. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
+"2e66eaf1": {"dfnID":"2e66eaf1","dfnText":"AbortController","external":true,"refSections":[{"refs":[{"id":"ref-for-abortcontroller"}],"title":"5. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortcontroller"},
+"32d74a61": {"dfnID":"32d74a61","dfnText":"Table","external":true,"refSections":[{"refs":[{"id":"ref-for-table"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#table"},
+"3332e595": {"dfnID":"3332e595","dfnText":"setTimeout(handler, timeout, ...arguments)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-settimeout"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
+"3711a638": {"dfnID":"3711a638","dfnText":"compile(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-compile"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
+"3cdef7e1": {"dfnID":"3cdef7e1","dfnText":"userAgent","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator-useragent"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent"},
+"3ce2d948": {"dfnID":"3ce2d948","dfnText":"Global","external":true,"refSections":[{"refs":[{"id":"ref-for-global"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#global"},
+"3e8c0e5f": {"dfnID":"3e8c0e5f","dfnText":"MessageEvent","external":true,"refSections":[{"refs":[{"id":"ref-for-messageevent"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/comms.html#messageevent"},
+"4032b689": {"dfnID":"4032b689","dfnText":"LinkError","external":true,"refSections":[{"refs":[{"id":"ref-for-exceptiondef-linkerror"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#exceptiondef-linkerror"},
+"417f81da": {"dfnID":"417f81da","dfnText":"TextEncoderStream","external":true,"refSections":[{"refs":[{"id":"ref-for-textencoderstream"}],"title":"5. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textencoderstream"},
+"43617e61": {"dfnID":"43617e61","dfnText":"btoa(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-btoa"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
+"47e93e3e": {"dfnID":"47e93e3e","dfnText":"TransformStream","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstream"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstream"},
+"4e5a29a5": {"dfnID":"4e5a29a5","dfnText":"RuntimeError","external":true,"refSections":[{"refs":[{"id":"ref-for-exceptiondef-runtimeerror"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#exceptiondef-runtimeerror"},
+"4f848e3e": {"dfnID":"4f848e3e","dfnText":"WritableStreamDefaultWriter","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultwriter"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultwriter"},
+"529179ea": {"dfnID":"529179ea","dfnText":"Crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Crypto"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
+"544fc7df": {"dfnID":"544fc7df","dfnText":"error","external":true,"refSections":[{"refs":[{"id":"ref-for-event-error"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/indices.html#event-error"},
+"560275c7": {"dfnID":"560275c7","dfnText":"report an exception","external":true,"refSections":[{"refs":[{"id":"ref-for-report-an-exception"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#report-an-exception"},
+"566bb8fb": {"dfnID":"566bb8fb","dfnText":"globalThis","external":true,"refSections":[{"refs":[{"id":"ref-for-sec-globalthis"}],"title":"5. Common API Index"}],"url":"https://tc39.es/ecma262/multipage/global-object.html#sec-globalthis"},
+"59dc45b5": {"dfnID":"59dc45b5","dfnText":"WritableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestream"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestream"},
+"59ed4e57": {"dfnID":"59ed4e57","dfnText":"ReadableStream","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestream"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestream"},
+"5d7209e9": {"dfnID":"5d7209e9","dfnText":"Window","external":true,"refSections":[{"refs":[{"id":"ref-for-window"},{"id":"ref-for-window\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
+"5fc623fc": {"dfnID":"5fc623fc","dfnText":"CryptoKey","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-CryptoKey"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
+"61cd38cd": {"dfnID":"61cd38cd","dfnText":"FormData","external":true,"refSections":[{"refs":[{"id":"ref-for-formdata"}],"title":"5. Common API Index"}],"url":"https://xhr.spec.whatwg.org/#formdata"},
+"630c6156": {"dfnID":"630c6156","dfnText":"clearInterval(id)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-clearinterval"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-clearinterval"},
+"66e988ae": {"dfnID":"66e988ae","dfnText":"ReadableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultcontroller"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultcontroller"},
+"6b152e3c": {"dfnID":"6b152e3c","dfnText":"reportError(e)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-reporterror"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-reporterror"},
+"6e6d76ed": {"dfnID":"6e6d76ed","dfnText":"CompressionStream","external":true,"refSections":[{"refs":[{"id":"ref-for-compressionstream"}],"title":"5. Common API Index"}],"url":"https://compression.spec.whatwg.org/#compressionstream"},
+"7957d613": {"dfnID":"7957d613","dfnText":"JSTag","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-jstag"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-jstag"},
+"7b1760b0": {"dfnID":"7b1760b0","dfnText":"console","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-console"}],"title":"5. Common API Index"}],"url":"https://console.spec.whatwg.org/#namespacedef-console"},
+"83c59a3a": {"dfnID":"83c59a3a","dfnText":"WorkerGlobalScope","external":true,"refSections":[{"refs":[{"id":"ref-for-workerglobalscope"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
+"84eed482": {"dfnID":"84eed482","dfnText":"TextDecoder","external":true,"refSections":[{"refs":[{"id":"ref-for-textdecoder"}],"title":"5. Common API Index"}],"url":"https://encoding.spec.whatwg.org/#textdecoder"},
+"88e7fa46": {"dfnID":"88e7fa46","dfnText":"onrejectionhandled (for WindowEventHandlers)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-window-onrejectionhandled"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-handler-window-onrejectionhandled\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onrejectionhandled"},
+"8b244842": {"dfnID":"8b244842","dfnText":"self (for Window)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-self"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-self"},
+"8e0df635": {"dfnID":"8e0df635","dfnText":"onrejectionhandled (for WorkerGlobalScope)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-workerglobalscope-onrejectionhandled"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onrejectionhandled"},
+"95ebcee5": {"dfnID":"95ebcee5","dfnText":"rejectionhandled","external":true,"refSections":[{"refs":[{"id":"ref-for-event-rejectionhandled"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/indices.html#event-rejectionhandled"},
+"96071371": {"dfnID":"96071371","dfnText":"Exception","external":true,"refSections":[{"refs":[{"id":"ref-for-exception"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#exception"},
+"98cffeee": {"dfnID":"98cffeee","dfnText":"atob(data)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-atob"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
+"9927ae47": {"dfnID":"9927ae47","dfnText":"ReadableByteStreamController","external":true,"refSections":[{"refs":[{"id":"ref-for-readablebytestreamcontroller"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablebytestreamcontroller"},
+"99bfa32c": {"dfnID":"99bfa32c","dfnText":"WritableStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-writablestreamdefaultcontroller"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
+"9ca1c179": {"dfnID":"9ca1c179","dfnText":"Memory","external":true,"refSections":[{"refs":[{"id":"ref-for-memory"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#memory"},
+"9cae8b68": {"dfnID":"9cae8b68","dfnText":"ReadableStreamDefaultReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreamdefaultreader"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreamdefaultreader"},
+"9feefb27": {"dfnID":"9feefb27","dfnText":"WebAssembly","external":true,"refSections":[{"refs":[{"id":"ref-for-namespacedef-webassembly"},{"id":"ref-for-namespacedef-webassembly\u2460"},{"id":"ref-for-namespacedef-webassembly\u2461"},{"id":"ref-for-namespacedef-webassembly\u2462"},{"id":"ref-for-namespacedef-webassembly\u2463"},{"id":"ref-for-namespacedef-webassembly\u2464"},{"id":"ref-for-namespacedef-webassembly\u2465"},{"id":"ref-for-namespacedef-webassembly\u2466"},{"id":"ref-for-namespacedef-webassembly\u2467"},{"id":"ref-for-namespacedef-webassembly\u2468"},{"id":"ref-for-namespacedef-webassembly\u2460\u24ea"},{"id":"ref-for-namespacedef-webassembly\u2460\u2460"},{"id":"ref-for-namespacedef-webassembly\u2460\u2461"},{"id":"ref-for-namespacedef-webassembly\u2460\u2462"},{"id":"ref-for-namespacedef-webassembly\u2460\u2463"},{"id":"ref-for-namespacedef-webassembly\u2460\u2464"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
+"a0768d9f": {"dfnID":"a0768d9f","dfnText":"navigator","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-navigator"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
+"a3a1d384": {"dfnID":"a3a1d384","dfnText":"Instance","external":true,"refSections":[{"refs":[{"id":"ref-for-instance"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#instance"},
+"a845eee0": {"dfnID":"a845eee0","dfnText":"instantiateStreaming(source)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiatestreaming"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
+"adfe3014": {"dfnID":"adfe3014","dfnText":"URLSearchParams","external":true,"refSections":[{"refs":[{"id":"ref-for-urlsearchparams"}],"title":"5. Common API Index"}],"url":"https://url.spec.whatwg.org/#urlsearchparams"},
+"aee9d099": {"dfnID":"aee9d099","dfnText":"performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-performance"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
+"b484b574": {"dfnID":"b484b574","dfnText":"ReadableStreamBYOBReader","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobreader"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobreader"},
+"b7d73f5b": {"dfnID":"b7d73f5b","dfnText":"Blob","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-Blob"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
+"bd1abd53": {"dfnID":"bd1abd53","dfnText":"TransformStreamDefaultController","external":true,"refSections":[{"refs":[{"id":"ref-for-transformstreamdefaultcontroller"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
+"bd45e189": {"dfnID":"bd45e189","dfnText":"Performance","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-performance"}],"title":"2. Conformance"},{"refs":[{"id":"ref-for-dom-performance\u2460"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/hr-time/#dom-performance"},
+"bd534f6c": {"dfnID":"bd534f6c","dfnText":"onerror (for WorkerGlobalScope)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-workerglobalscope-onerror"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onerror"},
+"be0af01c": {"dfnID":"be0af01c","dfnText":"validate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-validate"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
+"be4c4211": {"dfnID":"be4c4211","dfnText":"DecompressionStream","external":true,"refSections":[{"refs":[{"id":"ref-for-decompressionstream"}],"title":"5. Common API Index"}],"url":"https://compression.spec.whatwg.org/#decompressionstream"},
+"bfc48225": {"dfnID":"bfc48225","dfnText":"read only","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-read-only"}],"title":"6. The Global Scope"}],"url":"https://webidl.spec.whatwg.org/#dfn-read-only"},
+"c04c9568": {"dfnID":"c04c9568","dfnText":"ByteLengthQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-bytelengthqueuingstrategy"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
+"c0934dbf": {"dfnID":"c0934dbf","dfnText":"PromiseRejectionEvent","external":true,"refSections":[{"refs":[{"id":"ref-for-promiserejectionevent"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-promiserejectionevent\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#promiserejectionevent"},
+"c6083cc6": {"dfnID":"c6083cc6","dfnText":"queueMicrotask(callback)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-queuemicrotask"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
+"cca3cdb2": {"dfnID":"cca3cdb2","dfnText":"AbortSignal","external":true,"refSections":[{"refs":[{"id":"ref-for-abortsignal"}],"title":"5. Common API Index"}],"url":"https://dom.spec.whatwg.org/#abortsignal"},
+"ccfe986b": {"dfnID":"ccfe986b","dfnText":"ErrorEvent","external":true,"refSections":[{"refs":[{"id":"ref-for-errorevent"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-errorevent\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#errorevent"},
+"cd028611": {"dfnID":"cd028611","dfnText":"File","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-file"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/FileAPI/#dfn-file"},
+"ce760f06": {"dfnID":"ce760f06","dfnText":"ReadableStreamBYOBRequest","external":true,"refSections":[{"refs":[{"id":"ref-for-readablestreambyobrequest"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#readablestreambyobrequest"},
+"cf02c2dd": {"dfnID":"cf02c2dd","dfnText":"SubtleCrypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dfn-SubtleCrypto"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dfn-SubtleCrypto"},
+"d40d28a6": {"dfnID":"d40d28a6","dfnText":"Tag","external":true,"refSections":[{"refs":[{"id":"ref-for-tag"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#tag"},
+"daa15432": {"dfnID":"daa15432","dfnText":"onerror (for GlobalEventHandlers)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-onerror"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-handler-onerror\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror"},
+"dca2de17": {"dfnID":"dca2de17","dfnText":"DOMException","external":true,"refSections":[{"refs":[{"id":"ref-for-idl-DOMException"}],"title":"5. Common API Index"}],"url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
+"dd57410d": {"dfnID":"dd57410d","dfnText":"CompileError","external":true,"refSections":[{"refs":[{"id":"ref-for-exceptiondef-compileerror"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#exceptiondef-compileerror"},
+"df16744f": {"dfnID":"df16744f","dfnText":"MessagePort","external":true,"refSections":[{"refs":[{"id":"ref-for-messageport"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/web-messaging.html#messageport"},
+"e806d5a8": {"dfnID":"e806d5a8","dfnText":"Headers","external":true,"refSections":[{"refs":[{"id":"ref-for-headers"}],"title":"5. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#headers"},
+"eb1fb636": {"dfnID":"eb1fb636","dfnText":"CountQueuingStrategy","external":true,"refSections":[{"refs":[{"id":"ref-for-countqueuingstrategy"}],"title":"5. Common API Index"}],"url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
+"eba883ec": {"dfnID":"eba883ec","dfnText":"onunhandledrejection (for WindowEventHandlers)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-window-onunhandledrejection"}],"title":"5. Common API Index"},{"refs":[{"id":"ref-for-handler-window-onunhandledrejection\u2460"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunhandledrejection"},
+"ed3ab0a3": {"dfnID":"ed3ab0a3","dfnText":"crypto","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-windoworworkerglobalscope-crypto"}],"title":"5. Common API Index"}],"url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
+"f06432d7": {"dfnID":"f06432d7","dfnText":"URL","external":true,"refSections":[{"refs":[{"id":"ref-for-url"}],"title":"5. Common API Index"}],"url":"https://url.spec.whatwg.org/#url"},
+"f1041b37": {"dfnID":"f1041b37","dfnText":"unhandledrejection","external":true,"refSections":[{"refs":[{"id":"ref-for-event-unhandledrejection"}],"title":"6. The Global Scope"}],"url":"https://html.spec.whatwg.org/multipage/indices.html#event-unhandledrejection"},
+"f20d405b": {"dfnID":"f20d405b","dfnText":"instantiate(bytes)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-webassembly-instantiate"}],"title":"5. Common API Index"}],"url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
+"f2f85335": {"dfnID":"f2f85335","dfnText":"structuredClone(value, options)","external":true,"refSections":[{"refs":[{"id":"ref-for-dom-structuredclone"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
+"f9da6f1f": {"dfnID":"f9da6f1f","dfnText":"Request","external":true,"refSections":[{"refs":[{"id":"ref-for-request"}],"title":"5. Common API Index"}],"url":"https://fetch.spec.whatwg.org/#request"},
+"ffd62b07": {"dfnID":"ffd62b07","dfnText":"onunhandledrejection (for WorkerGlobalScope)","external":true,"refSections":[{"refs":[{"id":"ref-for-handler-workerglobalscope-onunhandledrejection"}],"title":"5. Common API Index"}],"url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onunhandledrejection"},
+"web-interoperable-runtime": {"dfnID":"web-interoperable-runtime","dfnText":"Web-interoperable Runtime","external":false,"refSections":[{"refs":[{"id":"ref-for-web-interoperable-runtime"}],"title":"5. Common API Index"}],"url":"#web-interoperable-runtime"},
+"web-platform": {"dfnID":"web-platform","dfnText":"Web Platform","external":false,"refSections":[],"url":"#web-platform"},
 };
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -3133,21 +3263,28 @@ function genLinkingSyntaxes(dfn) {
 {
 let refsData = {
 "#web-interoperable-runtime": {"displayText":"web-interoperable runtime","export":true,"for_":[],"level":"","normative":true,"shortname":"minimum-common-api","spec":"minimum-common-api","status":"local","text":"web-interoperable runtime","type":"dfn","url":"#web-interoperable-runtime"},
+"https://compression.spec.whatwg.org/#compressionstream": {"displayText":"CompressionStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"compression","spec":"compression","status":"current","text":"CompressionStream","type":"interface","url":"https://compression.spec.whatwg.org/#compressionstream"},
+"https://compression.spec.whatwg.org/#decompressionstream": {"displayText":"DecompressionStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"compression","spec":"compression","status":"current","text":"DecompressionStream","type":"interface","url":"https://compression.spec.whatwg.org/#decompressionstream"},
 "https://console.spec.whatwg.org/#namespacedef-console": {"displayText":"console","export":true,"for_":[],"level":"1","normative":true,"shortname":"console","spec":"console","status":"current","text":"console","type":"namespace","url":"https://console.spec.whatwg.org/#namespacedef-console"},
 "https://dom.spec.whatwg.org/#abortcontroller": {"displayText":"AbortController","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"AbortController","type":"interface","url":"https://dom.spec.whatwg.org/#abortcontroller"},
 "https://dom.spec.whatwg.org/#abortsignal": {"displayText":"AbortSignal","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"AbortSignal","type":"interface","url":"https://dom.spec.whatwg.org/#abortsignal"},
+"https://dom.spec.whatwg.org/#customevent": {"displayText":"CustomEvent","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"CustomEvent","type":"interface","url":"https://dom.spec.whatwg.org/#customevent"},
 "https://dom.spec.whatwg.org/#event": {"displayText":"Event","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"Event","type":"interface","url":"https://dom.spec.whatwg.org/#event"},
 "https://dom.spec.whatwg.org/#eventtarget": {"displayText":"EventTarget","export":true,"for_":[],"level":"1","normative":true,"shortname":"dom","spec":"dom","status":"current","text":"EventTarget","type":"interface","url":"https://dom.spec.whatwg.org/#eventtarget"},
 "https://encoding.spec.whatwg.org/#textdecoder": {"displayText":"TextDecoder","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextDecoder","type":"interface","url":"https://encoding.spec.whatwg.org/#textdecoder"},
 "https://encoding.spec.whatwg.org/#textdecoderstream": {"displayText":"TextDecoderStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextDecoderStream","type":"interface","url":"https://encoding.spec.whatwg.org/#textdecoderstream"},
 "https://encoding.spec.whatwg.org/#textencoder": {"displayText":"TextEncoder","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextEncoder","type":"interface","url":"https://encoding.spec.whatwg.org/#textencoder"},
 "https://encoding.spec.whatwg.org/#textencoderstream": {"displayText":"TextEncoderStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"encoding","spec":"encoding","status":"current","text":"TextEncoderStream","type":"interface","url":"https://encoding.spec.whatwg.org/#textencoderstream"},
+"https://fetch.spec.whatwg.org/#default-user-agent-value": {"displayText":"default `User-Agent` value","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"default `user-agent` value","type":"dfn","url":"https://fetch.spec.whatwg.org/#default-user-agent-value"},
 "https://fetch.spec.whatwg.org/#dom-global-fetch": {"displayText":"fetch(input)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"fetch(input)","type":"method","url":"https://fetch.spec.whatwg.org/#dom-global-fetch"},
 "https://fetch.spec.whatwg.org/#headers": {"displayText":"Headers","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Headers","type":"interface","url":"https://fetch.spec.whatwg.org/#headers"},
 "https://fetch.spec.whatwg.org/#request": {"displayText":"Request","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Request","type":"interface","url":"https://fetch.spec.whatwg.org/#request"},
 "https://fetch.spec.whatwg.org/#response": {"displayText":"Response","export":true,"for_":[],"level":"1","normative":true,"shortname":"fetch","spec":"fetch","status":"current","text":"Response","type":"interface","url":"https://fetch.spec.whatwg.org/#response"},
-"https://html.spec.whatwg.org/multipage/dom.html#htmlelement": {"displayText":"HTMLElement","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"HTMLElement","type":"interface","url":"https://html.spec.whatwg.org/multipage/dom.html#htmlelement"},
-"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement": {"displayText":"HTMLFormElement","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"HTMLFormElement","type":"interface","url":"https://html.spec.whatwg.org/multipage/forms.html#htmlformelement"},
+"https://html.spec.whatwg.org/multipage/comms.html#messageevent": {"displayText":"MessageEvent","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"MessageEvent","type":"interface","url":"https://html.spec.whatwg.org/multipage/comms.html#messageevent"},
+"https://html.spec.whatwg.org/multipage/indices.html#event-error": {"displayText":"error","export":true,"for_":["Window","WorkerGlobalScope","HTMLElement","EventSource","Worker","SharedWorker","AbstractWorker"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"error","type":"event","url":"https://html.spec.whatwg.org/multipage/indices.html#event-error"},
+"https://html.spec.whatwg.org/multipage/indices.html#event-rejectionhandled": {"displayText":"rejectionhandled","export":true,"for_":["Window","WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"rejectionhandled","type":"event","url":"https://html.spec.whatwg.org/multipage/indices.html#event-rejectionhandled"},
+"https://html.spec.whatwg.org/multipage/indices.html#event-unhandledrejection": {"displayText":"unhandledrejection","export":true,"for_":["Window","WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"unhandledrejection","type":"event","url":"https://html.spec.whatwg.org/multipage/indices.html#event-unhandledrejection"},
+"https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-self": {"displayText":"self","export":true,"for_":["Window"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"self","type":"attribute","url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-self"},
 "https://html.spec.whatwg.org/multipage/nav-history-apis.html#window": {"displayText":"Window","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"Window","type":"interface","url":"https://html.spec.whatwg.org/multipage/nav-history-apis.html#window"},
 "https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone": {"displayText":"structuredClone(value, options)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"structuredClone(value, options)","type":"method","url":"https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone"},
 "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator": {"displayText":"navigator","export":true,"for_":["Window"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"navigator","type":"attribute","url":"https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator"},
@@ -3157,9 +3294,21 @@ let refsData = {
 "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask": {"displayText":"queueMicrotask(callback)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"queueMicrotask(callback)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-queuemicrotask"},
 "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval": {"displayText":"setInterval(handler, timeout, ...arguments)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"setInterval(handler, timeout, ...arguments)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-setinterval"},
 "https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout": {"displayText":"setTimeout(handler, timeout, ...arguments)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"setTimeout(handler, timeout, ...arguments)","type":"method","url":"https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#dom-settimeout"},
+"https://html.spec.whatwg.org/multipage/web-messaging.html#messagechannel": {"displayText":"MessageChannel","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"MessageChannel","type":"interface","url":"https://html.spec.whatwg.org/multipage/web-messaging.html#messagechannel"},
+"https://html.spec.whatwg.org/multipage/web-messaging.html#messageport": {"displayText":"MessagePort","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"MessagePort","type":"interface","url":"https://html.spec.whatwg.org/multipage/web-messaging.html#messageport"},
 "https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob": {"displayText":"atob(data)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"atob(data)","type":"method","url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-atob"},
 "https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa": {"displayText":"btoa(data)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"btoa(data)","type":"method","url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-btoa"},
-"https://html.spec.whatwg.org/multipage/workers.html#worker": {"displayText":"Worker","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"Worker","type":"interface","url":"https://html.spec.whatwg.org/multipage/workers.html#worker"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#dom-reporterror": {"displayText":"reportError(e)","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"reportError(e)","type":"method","url":"https://html.spec.whatwg.org/multipage/webappapis.html#dom-reporterror"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#errorevent": {"displayText":"ErrorEvent","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"ErrorEvent","type":"interface","url":"https://html.spec.whatwg.org/multipage/webappapis.html#errorevent"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror": {"displayText":"onerror","export":true,"for_":["GlobalEventHandlers"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onerror","type":"attribute","url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onrejectionhandled": {"displayText":"onrejectionhandled","export":true,"for_":["WindowEventHandlers"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onrejectionhandled","type":"attribute","url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onrejectionhandled"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunhandledrejection": {"displayText":"onunhandledrejection","export":true,"for_":["WindowEventHandlers"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onunhandledrejection","type":"attribute","url":"https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunhandledrejection"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#promiserejectionevent": {"displayText":"PromiseRejectionEvent","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"PromiseRejectionEvent","type":"interface","url":"https://html.spec.whatwg.org/multipage/webappapis.html#promiserejectionevent"},
+"https://html.spec.whatwg.org/multipage/webappapis.html#report-an-exception": {"displayText":"report an exception","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"report an exception","type":"dfn","url":"https://html.spec.whatwg.org/multipage/webappapis.html#report-an-exception"},
+"https://html.spec.whatwg.org/multipage/workers.html#dom-workerglobalscope-self": {"displayText":"self","export":true,"for_":["WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"self","type":"attribute","url":"https://html.spec.whatwg.org/multipage/workers.html#dom-workerglobalscope-self"},
+"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onerror": {"displayText":"onerror","export":true,"for_":["WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onerror","type":"attribute","url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onerror"},
+"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onrejectionhandled": {"displayText":"onrejectionhandled","export":true,"for_":["WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onrejectionhandled","type":"attribute","url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onrejectionhandled"},
+"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onunhandledrejection": {"displayText":"onunhandledrejection","export":true,"for_":["WorkerGlobalScope"],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"onunhandledrejection","type":"attribute","url":"https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onunhandledrejection"},
 "https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope": {"displayText":"WorkerGlobalScope","export":true,"for_":[],"level":"1","normative":true,"shortname":"html","spec":"html","status":"current","text":"WorkerGlobalScope","type":"interface","url":"https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope"},
 "https://streams.spec.whatwg.org/#bytelengthqueuingstrategy": {"displayText":"ByteLengthQueuingStrategy","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"ByteLengthQueuingStrategy","type":"interface","url":"https://streams.spec.whatwg.org/#bytelengthqueuingstrategy"},
 "https://streams.spec.whatwg.org/#countqueuingstrategy": {"displayText":"CountQueuingStrategy","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"CountQueuingStrategy","type":"interface","url":"https://streams.spec.whatwg.org/#countqueuingstrategy"},
@@ -3173,13 +3322,14 @@ let refsData = {
 "https://streams.spec.whatwg.org/#transformstreamdefaultcontroller": {"displayText":"TransformStreamDefaultController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"TransformStreamDefaultController","type":"interface","url":"https://streams.spec.whatwg.org/#transformstreamdefaultcontroller"},
 "https://streams.spec.whatwg.org/#writablestream": {"displayText":"WritableStream","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"WritableStream","type":"interface","url":"https://streams.spec.whatwg.org/#writablestream"},
 "https://streams.spec.whatwg.org/#writablestreamdefaultcontroller": {"displayText":"WritableStreamDefaultController","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"WritableStreamDefaultController","type":"interface","url":"https://streams.spec.whatwg.org/#writablestreamdefaultcontroller"},
+"https://streams.spec.whatwg.org/#writablestreamdefaultwriter": {"displayText":"WritableStreamDefaultWriter","export":true,"for_":[],"level":"1","normative":true,"shortname":"streams","spec":"streams","status":"current","text":"WritableStreamDefaultWriter","type":"interface","url":"https://streams.spec.whatwg.org/#writablestreamdefaultwriter"},
+"https://tc39.es/ecma262/multipage/global-object.html#sec-globalthis": {"displayText":"globalThis","export":true,"for_":["globalThis"],"level":"1","normative":true,"shortname":"ecmascript","spec":"ecmascript","status":"current","text":"globalThis","type":"attribute","url":"https://tc39.es/ecma262/multipage/global-object.html#sec-globalthis"},
 "https://url.spec.whatwg.org/#url": {"displayText":"URL","export":true,"for_":[],"level":"1","normative":true,"shortname":"url","spec":"url","status":"current","text":"URL","type":"interface","url":"https://url.spec.whatwg.org/#url"},
 "https://url.spec.whatwg.org/#urlsearchparams": {"displayText":"URLSearchParams","export":true,"for_":[],"level":"1","normative":true,"shortname":"url","spec":"url","status":"current","text":"URLSearchParams","type":"interface","url":"https://url.spec.whatwg.org/#urlsearchparams"},
 "https://urlpattern.spec.whatwg.org/#urlpattern": {"displayText":"URLPattern","export":true,"for_":[],"level":"1","normative":true,"shortname":"urlpattern","spec":"urlpattern","status":"current","text":"URLPattern","type":"interface","url":"https://urlpattern.spec.whatwg.org/#urlpattern"},
 "https://w3c.github.io/FileAPI/#dfn-Blob": {"displayText":"Blob","export":true,"for_":[],"level":"1","normative":true,"shortname":"fileapi","spec":"fileapi","status":"current","text":"Blob","type":"interface","url":"https://w3c.github.io/FileAPI/#dfn-Blob"},
 "https://w3c.github.io/FileAPI/#dfn-file": {"displayText":"File","export":true,"for_":[],"level":"1","normative":true,"shortname":"fileapi","spec":"fileapi","status":"current","text":"File","type":"interface","url":"https://w3c.github.io/FileAPI/#dfn-file"},
-"https://w3c.github.io/hr-time/#dom-performance-now": {"displayText":"now()","export":true,"for_":["Performance"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"now()","type":"method","url":"https://w3c.github.io/hr-time/#dom-performance-now"},
-"https://w3c.github.io/hr-time/#dom-performance-timeorigin": {"displayText":"timeOrigin","export":true,"for_":["Performance"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"timeOrigin","type":"attribute","url":"https://w3c.github.io/hr-time/#dom-performance-timeorigin"},
+"https://w3c.github.io/hr-time/#dom-performance": {"displayText":"Performance","export":true,"for_":[],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"Performance","type":"interface","url":"https://w3c.github.io/hr-time/#dom-performance"},
 "https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance": {"displayText":"performance","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"3","normative":true,"shortname":"hr-time","spec":"hr-time-3","status":"current","text":"performance","type":"attribute","url":"https://w3c.github.io/hr-time/#dom-windoworworkerglobalscope-performance"},
 "https://w3c.github.io/webcrypto/#dfn-Crypto": {"displayText":"Crypto","export":true,"for_":[],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"Crypto","type":"interface","url":"https://w3c.github.io/webcrypto/#dfn-Crypto"},
 "https://w3c.github.io/webcrypto/#dfn-CryptoKey": {"displayText":"CryptoKey","export":true,"for_":[],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"CryptoKey","type":"interface","url":"https://w3c.github.io/webcrypto/#dfn-CryptoKey"},
@@ -3187,15 +3337,22 @@ let refsData = {
 "https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto": {"displayText":"crypto","export":true,"for_":["WindowOrWorkerGlobalScope"],"level":"2","normative":true,"shortname":"webcrypto","spec":"webcrypto-2","status":"current","text":"crypto","type":"attribute","url":"https://w3c.github.io/webcrypto/#dom-windoworworkerglobalscope-crypto"},
 "https://webassembly.github.io/spec/js-api/#dom-webassembly-compile": {"displayText":"compile(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"compile(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-compile"},
 "https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate": {"displayText":"instantiate(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"instantiate(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-instantiate"},
+"https://webassembly.github.io/spec/js-api/#dom-webassembly-jstag": {"displayText":"JSTag","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"JSTag","type":"attribute","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-jstag"},
 "https://webassembly.github.io/spec/js-api/#dom-webassembly-validate": {"displayText":"validate(bytes)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"validate(bytes)","type":"method","url":"https://webassembly.github.io/spec/js-api/#dom-webassembly-validate"},
+"https://webassembly.github.io/spec/js-api/#exception": {"displayText":"Exception","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Exception","type":"interface","url":"https://webassembly.github.io/spec/js-api/#exception"},
+"https://webassembly.github.io/spec/js-api/#exceptiondef-compileerror": {"displayText":"CompileError","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"CompileError","type":"exception","url":"https://webassembly.github.io/spec/js-api/#exceptiondef-compileerror"},
+"https://webassembly.github.io/spec/js-api/#exceptiondef-linkerror": {"displayText":"LinkError","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"LinkError","type":"exception","url":"https://webassembly.github.io/spec/js-api/#exceptiondef-linkerror"},
+"https://webassembly.github.io/spec/js-api/#exceptiondef-runtimeerror": {"displayText":"RuntimeError","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"RuntimeError","type":"exception","url":"https://webassembly.github.io/spec/js-api/#exceptiondef-runtimeerror"},
 "https://webassembly.github.io/spec/js-api/#global": {"displayText":"Global","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Global","type":"interface","url":"https://webassembly.github.io/spec/js-api/#global"},
 "https://webassembly.github.io/spec/js-api/#instance": {"displayText":"Instance","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Instance","type":"interface","url":"https://webassembly.github.io/spec/js-api/#instance"},
 "https://webassembly.github.io/spec/js-api/#memory": {"displayText":"Memory","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Memory","type":"interface","url":"https://webassembly.github.io/spec/js-api/#memory"},
 "https://webassembly.github.io/spec/js-api/#module": {"displayText":"Module","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Module","type":"interface","url":"https://webassembly.github.io/spec/js-api/#module"},
 "https://webassembly.github.io/spec/js-api/#namespacedef-webassembly": {"displayText":"WebAssembly","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"WebAssembly","type":"namespace","url":"https://webassembly.github.io/spec/js-api/#namespacedef-webassembly"},
 "https://webassembly.github.io/spec/js-api/#table": {"displayText":"Table","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Table","type":"interface","url":"https://webassembly.github.io/spec/js-api/#table"},
+"https://webassembly.github.io/spec/js-api/#tag": {"displayText":"Tag","export":true,"for_":[],"level":"2","normative":true,"shortname":"wasm-js-api","spec":"wasm-js-api-2","status":"current","text":"Tag","type":"interface","url":"https://webassembly.github.io/spec/js-api/#tag"},
 "https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming": {"displayText":"compileStreaming(source)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-web-api","spec":"wasm-web-api-2","status":"current","text":"compileStreaming(source)","type":"method","url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-compilestreaming"},
 "https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming": {"displayText":"instantiateStreaming(source)","export":true,"for_":["WebAssembly"],"level":"2","normative":true,"shortname":"wasm-web-api","spec":"wasm-web-api-2","status":"current","text":"instantiateStreaming(source)","type":"method","url":"https://webassembly.github.io/spec/web-api/#dom-webassembly-instantiatestreaming"},
+"https://webidl.spec.whatwg.org/#dfn-read-only": {"displayText":"read only","export":true,"for_":[],"level":"1","normative":true,"shortname":"webidl","spec":"webidl","status":"current","text":"read only","type":"dfn","url":"https://webidl.spec.whatwg.org/#dfn-read-only"},
 "https://webidl.spec.whatwg.org/#idl-DOMException": {"displayText":"DOMException","export":true,"for_":[],"level":"1","normative":true,"shortname":"webidl","spec":"webidl","status":"current","text":"DOMException","type":"interface","url":"https://webidl.spec.whatwg.org/#idl-DOMException"},
 "https://xhr.spec.whatwg.org/#formdata": {"displayText":"FormData","export":true,"for_":[],"level":"1","normative":true,"shortname":"xhr","spec":"xhr","status":"current","text":"FormData","type":"interface","url":"https://xhr.spec.whatwg.org/#formdata"},
 };
