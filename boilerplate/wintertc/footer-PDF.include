@@ -1,4 +1,4 @@
-<div data-fill-with="references"></div>
+<hr bikeshed-ecmarkup-section=annex>
 
 <div data-fill-with="index"></div>
 
@@ -10,4 +10,19 @@
 
 <div data-fill-with="issues-index"></div>
 
-<div data-fill-with="copyright"></div>
+<div data-fill-with="references"></div>
+
+<h2 class="no-num no-ref">Bibliography</h2>
+
+<!--hr bikeshed-ecmarkup-section=back-matter>
+
+<h2 class="no-num">Software License</h2>
+
+<p class="ECMAaddress">Ecma International</p>
+<p class="ECMAaddress">Rue du Rhone 114</p>
+<p class="ECMAaddress">CH-1204 Geneva</p>
+<p class="ECMAaddress">Tel: +41 22 849 6000</p>
+<p class="ECMAaddress">Fax: +41 22 849 6001</p>
+<p class="ECMAaddress">Web: <a href="https://ecma-international.org/">https://ecma-international.org/</a></p>
+
+<div data-fill-with="copyright"></div-->
